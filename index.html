@@ -149,7 +149,32 @@
           <button class="btn-secondary" id="btn-close-modal">Fechar</button>
         </div>
       </div>
-      <div style="flex: 1; overflow-y: auto; background: #08070d; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem; margin-top: 1rem;">
+      <!-- Card de Inteligência da Base (0% a 100%) -->
+      <div class="intelligence-card">
+        <div class="intelligence-header">
+          <div class="intelligence-title">
+            <span style="font-size: 1.5rem;">🧠</span>
+            <div>
+              <h3>Nível de Inteligência da Base</h3>
+              <p class="intelligence-status" id="intel-level-text">Calculando prontidão...</p>
+            </div>
+          </div>
+          <div class="intelligence-score" id="intel-percentage">--%</div>
+        </div>
+
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill" id="intel-bar" style="width: 0%;"></div>
+        </div>
+
+        <div class="intelligence-metrics">
+          <div class="metric-item">🌐 <strong id="intel-pages">--</strong> Páginas Mapeadas</div>
+          <div class="metric-item">📄 <strong id="intel-docs">--</strong> Documentos Oficiais</div>
+          <div class="metric-item">📊 <strong id="intel-size">-- KB</strong> de Conhecimento</div>
+          <div class="metric-item">💬 <strong id="intel-questions">--</strong> Dúvidas Respondidas</div>
+        </div>
+      </div>
+
+      <div style="flex: 1; overflow-y: auto; background: #08070d; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem;">
         <pre id="modal-kb-text" style="font-family: monospace; font-size: 0.85rem; color: #cbd5e1; white-space: pre-wrap; word-break: break-word;"></pre>
       </div>
     </div>

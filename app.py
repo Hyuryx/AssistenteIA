@@ -31,6 +31,7 @@ from config import (
     SENHA_LOGIN,
     GEMINI_API_KEY,
     BASE_URL,
+    obter_gemini_api_key,
 )
 from atendente import responder_duvida
 from detector_mudancas import comparar_versoes
@@ -73,7 +74,26 @@ async def get_js():
 class ChatRequest(BaseModel):
     question: str
 
+def carregar_metricas_ia() -> dict:
+    metricas_file = DATA_DIR / "metricas_ia.json"
+    if metricas_file.exists():
+        try:
+            with open(metricas_file, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return {"perguntas_respondidas": 0}
+
+def salvar_metricas_ia(metricas: dict):
+    metricas_file = DATA_DIR / "metricas_ia.json"
+    try:
+        with open(metricas_file, "w", encoding="utf-8") as f:
+            json.dump(metricas, f, ensure_ascii=False, indent=2)
+    except Exception:
+        pass
+
 @app.post("/api/chat")
+@app.post("/chat")
 async def chat_endpoint(req: ChatRequest):
     question = req.question.strip()
     if not question:
@@ -83,22 +103,21 @@ async def chat_endpoint(req: ChatRequest):
         # Chama a função oficial do atendente
         loop = asyncio.get_event_loop()
         answer = await loop.run_in_executor(None, responder_duvida, question)
+        
+        # Incrementa contador de aprendizado da IA
+        m = carregar_metricas_ia()
+        m["perguntas_respondidas"] = m.get("perguntas_respondidas", 0) + 1
+        salvar_metricas_ia(m)
+        
         return {"success": True, "answer": answer}
     except Exception as e:
         return {"success": False, "answer": f"Erro interno ao processar a dúvida: {str(e)}"}
 
 @app.get("/api/stats")
+@app.get("/stats")
 async def stats_endpoint():
     import atendente
-    api_key_val = (
-        os.getenv("GEMINI_API_KEY")
-        or os.getenv("GOOGLE_API_KEY")
-        or os.getenv("GEMINI_KEY")
-        or os.getenv("CHAVE_GEMINI")
-        or os.getenv("CHAVE_IA")
-        or os.getenv("API_KEY")
-        or ""
-    ).strip()
+    api_key_val = obter_gemini_api_key()
     
     # 1. Status da API Key (Ativa [verde], Esgotada [laranja], Offline [vermelho])
     if not api_key_val:
@@ -137,6 +156,34 @@ async def stats_endpoint():
         except Exception:
             pass
 
+    metricas = carregar_metricas_ia()
+    perguntas_feitas = metricas.get("perguntas_respondidas", 0)
+
+    # 3. Cálculo do Nível de Inteligência (0% a 100%)
+    if not KB_TEXT_FILE.exists() or kb_size == 0:
+        score_inteligencia = 0
+        nivel_classificacao = "Base Vazia (0%)"
+    else:
+        # Páginas oficiais (até 45 pts)
+        pts_paginas = min(45, int((total_pages / 50) * 45)) if total_pages > 0 else 30
+        # Documentos e manuais locais integrados (até 35 pts)
+        pts_docs = min(35, total_docs * 15)
+        # Volume de dados e regras em KB (até 10 pts)
+        pts_volume = min(10, int((kb_size / (140 * 1024)) * 10))
+        # Histórico de aprendizado de perguntas atendidas (até 10 pts adicionais)
+        pts_aprendizado = min(10, perguntas_feitas)
+        
+        score_inteligencia = min(100, max(15, pts_paginas + pts_docs + pts_volume + pts_aprendizado))
+        
+        if score_inteligencia >= 90:
+            nivel_classificacao = "Nível Especialista (Alta Precisão)"
+        elif score_inteligencia >= 70:
+            nivel_classificacao = "Nível Avançado"
+        elif score_inteligencia >= 45:
+            nivel_classificacao = "Nível Intermediário"
+        else:
+            nivel_classificacao = "Nível Básico"
+
     if sync_state.get("is_running"):
         kb_status = "maintenance"
         kb_label = "Em Manutenção"
@@ -168,8 +215,14 @@ async def stats_endpoint():
             "total_documents": total_docs,
             "kb_size_kb": round(kb_size / 1024, 1),
             "kb_lines": kb_lines,
-            "total_pages": total_pages
+            "total_pages": total_pages,
+            "intelligence_score": score_inteligencia,
+            "intelligence_level": nivel_classificacao,
+            "questions_answered": perguntas_feitas
         },
+        "intelligence_score": score_inteligencia,
+        "intelligence_level": nivel_classificacao,
+        "questions_answered": perguntas_feitas,
         "total_documents": total_docs,
         "kb_size_kb": round(kb_size / 1024, 1),
         "kb_lines": kb_lines,
@@ -319,15 +372,29 @@ async def rebuild_knowledge_base():
         raise HTTPException(status_code=500, detail=f"Erro ao recompilar base: {str(e)}")
 
 @app.get("/api/knowledge-base")
+@app.get("/knowledge-base")
 async def get_knowledge_base():
-    if not KB_TEXT_FILE.exists():
-        return {"content": "Base de conhecimento vazia."}
-    try:
-        with open(KB_TEXT_FILE, "r", encoding="utf-8", errors="ignore") as f:
-            content = f.read()
-        return {"content": content, "size_chars": len(content)}
-    except Exception as e:
-        return {"content": f"Erro ao ler base: {str(e)}"}
+    stats = await stats_endpoint()
+    content = ""
+    if KB_TEXT_FILE.exists():
+        try:
+            with open(KB_TEXT_FILE, "r", encoding="utf-8", errors="ignore") as f:
+                content = f.read()
+        except Exception as e:
+            content = f"Erro ao ler base: {str(e)}"
+    else:
+        content = "Base de conhecimento vazia ou ainda não compilada."
+
+    return {
+        "content": content,
+        "size_chars": len(content),
+        "intelligence_score": stats.get("intelligence_score", 0),
+        "intelligence_level": stats.get("intelligence_level", "Básico"),
+        "total_pages": stats.get("total_pages", 0),
+        "total_documents": stats.get("total_documents", 0),
+        "kb_size_kb": stats.get("kb_size_kb", 0),
+        "questions_answered": stats.get("questions_answered", 0)
+    }
 
 class KBUpdateRequest(BaseModel):
     content: str

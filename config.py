@@ -28,15 +28,21 @@ LOGIN_URL = f"{BASE_URL}/login"
 # Credenciais
 TELEFONE_LOGIN = os.getenv("TELEFONE_LOGIN", "").strip()
 SENHA_LOGIN = os.getenv("SENHA_LOGIN", "").strip()
-GEMINI_API_KEY = (
-    os.getenv("GEMINI_API_KEY")
-    or os.getenv("GOOGLE_API_KEY")
-    or os.getenv("GEMINI_KEY")
-    or os.getenv("CHAVE_GEMINI")
-    or os.getenv("CHAVE_IA")
-    or os.getenv("API_KEY")
-    or ""
-).strip()
+def obter_gemini_api_key() -> str:
+    # 1. Procura pelas variáveis mais comuns
+    for var in ["GEMINI_API_KEY", "GOOGLE_API_KEY", "GEMINI_KEY", "CHAVE_GEMINI", "CHAVE_IA", "API_KEY"]:
+        val = os.getenv(var, "").strip()
+        if val:
+            return val
+    # 2. Varre qualquer variável de ambiente com termo chave
+    for k, v in os.environ.items():
+        k_upper = k.upper()
+        if any(term in k_upper for term in ["GEMINI", "GOOGLE_API", "API_KEY", "CHAVE"]):
+            if v and len(v.strip()) > 10:
+                return v.strip()
+    return ""
+
+GEMINI_API_KEY = obter_gemini_api_key()
 
 # Diretórios e Arquivos de Armazenamento
 DATA_DIR = BASE_DIR / "dados_plataforma"

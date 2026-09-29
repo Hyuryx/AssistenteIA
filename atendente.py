@@ -1,5 +1,6 @@
+import os
 import json
-from config import KB_TEXT_FILE, LATEST_DATA_FILE, GEMINI_API_KEY
+from config import KB_TEXT_FILE, LATEST_DATA_FILE, obter_gemini_api_key
 
 SYSTEM_PROMPT = """Você é o Heitor, Atendente Oficial de Suporte ao Cliente da Vinícola Uvva.
 Sua missão é atuar como o próprio suporte, resolvendo as dúvidas dos clientes de forma direta e ativa.
@@ -48,9 +49,10 @@ def responder_duvida(pergunta_cliente: str) -> str:
             "Execute primeiro a opção [1] no menu principal para que o robô faça a varredura do site."
         )
 
-    if not GEMINI_API_KEY:
+    api_key = obter_gemini_api_key()
+    if not api_key:
         # Modo busca textual caso a chave ainda não tenha sido configurada
-        print("\n[AVISO] Chave GEMINI_API_KEY não configurada no arquivo .env.")
+        print("\n[AVISO] Nenhuma chave do Gemini configurada.")
         print("Realizando localização direta nos dados extraídos do site...\n")
         
         termos = [t.lower() for t in pergunta_cliente.split() if len(t) > 3]
@@ -64,7 +66,7 @@ def responder_duvida(pergunta_cliente: str) -> str:
             return (
                 "=== DADOS ENCONTRADOS NO SITE (Configure sua API Key para resposta automática) ===\n"
                 f"{trecho}\n\n"
-                "Para que a IA redija a mensagem formal automaticamente, gere sua chave gratuita em https://aistudio.google.com/ e insira no arquivo .env."
+                "Para que a IA redija a mensagem formal automaticamente, gere sua chave gratuita em https://aistudio.google.com/ e insira no arquivo .env ou nas variáveis da Vercel."
             )
         else:
             return "Nenhum dado relacionado foi encontrado na base extraída do site."
@@ -89,7 +91,7 @@ Gere a resposta formal e educada pronta para o cliente agora:
     import time
     global ULTIMO_ERRO_QUOTA
     
-    client = genai.Client(api_key=GEMINI_API_KEY)
+    client = genai.Client(api_key=api_key)
     
     for tentativa in range(3):
         try:

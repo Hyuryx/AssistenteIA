@@ -114,11 +114,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const startTime = performance.now();
 
     try {
-      const res = await fetch(`${API_BASE}/api/chat`, {
+      let res = await fetch(`${API_BASE}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question })
       });
+      if (!res.ok && res.status === 404) {
+        res = await fetch(`${API_BASE}/chat`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ question })
+        });
+      }
       const data = await res.json();
 
       const duration = ((performance.now() - startTime) / 1000).toFixed(1);
@@ -128,6 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (data.success) {
         formatarEExibirResposta(data.answer);
+        atualizarStats();
       } else {
         responseContent.innerHTML = `<div style="color: #f87171; padding: 1rem;">${data.answer || 'Erro ao consultar o assistente.'}</div>`;
       }
@@ -135,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
       responseContent.innerHTML = `
         <div style="color: #f87171; padding: 1rem; line-height: 1.6;">
           <strong>Erro ao conectar com a API:</strong> ${err.message}<br>
-          <small style="color: var(--text-dim);">Dica: Verifique se o backend na Vercel está ativo.</small>
+          <small style="color: var(--text-dim);">Dica: Se estiver usando o arquivo local, execute <code>iniciar_servidor.bat</code> ou acesse a URL publicada na Vercel.</small>
         </div>
       `;
     } finally {
@@ -184,22 +192,55 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalKbText = document.getElementById('modal-kb-text');
   const modalKbSubtitle = document.getElementById('modal-kb-subtitle');
   const modalKbSearch = document.getElementById('modal-kb-search');
+  
+  // Elementos do Medidor de Inteligência (0% a 100%)
+  const intelPercentage = document.getElementById('intel-percentage');
+  const intelBar = document.getElementById('intel-bar');
+  const intelLevelText = document.getElementById('intel-level-text');
+  const intelPages = document.getElementById('intel-pages');
+  const intelDocs = document.getElementById('intel-docs');
+  const intelSize = document.getElementById('intel-size');
+  const intelQuestions = document.getElementById('intel-questions');
+
   let rawKbFullText = '';
+
+  function renderizarInteligencia(data) {
+    if (!data) return;
+    const score = data.intelligence_score ?? data.knowledge_base?.intelligence_score ?? 0;
+    const level = data.intelligence_level ?? data.knowledge_base?.intelligence_level ?? 'Nível Operacional';
+    const pages = data.total_pages ?? data.knowledge_base?.total_pages ?? 0;
+    const docs = data.total_documents ?? data.knowledge_base?.total_documents ?? 0;
+    const size = data.kb_size_kb ?? data.knowledge_base?.kb_size_kb ?? 0;
+    const questions = data.questions_answered ?? data.knowledge_base?.questions_answered ?? 0;
+
+    if (intelPercentage) intelPercentage.textContent = `${score}%`;
+    if (intelBar) intelBar.style.width = `${score}%`;
+    if (intelLevelText) intelLevelText.textContent = level;
+    if (intelPages) intelPages.textContent = pages;
+    if (intelDocs) intelDocs.textContent = docs;
+    if (intelSize) intelSize.textContent = `${size} KB`;
+    if (intelQuestions) intelQuestions.textContent = questions;
+  }
 
   if (btnOpenKbModal && kbModal) {
     btnOpenKbModal.addEventListener('click', async () => {
       kbModal.style.display = 'flex';
       modalKbText.textContent = 'Carregando texto da base oficial...';
       try {
-        const res = await fetch(`${API_BASE}/api/knowledge-base`);
+        let res = await fetch(`${API_BASE}/api/knowledge-base`);
+        if (!res.ok && res.status === 404) {
+          res = await fetch(`${API_BASE}/knowledge-base`);
+        }
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
         rawKbFullText = data.content || 'Base vazia.';
         modalKbText.textContent = rawKbFullText;
         if (modalKbSubtitle) {
           modalKbSubtitle.textContent = `${(rawKbFullText.length / 1024).toFixed(1)} KB • ${(rawKbFullText.split('\n').length)} linhas`;
         }
+        renderizarInteligencia(data);
       } catch (err) {
-        modalKbText.textContent = 'Erro ao carregar base: ' + err.message;
+        modalKbText.textContent = `Atenção: Não foi possível carregar a base de dados.\n\nMotivo: ${err.message}\n\n• Se você abriu o arquivo direto pelo computador: dê 2 cliques no arquivo 'iniciar_servidor.bat' na pasta do projeto para iniciar o backend local.\n• Se estiver usando a versão web da Vercel: certifique-se de que a publicação foi concluída.`;
       }
     });
   }
@@ -241,9 +282,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function atualizarStats() {
     try {
-      const res = await fetch(`${API_BASE}/api/stats`);
+      let res = await fetch(`${API_BASE}/api/stats`);
+      if (!res.ok && res.status === 404) {
+        res = await fetch(`${API_BASE}/stats`);
+      }
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
+
+      // Renderiza medidor de inteligência em tempo real
+      renderizarInteligencia(data);
 
       // 1. Atualiza Badge da API Key (Verde = Ativa, Laranja = Esgotada, Vermelho = Offline)
       if (badgeApiStatus) {
@@ -271,7 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (badgeApiStatus) {
         badgeApiStatus.textContent = 'Offline';
         badgeApiStatus.className = 'badge-pill badge-status-red';
-        badgeApiStatus.title = 'Servidor ou API inacessível';
+        badgeApiStatus.title = 'Servidor local não iniciado ou API inacessível';
       }
       if (badgeKbStatus) {
         badgeKbStatus.textContent = 'Offline';
