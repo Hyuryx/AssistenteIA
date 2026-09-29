@@ -1,6 +1,7 @@
 @echo off
 chcp 65001 > nul
-title Enviar Atualizações - GitHub & Vercel
+set "PATH=C:\Program Files\Git\cmd;C:\Program Files\Git\bin;%PATH%"
+title "Enviar Atualizações - GitHub e Vercel"
 cd /d "%~dp0"
 
 echo ==============================================================

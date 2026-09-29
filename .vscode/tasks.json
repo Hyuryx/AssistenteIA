@@ -8,6 +8,11 @@
       "windows": {
         "command": "${workspaceFolder}\\enviar_atualizacoes.bat"
       },
+      "options": {
+        "env": {
+          "PATH": "C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;${env:PATH}"
+        }
+      },
       "group": {
         "kind": "build",
         "isDefault": true
