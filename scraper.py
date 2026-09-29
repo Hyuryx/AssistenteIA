@@ -309,12 +309,22 @@ def executar_varredura(headless: bool = False):
                     f.write(tab + "\n")
                 f.write("\n")
 
-    print(f"[CONCLUÍDO] {len(paginas_coletadas)} páginas mapeadas e salvas com sucesso!")
-    
     # 6. Adiciona conteúdo de PDFs e DOCXs locais na base de conhecimento
     integrar_manuais_locais()
 
-    print(f"Base de conhecimento gerada em: {KB_TEXT_FILE.name}\n")
+    # 7. Compara com a versão anterior para detectar páginas novas ou removidas
+    try:
+        from detector_mudancas import comparar_versoes
+        mudancas = comparar_versoes()
+        print("\n--- COMPARATIVO DE MUDANÇAS (NOVIDADES / REMOÇÕES) ---")
+        for m in mudancas[:8]:
+            print(f"  {m}")
+        if len(mudancas) > 8:
+            print(f"  ... e mais {len(mudancas) - 8} alterações registradas.")
+    except Exception as e:
+        pass
+
+    print(f"\nBase de conhecimento gerada em: {KB_TEXT_FILE.name}\n")
     return paginas_coletadas
 
 def integrar_manuais_locais():
