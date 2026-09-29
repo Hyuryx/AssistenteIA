@@ -1,7 +1,7 @@
 @echo off
 chcp 65001 > nul
 set "PATH=C:\Program Files\Git\cmd;C:\Program Files\Git\bin;%PATH%"
-title "Enviar Atualizações - GitHub e Vercel"
+title Assistente IA - GitHub e Vercel
 cd /d "%~dp0"
 
 echo ==============================================================
@@ -9,7 +9,7 @@ echo    ASSISTENTE IA - ENVIAR ATUALIZACOES PARA GITHUB E VERCEL
 echo ==============================================================
 echo.
 
-echo [1/4] Verificando arquivos alterados...
+echo [1/5] Verificando arquivos alterados...
 git status -s
 echo.
 
@@ -19,14 +19,18 @@ if "%msg%"=="" (
 )
 
 echo.
-echo [2/4] Preparando arquivos alterados...
+echo [2/5] Preparando arquivos alterados...
 git add .
 
-echo [3/4] Gravando alteracoes: "%msg%"...
+echo [3/5] Gravando alteracoes: "%msg%"...
 git commit -m "%msg%"
 
 echo.
-echo [4/4] Enviando para o GitHub (https://github.com/Hyuryx/AssistenteIA)...
+echo [4/5] Sincronizando com o GitHub...
+git pull --rebase origin main
+
+echo.
+echo [5/5] Enviando para o GitHub (https://github.com/Hyuryx/AssistenteIA)...
 git push origin main
 
 echo.
