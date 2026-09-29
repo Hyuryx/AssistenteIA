@@ -1,9 +1,17 @@
 === BASE OFICIAL DE DADOS DA PLATAFORMA (VINICOLA UVVA) ===
-Última atualização: 29/09/2026 às 15:59:33
+Ultima atualizacao: 29/09/2026 as 16:58:12
+
+==================================================
+DIRETRIZES FUNDAMENTAIS DO SUPORTE - SAQUES E RETIRADAS:
+==================================================
+1. DISPONIBILIDADE E PRAZO: Os saques funcionam 24 horas por dia (24/7) E SAO 100%% INSTANTANEOS!
+   Assim que o cliente solicita a retirada na plataforma, o dinheiro cai instantaneamente na conta bancaria via PIX ou carteira USDT.
+   IMPORTANTE: NUNCA diga que o saque demora ate 24 horas. '24 horas' significa que o cliente pode sacar a qualquer hora do dia ou da noite, e o pagamento cai na hora (instantaneo).
+2. VALORES MINIMOS E TAXAS: Minimo de R$ 6,00 no PIX e R$ 40,00 no USDT. Taxa padrao de 6%% (com 50%% de desconto na taxa para membros do Cartao SVIP).
 
 
 ==================================================
-PÁGINA: Vinicola Uvva - Cadastro
+PAGINA: Vinicola Uvva - Cadastro
 URL: https://vinicolauvva.com/cadastro
 ==================================================
 Vinicola Uvva - Cadastro
@@ -17,7 +25,7 @@ Uma experiência que começa na origem.
 
 
 ==================================================
-PÁGINA: Recuperar senha - Vinicola Uvva
+PAGINA: Recuperar senha - Vinicola Uvva
 URL: https://vinicolauvva.com/recuperar-senha
 ==================================================
 Recuperar senha - Vinicola Uvva
@@ -29,7 +37,7 @@ Por segurança, informaremos apenas que o código será enviado caso o telefone 
 
 
 ==================================================
-PÁGINA: Vinicola Uvva - Acessar Conta
+PAGINA: Vinicola Uvva - Acessar Conta
 URL: https://vinicolauvva.com/login
 ==================================================
 Vinicola Uvva - Acessar Conta
@@ -90,14 +98,14 @@ Uma tiragem limitada e exclusiva no microclima tropical de altitude.
 
 
 ==================================================
-PÁGINA: Sem título
+PAGINA: Sem título
 URL: https://vinicolauvva.com/tarefas
 ==================================================
 Not Found
 
 
 ==================================================
-PÁGINA: Compartilhamento de equipe
+PAGINA: Compartilhamento de equipe
 URL: https://vinicolauvva.com/tarefa-compartilhamento-equipe
 ==================================================
 Compartilhamento de equipe
@@ -121,7 +129,7 @@ ENVIAR PARA ANÁLISE
 
 
 ==================================================
-PÁGINA: Produtos
+PAGINA: Produtos
 URL: https://vinicolauvva.com/produtos
 ==================================================
 Produtos
@@ -304,7 +312,7 @@ O meu
 
 
 ==================================================
-PÁGINA: Presente de Primeira Convite
+PAGINA: Presente de Primeira Convite
 URL: https://vinicolauvva.com/tarefa-presente-convite
 ==================================================
 Presente de Primeira Convite
@@ -328,7 +336,7 @@ ENVIAR PARA ANÁLISE
 
 
 ==================================================
-PÁGINA: Perfil
+PAGINA: Perfil
 URL: https://vinicolauvva.com/perfil
 ==================================================
 Perfil
@@ -392,7 +400,7 @@ Entendi
 
 
 ==================================================
-PÁGINA: Roleta
+PAGINA: Roleta
 URL: https://vinicolauvva.com/sorteio
 ==================================================
 Roleta
@@ -424,7 +432,7 @@ Ok
 
 
 ==================================================
-PÁGINA: Prêmio selfie
+PAGINA: Prêmio selfie
 URL: https://vinicolauvva.com/tarefa-premio-selfie
 ==================================================
 Prêmio selfie
@@ -449,7 +457,7 @@ ENVIAR PARA ANÁLISE
 
 
 ==================================================
-PÁGINA: Faturas
+PAGINA: Faturas
 URL: https://vinicolauvva.com/registros
 ==================================================
 Faturas
@@ -468,7 +476,7 @@ O meu
 
 
 ==================================================
-PÁGINA: O meu produto - Vinicola Uvva
+PAGINA: O meu produto - Vinicola Uvva
 URL: https://vinicolauvva.com/meus-produtos
 ==================================================
 O meu produto - Vinicola Uvva
@@ -497,7 +505,7 @@ O meu
 
 
 ==================================================
-PÁGINA: Código de Resgate
+PAGINA: Código de Resgate
 URL: https://vinicolauvva.com/cupom
 ==================================================
 Código de Resgate
@@ -517,7 +525,7 @@ O meu
 
 
 ==================================================
-PÁGINA: Comunidade e Suporte
+PAGINA: Comunidade e Suporte
 URL: https://vinicolauvva.com/suporte
 ==================================================
 Comunidade e Suporte
@@ -542,7 +550,7 @@ O meu
 
 
 ==================================================
-PÁGINA: Produtos
+PAGINA: Produtos
 URL: https://vinicolauvva.com/produtos?serie=serie_vinho
 ==================================================
 Produtos
@@ -674,7 +682,7 @@ O meu
 
 
 ==================================================
-PÁGINA: Vinicola Uvva
+PAGINA: Vinicola Uvva
 URL: https://vinicolauvva.com/home
 ==================================================
 Vinicola Uvva
@@ -743,7 +751,7 @@ O meu
 
 
 ==================================================
-PÁGINA: Envie sua opinião em vídeo
+PAGINA: Envie sua opinião em vídeo
 URL: https://vinicolauvva.com/tarefa-opiniao-video
 ==================================================
 Envie sua opinião em vídeo
@@ -767,7 +775,7 @@ ENVIAR PARA ANÁLISE
 
 
 ==================================================
-PÁGINA: Poste um vídeo no TikTok todos os dias
+PAGINA: Poste um vídeo no TikTok todos os dias
 URL: https://vinicolauvva.com/tarefa-top?slug=video-tiktok
 ==================================================
 Poste um vídeo no TikTok todos os dias
@@ -792,7 +800,7 @@ ENVIAR PARA ANÁLISE
 
 
 ==================================================
-PÁGINA: Programa VIP
+PAGINA: Programa VIP
 URL: https://vinicolauvva.com/programavip
 ==================================================
 Programa VIP
@@ -886,14 +894,14 @@ As regras e valores podem ser atualizados pela administração da plataforma.
 
 
 ==================================================
-PÁGINA: Sem título
+PAGINA: Sem título
 URL: https://vinicolauvva.com/regras
 ==================================================
 Not Found
 
 
 ==================================================
-PÁGINA: Notícias · Vinícola Uvva
+PAGINA: Notícias · Vinícola Uvva
 URL: https://vinicolauvva.com/noticias
 ==================================================
 Notícias · Vinícola Uvva
@@ -963,14 +971,14 @@ O meu
 
 
 ==================================================
-PÁGINA: Sem título
+PAGINA: Sem título
 URL: https://vinicolauvva.com/investimento
 ==================================================
 Not Found
 
 
 ==================================================
-PÁGINA: Faturas
+PAGINA: Faturas
 URL: https://vinicolauvva.com/registros?tab=all
 ==================================================
 Faturas
@@ -989,7 +997,7 @@ O meu
 
 
 ==================================================
-PÁGINA: Check-in diário
+PAGINA: Check-in diário
 URL: https://vinicolauvva.com/checkin
 ==================================================
 Check-in diário
@@ -1023,7 +1031,7 @@ Entendi
 
 
 ==================================================
-PÁGINA: Minha equipe
+PAGINA: Minha equipe
 URL: https://vinicolauvva.com/equipe
 ==================================================
 Minha equipe
@@ -1103,7 +1111,7 @@ Nenhum membro nesta categoria.
 
 
 ==================================================
-PÁGINA: Informações PIX
+PAGINA: Informações PIX
 URL: https://vinicolauvva.com/pix-config
 ==================================================
 Informações PIX
@@ -1135,7 +1143,7 @@ O meu
 
 
 ==================================================
-PÁGINA: Faturas
+PAGINA: Faturas
 URL: https://vinicolauvva.com/registros?tab=withdrawals
 ==================================================
 Faturas
@@ -1154,14 +1162,14 @@ O meu
 
 
 ==================================================
-PÁGINA: Sem título
+PAGINA: Sem título
 URL: https://vinicolauvva.com/historico
 ==================================================
 Not Found
 
 
 ==================================================
-PÁGINA: Conquistas VIP · Vinícola Uvva
+PAGINA: Conquistas VIP · Vinícola Uvva
 URL: https://vinicolauvva.com/noticias?categoria=conquistas_vip
 ==================================================
 Conquistas VIP · Vinícola Uvva
@@ -1344,7 +1352,7 @@ O meu
 
 
 ==================================================
-PÁGINA: Pontos · Vinícola Uvva
+PAGINA: Pontos · Vinícola Uvva
 URL: https://vinicolauvva.com/pontos
 ==================================================
 Pontos · Vinícola Uvva
@@ -1397,7 +1405,7 @@ Os pontos são creditados conforme os produtos configurados pela administração
 
 
 ==================================================
-PÁGINA: Selfies · Vinícola Uvva
+PAGINA: Selfies · Vinícola Uvva
 URL: https://vinicolauvva.com/noticias?categoria=selfies
 ==================================================
 Selfies · Vinícola Uvva
@@ -2138,7 +2146,7 @@ O meu
 
 
 ==================================================
-PÁGINA: Convidar amigos - Vinícola Uvva
+PAGINA: Convidar amigos - Vinícola Uvva
 URL: https://vinicolauvva.com/convida-amigos
 ==================================================
 Convidar amigos - Vinícola Uvva
@@ -2158,14 +2166,14 @@ Ver equipe completa
 
 
 ==================================================
-PÁGINA: Retirada
+PAGINA: Retirada
 URL: https://vinicolauvva.com/retirada
 ==================================================
 Retirada
 ‹
 Retirada
 Faturas
-Saques: 24 horas • mínimo R$ 6,00 • taxa 6%
+Saques: Disponíveis 24 horas por dia (24/7) e INSTANTÂNEOS (o valor cai na hora na sua conta bancária/PIX assim que solicitado) • mínimo R$ 6,00 • taxa 6%
 **0478
 retirou
 R$ 6,96
@@ -2226,7 +2234,7 @@ R$ 7,52
 **3531
 retirou
 R$ 9,02
-Saques: 24 horas • mínimo R$ 6,00 • taxa 6%
+Saques: Disponíveis 24 horas por dia (24/7) e INSTANTÂNEOS (o valor cai na hora na sua conta bancária/PIX assim que solicitado) • mínimo R$ 6,00 • taxa 6%
 **0478
 retirou
 R$ 6,96
@@ -2317,7 +2325,7 @@ OK
 
 
 ==================================================
-PÁGINA: Depoimentos · Vinícola Uvva
+PAGINA: Depoimentos · Vinícola Uvva
 URL: https://vinicolauvva.com/noticias?categoria=depoimentos
 ==================================================
 Depoimentos · Vinícola Uvva
@@ -2609,7 +2617,7 @@ O meu
 
 
 ==================================================
-PÁGINA: Salário VIP mensal
+PAGINA: Salário VIP mensal
 URL: https://vinicolauvva.com/salario-vip-mensal
 ==================================================
 Salário VIP mensal
@@ -2639,14 +2647,14 @@ O sistema valida novamente seu VIP e seus requisitos no momento do resgate. Cada
 
 
 ==================================================
-PÁGINA: Sem título
+PAGINA: Sem título
 URL: https://vinicolauvva.com/meu-time
 ==================================================
 Not Found
 
 
 ==================================================
-PÁGINA: Recarregar
+PAGINA: Recarregar
 URL: https://vinicolauvva.com/deposito
 ==================================================
 Recarregar
@@ -2693,7 +2701,7 @@ O meu
 
 
 ==================================================
-PÁGINA: Salário VIP semanal
+PAGINA: Salário VIP semanal
 URL: https://vinicolauvva.com/salario-vip-semanal
 ==================================================
 Salário VIP semanal
@@ -2723,7 +2731,7 @@ O sistema valida novamente seu VIP e seus requisitos no momento do resgate. Cada
 
 
 ==================================================
-PÁGINA: Comunidade e Suporte
+PAGINA: Comunidade e Suporte
 URL: https://vinicolauvva.com/suporte?grupo=bloqueado
 ==================================================
 Comunidade e Suporte
@@ -2749,7 +2757,7 @@ O meu
 
 
 ==================================================
-PÁGINA: Saque USDT
+PAGINA: Saque USDT
 URL: https://vinicolauvva.com/retirada-usdt
 ==================================================
 Saque USDT
@@ -2791,7 +2799,7 @@ Nenhum saque USDT registrado.
 
 
 ==================================================
-PÁGINA: Faturas
+PAGINA: Faturas
 URL: https://vinicolauvva.com/registros?tab=deposits
 ==================================================
 Faturas
@@ -2810,7 +2818,7 @@ O meu
 
 
 ==================================================
-PÁGINA: Faturas
+PAGINA: Faturas
 URL: https://vinicolauvva.com/registros?tab=withdraw
 ==================================================
 Faturas
@@ -2829,7 +2837,7 @@ O meu
 
 
 ==================================================
-PÁGINA: Depósito USDT
+PAGINA: Depósito USDT
 URL: https://vinicolauvva.com/deposito-usdt
 ==================================================
 Depósito USDT
@@ -2861,7 +2869,7 @@ Nenhum depósito USDT registrado.
 
 
 ==================================================
-PÁGINA: Notícias · Vinícola Uvva
+PAGINA: Notícias · Vinícola Uvva
 URL: https://vinicolauvva.com/noticias?categoria=noticias
 ==================================================
 Notícias · Vinícola Uvva
@@ -2931,7 +2939,7 @@ O meu
 
 
 ==================================================
-PÁGINA: Detalhes da Equipe
+PAGINA: Detalhes da Equipe
 URL: https://vinicolauvva.com/detalhes-equipe?nivel=1
 ==================================================
 Detalhes da Equipe
@@ -2950,7 +2958,7 @@ O meu
 
 
 ==================================================
-PÁGINA: Informações PIX
+PAGINA: Informações PIX
 URL: https://vinicolauvva.com/retirada?method=pix
 ==================================================
 Informações PIX
@@ -2982,7 +2990,7 @@ O meu
 
 
 ==================================================
-PÁGINA: Informações PIX
+PAGINA: Informações PIX
 URL: https://vinicolauvva.com/pix-config?from=retirada
 ==================================================
 Informações PIX
@@ -3328,7 +3336,13 @@ Muitos depósitos em pouco tempo
 5. Saques e retiradas
 Mensagens sobre regras de saque e confirmações após a retirada.
 Saque precisa esperar o fim do ciclo?
+Não precisa esperar o término do ciclo! Tendo saldo disponível para retirada (a partir de R$ 6,00), você pode solicitar seu saque a qualquer hora. Os saques na Vinícola Uvva funcionam 24 horas por dia e o pagamento é INSTANTÂNEO na sua conta via PIX ou USDT.
 Como funcionam os saques — versão completa
+Os saques na Vinícola Uvva funcionam 24 horas por dia (24/7) e são 100% INSTANTÂNEOS! Assim que você solicita a retirada na plataforma, o dinheiro cai imediatamente na sua conta bancária cadastrada via PIX ou carteira USDT.
+• Disponibilidade: 24 horas por dia (dia e noite).
+• Prazo de processamento: Instantâneo (cai na hora).
+• Valor mínimo: R$ 6,00 no PIX e R$ 40,00 em USDT.
+• Taxa: 6% padrão (com 50% de desconto para assinantes do Cartão SVIP).
 Parabenizar pela retirada — curta
 Parabenizar pela retirada — completa
 Pedir para compartilhar a retirada no grupo
