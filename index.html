@@ -77,6 +77,30 @@
           </button>
         </div>
 
+        <!-- Seletor de Atendente Responsável (Heitor ou Chloe) -->
+        <div class="attendant-selector-wrapper">
+          <div class="attendant-label">
+            <span>👤 Atendente Responsável:</span>
+            <span class="attendant-sublabel" id="active-attendant-indicator">Heitor (Ativo)</span>
+          </div>
+          <div class="attendant-toggle-group">
+            <button type="button" class="btn-attendant active" data-attendant="Heitor" id="btn-attendant-heitor">
+              <span class="attendant-avatar">👨‍💼</span>
+              <div class="attendant-meta">
+                <span class="attendant-name">Heitor</span>
+                <span class="attendant-role">Suporte Oficial</span>
+              </div>
+            </button>
+            <button type="button" class="btn-attendant" data-attendant="Chloe" id="btn-attendant-chloe">
+              <span class="attendant-avatar">👩‍💼</span>
+              <div class="attendant-meta">
+                <span class="attendant-name">Chloe</span>
+                <span class="attendant-role">Suporte Oficial</span>
+              </div>
+            </button>
+          </div>
+        </div>
+
         <!-- Sugestões Rápidas (Chips de Perguntas Frequentes) -->
         <div class="suggestion-chips-wrapper">
           <div class="chips-label">Perguntas Frequentes (Clique para preencher)</div>
@@ -112,7 +136,7 @@
       <div class="glass-card response-container">
         <div class="support-panel-header">
           <h2>
-            <span style="color: var(--accent-purple-light);">✨</span> Resposta Pronta (Heitor - Suporte)
+            <span style="color: var(--accent-purple-light);">✨</span> Resposta Pronta (<span id="response-attendant-name">Heitor</span> - Suporte)
           </h2>
           <span class="badge-pill badge-purple" id="badge-ai-model">Gemini 2.5 Flash</span>
         </div>

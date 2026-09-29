@@ -2,7 +2,10 @@ import os
 import json
 from config import KB_TEXT_FILE, LATEST_DATA_FILE, obter_gemini_api_key
 
-SYSTEM_PROMPT = """Você é o Heitor, Atendente Oficial de Suporte ao Cliente da Vinícola Uvva.
+def gerar_system_prompt(atendente_nome: str = "Heitor") -> str:
+    nome = "Chloe" if "chloe" in (atendente_nome or "").lower() else "Heitor"
+    artigo = "a" if nome == "Chloe" else "o"
+    return f"""Você é {artigo} {nome}, Atendente Oficial de Suporte ao Cliente da Vinícola Uvva.
 Sua missão é atuar como o próprio suporte, resolvendo as dúvidas dos clientes de forma direta e ativa.
 
 DIRETRIZES FUNDAMENTAIS DE FIDELIDADE:
@@ -20,7 +23,7 @@ DIRETRIZES FUNDAMENTAIS DE FIDELIDADE:
    - Use formatação simples (apenas *negrito* para dar destaque). Não use cabeçalhos markdown como `###`.
    - Use emojis com moderação para deixar o texto amigável.
 9. Responda de forma pronta para envio (copy-paste):
-   - Saudação cordial se apresentando como Heitor (ex: "Olá! 👋 Me chamo Heitor...").
+   - Saudação cordial se apresentando como {nome} (ex: "Olá! 👋 Me chamo {nome}, sou {artigo} Atendente Oficial de Suporte da Vinícola Uvva...").
    - Respostas curtas e diretas.
    - Encerramento formal colocando-se à disposição.
 10. REGRA CRÍTICA PARA SAQUES E RETIRADAS:
@@ -42,11 +45,15 @@ def carregar_base_conhecimento() -> str:
     except Exception as e:
         return f"Erro ao ler base: {e}"
 
-def responder_duvida(pergunta_cliente: str) -> str:
+def responder_duvida(pergunta_cliente: str, atendente_nome: str = "Heitor") -> str:
     """
-    Recebe a pergunta do cliente, injeta o contexto da base de dados
-    e aciona o modelo de IA para compor a resposta formal.
+    Recebe a pergunta do cliente e o nome do atendente (Heitor ou Chloe),
+    injeta o contexto da base de dados e aciona a IA para compor a resposta formal.
     """
+    nome = "Chloe" if "chloe" in (atendente_nome or "").lower() else "Heitor"
+    artigo = "a" if nome == "Chloe" else "o"
+    system_prompt = gerar_system_prompt(nome)
+
     base_texto = carregar_base_conhecimento()
     if not base_texto:
         return (
@@ -69,16 +76,17 @@ def responder_duvida(pergunta_cliente: str) -> str:
         if linhas_correspondentes:
             trecho = "\n".join(linhas_correspondentes[:10])
             return (
-                "=== DADOS ENCONTRADOS NO SITE (Configure sua API Key para resposta automática) ===\n"
+                f"Olá! 👋 Me chamo {nome}, sou {artigo} Atendente Oficial da Vinícola Uvva.\n\n"
+                f"=== DADOS ENCONTRADOS NO SITE ===\n"
                 f"{trecho}\n\n"
-                "Para que a IA redija a mensagem formal automaticamente, gere sua chave gratuita em https://aistudio.google.com/ e insira no arquivo .env ou nas variáveis da Vercel."
+                "Para que a IA redija a mensagem formal automaticamente, configure sua chave do Gemini no .env ou na Vercel."
             )
         else:
-            return "Nenhum dado relacionado foi encontrado na base extraída do site."
+            return f"Olá! 👋 Me chamo {nome}. Nenhum dado relacionado foi encontrado na base extraída do site."
 
     # Se a chave da API existir, chama o modelo Gemini oficial
     prompt_completo = f"""
-{SYSTEM_PROMPT}
+{system_prompt}
 
 ---
 BASE OFICIAL DE DADOS DA PLATAFORMA (EXTRAÍDA DIRETAMENTE DO SITE):

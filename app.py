@@ -73,6 +73,7 @@ async def get_js():
 
 class ChatRequest(BaseModel):
     question: str
+    attendant: Optional[str] = "Heitor"
 
 def carregar_metricas_ia() -> dict:
     metricas_file = DATA_DIR / "metricas_ia.json"
@@ -96,13 +97,14 @@ def salvar_metricas_ia(metricas: dict):
 @app.post("/chat")
 async def chat_endpoint(req: ChatRequest):
     question = req.question.strip()
+    attendant = (req.attendant or "Heitor").strip()
     if not question:
         raise HTTPException(status_code=400, detail="A pergunta não pode estar vazia.")
     
     try:
         # Chama a função oficial do atendente
         loop = asyncio.get_event_loop()
-        answer = await loop.run_in_executor(None, responder_duvida, question)
+        answer = await loop.run_in_executor(None, responder_duvida, question, attendant)
         
         # Incrementa contador de aprendizado da IA
         m = carregar_metricas_ia()

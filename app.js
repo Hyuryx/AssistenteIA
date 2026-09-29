@@ -51,6 +51,45 @@ document.addEventListener('DOMContentLoaded', () => {
   const headerKbBadge = document.getElementById('header-kb-badge');
   const chips = document.querySelectorAll('.chip');
 
+  // ==================== SELETOR DE ATENDENTE (HEITOR / CHLOE) ====================
+  let currentAttendant = localStorage.getItem('uvva_selected_attendant') || 'Heitor';
+  const btnAttendantHeitor = document.getElementById('btn-attendant-heitor');
+  const btnAttendantChloe = document.getElementById('btn-attendant-chloe');
+  const activeAttendantIndicator = document.getElementById('active-attendant-indicator');
+  const responseAttendantName = document.getElementById('response-attendant-name');
+
+  function setAttendant(name) {
+    currentAttendant = name;
+    localStorage.setItem('uvva_selected_attendant', name);
+
+    if (btnAttendantHeitor && btnAttendantChloe) {
+      if (name === 'Chloe') {
+        btnAttendantChloe.classList.add('active');
+        btnAttendantHeitor.classList.remove('active');
+      } else {
+        btnAttendantHeitor.classList.add('active');
+        btnAttendantChloe.classList.remove('active');
+      }
+    }
+
+    if (activeAttendantIndicator) {
+      activeAttendantIndicator.textContent = `${name} (Ativo)`;
+    }
+    if (responseAttendantName) {
+      responseAttendantName.textContent = name;
+    }
+  }
+
+  // Inicializa estado do atendente
+  setAttendant(currentAttendant);
+
+  if (btnAttendantHeitor) {
+    btnAttendantHeitor.addEventListener('click', () => setAttendant('Heitor'));
+  }
+  if (btnAttendantChloe) {
+    btnAttendantChloe.addEventListener('click', () => setAttendant('Chloe'));
+  }
+
   // Contador de caracteres
   if (inputQuestion && charCounter) {
     inputQuestion.addEventListener('input', () => {
@@ -102,12 +141,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Estado de carregamento
     btnSubmit.disabled = true;
-    btnSubmitText.textContent = 'Consultando base e gerando resposta...';
+    btnSubmitText.textContent = `Consultando base como ${currentAttendant}...`;
     btnSpinner.style.display = 'inline-block';
     responseContent.innerHTML = `
       <div class="response-placeholder">
         <div class="spinner" style="width: 32px; height: 32px; border-width: 3px; margin-bottom: 1rem;"></div>
-        <p>A IA está lendo o site oficial, os manuais e redigindo a resposta formal...</p>
+        <p>A IA está lendo o site oficial, os manuais e redigindo a resposta como <strong>${currentAttendant}</strong>...</p>
       </div>
     `;
 
@@ -117,13 +156,13 @@ document.addEventListener('DOMContentLoaded', () => {
       let res = await fetch(`${API_BASE}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question })
+        body: JSON.stringify({ question, attendant: currentAttendant })
       });
       if (!res.ok && res.status === 404) {
         res = await fetch(`${API_BASE}/chat`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ question })
+          body: JSON.stringify({ question, attendant: currentAttendant })
         });
       }
       const data = await res.json();
