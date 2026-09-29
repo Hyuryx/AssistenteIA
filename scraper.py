@@ -3,7 +3,6 @@ import time
 import re
 from datetime import datetime
 from bs4 import BeautifulSoup
-from playwright.sync_api import sync_playwright
 from pathlib import Path
 
 from config import (
@@ -86,6 +85,7 @@ def executar_varredura(headless: bool = False):
     urls_para_visitar = set()
     urls_visitadas = set()
 
+    from playwright.sync_api import sync_playwright
     with sync_playwright() as p:
         # Abre o navegador (Chrome/Chromium) do próprio sistema para não depender dos binários do Playwright no .exe
         try:
