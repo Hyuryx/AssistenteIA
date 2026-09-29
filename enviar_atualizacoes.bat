@@ -1,7 +1,7 @@
 @echo off
 chcp 65001 > nul
 set "PATH=C:\Program Files\Git\cmd;C:\Program Files\Git\bin;%PATH%"
-title Assistente IA - GitHub e Vercel
+title Assistente IA - Enviar Atualizacoes para GitHub e Vercel
 cd /d "%~dp0"
 
 echo ==============================================================
@@ -9,15 +9,7 @@ echo    ASSISTENTE IA - ENVIAR ATUALIZACOES PARA GITHUB E VERCEL
 echo ==============================================================
 echo.
 
-echo [1/6] Sincronizando alteracoes em documentos e recompilando base...
-if exist ".\venv\Scripts\python.exe" (
-    .\venv\Scripts\python.exe -c "from app import rebuild_knowledge_base; import asyncio; asyncio.run(rebuild_knowledge_base())"
-) else (
-    python -c "from app import rebuild_knowledge_base; import asyncio; asyncio.run(rebuild_knowledge_base())" 2>nul
-)
-
-echo.
-echo [2/6] Verificando arquivos alterados...
+echo [1/4] Verificando arquivos alterados...
 git status -s
 echo.
 
@@ -27,19 +19,16 @@ if "%msg%"=="" (
 )
 
 echo.
-echo [3/6] Preparando arquivos alterados...
+echo [2/4] Preparando arquivos alterados...
 git add .
 
 echo.
-echo [4/6] Gravando alteracoes: "%msg%"...
+echo [3/4] Gravando alteracoes: "%msg%"...
 git commit -m "%msg%"
 
 echo.
-echo [5/6] Sincronizando com o GitHub...
+echo [4/4] Enviando para o GitHub e Vercel (https://github.com/Hyuryx/AssistenteIA)...
 git pull --rebase origin main
-
-echo.
-echo [6/6] Enviando para o GitHub (https://github.com/Hyuryx/AssistenteIA)...
 git push origin main
 
 echo.
@@ -54,5 +43,6 @@ if %errorlevel% equ 0 (
     echo  Verifique sua conexao ou se precisa fazer login no GitHub.
     echo ==============================================================
 )
+
 echo.
 pause

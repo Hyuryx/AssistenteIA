@@ -55,33 +55,20 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Monta arquivos estáticos
-STATIC_DIR = BASE_DIR / "static"
-STATIC_DIR.mkdir(exist_ok=True, parents=True)
-app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
-
 @app.get("/", response_class=HTMLResponse)
 async def read_index():
     index_file = BASE_DIR / "index.html"
-    if not index_file.exists():
-        index_file = STATIC_DIR / "index.html"
     if index_file.exists():
         return FileResponse(index_file)
     return HTMLResponse("<h1>Assistente IA Carregando...</h1>")
 
 @app.get("/style.css")
 async def get_css():
-    css_file = BASE_DIR / "style.css"
-    if not css_file.exists():
-        css_file = STATIC_DIR / "style.css"
-    return FileResponse(css_file, media_type="text/css")
+    return FileResponse(BASE_DIR / "style.css", media_type="text/css")
 
 @app.get("/app.js")
 async def get_js():
-    js_file = BASE_DIR / "app.js"
-    if not js_file.exists():
-        js_file = STATIC_DIR / "app.js"
-    return FileResponse(js_file, media_type="application/javascript")
+    return FileResponse(BASE_DIR / "app.js", media_type="application/javascript")
 
 class ChatRequest(BaseModel):
     question: str
