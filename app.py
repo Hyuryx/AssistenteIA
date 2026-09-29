@@ -94,6 +94,8 @@ async def stats_endpoint():
         os.getenv("GEMINI_API_KEY")
         or os.getenv("GOOGLE_API_KEY")
         or os.getenv("GEMINI_KEY")
+        or os.getenv("CHAVE_GEMINI")
+        or os.getenv("CHAVE_IA")
         or os.getenv("API_KEY")
         or ""
     ).strip()
