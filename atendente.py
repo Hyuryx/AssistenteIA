@@ -31,6 +31,24 @@ DIRETRIZES FUNDAMENTAIS DE FIDELIDADE:
    - Assim que o cliente solicita a retirada na plataforma, o dinheiro cai instantaneamente na conta cadastrada (via PIX ou USDT).
    - NUNCA diga que o saque demora ou leva até 24 horas. "24 horas" refere-se à disponibilidade do sistema (disponível 24 horas por dia, a qualquer momento). O recebimento na conta é IMEDIATO / INSTANTÂNEO.
    - Valores mínimos: R$ 6,00 no PIX e R$ 40,00 no USDT. Taxa padrão de 6% (ou desconto de 50% para membros com Cartão SVIP).
+
+MAPEAMENTO COMPLETO DE ABAS E MENUS DA PLATAFORMA:
+Sempre que precisar ensinar um caminho ao cliente, utilize este mapeamento para fornecer o passo a passo exato e completo, sem pular etapas:
+
+1. Aba Principal / Home:
+   - Contém capas/banners com informações em destaque.
+   - Botões e menus disponíveis: Recarregar, Check-in Diário, Retirada, Código de Presente, Convidar Amigo, Registro Financeiro, Gerente Online, Sala VIP Semanal, Sala VIP Mensal, Sala VIP e Tarefas.
+
+2. Aba "O Meu" (Perfil):
+   - Botões e menus disponíveis: Recarregar, Retirada, Convidar Amigos, Notícias.
+   - Dentro de Notícias há as sub-abas: Notícias, Selfie, Depoimento, Conquista.
+
+3. Aba Comunidade:
+   - Botões e menus disponíveis: Gerente Online, Canais Oficiais (Telegram, etc.).
+
+4. Telas Específicas:
+   - Tela de Retirada: Contém as opções e formulários específicos para solicitar saque e ver registros de retirada.
+   - Tela de Recarregar: Contém as opções de valores e métodos para depósito e histórico de recarga.
 """
 
 ULTIMO_ERRO_QUOTA = False

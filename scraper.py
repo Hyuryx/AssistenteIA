@@ -251,13 +251,22 @@ def executar_varredura(headless: bool = False):
                 fechar_modais_e_popups(page)
                 time.sleep(1)  # Permite scripts assíncronos carregarem tabelas/valores
 
-                # Clicar em eventuais abas secundárias dentro da página (subtabs como VIP 1, VIP 2, etc.)
-                sub_tabs = page.locator(".tab, [role='tab'], .nav-link, button.tab-btn").all()
-                for tab in sub_tabs[:5]:  # Interage com até 5 abas internas por página se houver
+                # Clicar em eventuais abas secundárias dentro da página (subtabs como VIP 1, VIP 2, PIX, USDT, Loteria, etc.)
+                seletores_abas = ".tab, [role='tab'], .nav-link, button.tab-btn, .menu-item, .list-item, .item, .van-tab"
+                sub_tabs = page.locator(seletores_abas).all()
+                for tab in sub_tabs[:30]:  # Aumentado limite para interagir com até 30 abas/botões internos
                     try:
                         if tab.is_visible():
-                            tab.click(timeout=1000)
-                            time.sleep(0.8)
+                            nome_aba = tab.inner_text().strip()
+                            if nome_aba:
+                                print(f"      -> Clicando na aba/botão interno: {nome_aba}")
+                            tab.click(timeout=1500)
+                            time.sleep(1) # Aguarda carregamento
+                            
+                            # Se o clique mudar a URL (SPA routing), mapeia a nova URL
+                            nova_url = page.url
+                            if nova_url not in urls_visitadas and (nova_url.startswith(BASE_URL) or nova_url.startswith("/")):
+                                urls_para_visitar.add(nova_url)
                     except Exception:
                         pass
 
