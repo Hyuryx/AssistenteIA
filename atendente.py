@@ -1,0 +1,106 @@
+import json
+from config import KB_TEXT_FILE, LATEST_DATA_FILE, GEMINI_API_KEY
+
+SYSTEM_PROMPT = """Você é o Heitor, Atendente Oficial de Suporte ao Cliente da Vinícola Uvva.
+Sua missão é atuar como o próprio suporte, resolvendo as dúvidas dos clientes de forma direta e ativa.
+
+DIRETRIZES FUNDAMENTAIS DE FIDELIDADE:
+1. Você deve se basear nas informações oficiais da base de dados (e dos manuais/PDFs fornecidos) para regras de negócio, bônus e valores.
+2. VOCÊ É O SUPORTE. NUNCA oriente o cliente a "entrar em contato com o suporte". Você mesmo deve fornecer a solução.
+3. Para dúvidas de "como fazer", crie um guia passo a passo claro (ex: "Vá na aba X, clique em Y").
+4. Sempre que possível, inclua os caminhos ou URLs das abas relacionadas. IMPORTANTE: NUNCA use formatação markdown para links (não faça `[link](link)`). Apenas escreva a URL diretamente no texto (ex: "Acesse: https://site.com").
+5. EXCEÇÃO PARA FLUXOS PADRÕES: Para procedimentos comuns de aplicativos que podem não estar explícitos no texto extraído (como 'Esqueci minha senha' ou 'Problemas de login'), você tem permissão para instruir o fluxo padrão do sistema: "Acesse a tela de login, clique na opção 'Esqueceu a senha?', digite seu número de telefone, aguarde o envio do código por SMS e crie uma nova senha".
+6. NUNCA invente ou deduza valores financeiros, porcentagens de lucro ou regras de negócio não documentadas.
+7. Se for uma dúvida de negócio muito específica que não está na base, informe educadamente que você irá consultar a supervisão.
+8. FORMATO WHATSAPP E OBJETIVIDADE: A resposta será enviada em um grupo de WhatsApp.
+   - O cliente pode enviar *MÚLTIPLAS PERGUNTAS* de uma vez só (ex: "Quanto tempo demora o saque? Qual o valor mínimo?").
+   - Identifique cada pergunta e responda de forma BEM OBJETIVA, item por item.
+   - Respostas curtas (1 a 2 linhas por pergunta). NADA de "textões" ou mensagens gigantescas.
+   - Use formatação simples (apenas *negrito* para dar destaque). Não use cabeçalhos markdown como `###`.
+   - Use emojis com moderação para deixar o texto amigável.
+9. Responda de forma pronta para envio (copy-paste):
+   - Saudação cordial se apresentando como Heitor (ex: "Olá! 👋 Me chamo Heitor...").
+   - Respostas curtas e diretas.
+   - Encerramento formal colocando-se à disposição.
+"""
+
+def carregar_base_conhecimento() -> str:
+    """Lê o texto consolidado extraído do site."""
+    if not KB_TEXT_FILE.exists():
+        return ""
+    try:
+        with open(KB_TEXT_FILE, "r", encoding="utf-8") as f:
+            return f.read()
+    except Exception as e:
+        return f"Erro ao ler base: {e}"
+
+def responder_duvida(pergunta_cliente: str) -> str:
+    """
+    Recebe a pergunta do cliente, injeta o contexto da base de dados
+    e aciona o modelo de IA para compor a resposta formal.
+    """
+    base_texto = carregar_base_conhecimento()
+    if not base_texto:
+        return (
+            "[AVISO] Nenhuma base de dados encontrada!\n"
+            "Execute primeiro a opção [1] no menu principal para que o robô faça a varredura do site."
+        )
+
+    if not GEMINI_API_KEY:
+        # Modo busca textual caso a chave ainda não tenha sido configurada
+        print("\n[AVISO] Chave GEMINI_API_KEY não configurada no arquivo .env.")
+        print("Realizando localização direta nos dados extraídos do site...\n")
+        
+        termos = [t.lower() for t in pergunta_cliente.split() if len(t) > 3]
+        linhas_correspondentes = []
+        for linha in base_texto.splitlines():
+            if any(termo in linha.lower() for termo in termos):
+                linhas_correspondentes.append(linha)
+
+        if linhas_correspondentes:
+            trecho = "\n".join(linhas_correspondentes[:10])
+            return (
+                "=== DADOS ENCONTRADOS NO SITE (Configure sua API Key para resposta automática) ===\n"
+                f"{trecho}\n\n"
+                "Para que a IA redija a mensagem formal automaticamente, gere sua chave gratuita em https://aistudio.google.com/ e insira no arquivo .env."
+            )
+        else:
+            return "Nenhum dado relacionado foi encontrado na base extraída do site."
+
+    # Se a chave da API existir, chama o modelo Gemini oficial
+    prompt_completo = f"""
+{SYSTEM_PROMPT}
+
+---
+BASE OFICIAL DE DADOS DA PLATAFORMA (EXTRAÍDA DIRETAMENTE DO SITE):
+{base_texto}
+---
+
+DÚVIDA DO CLIENTE:
+"{pergunta_cliente}"
+
+Gere a resposta formal e educada pronta para o cliente agora:
+"""
+
+    # Utiliza o SDK google-genai
+    from google import genai
+    import time
+    
+    client = genai.Client(api_key=GEMINI_API_KEY)
+    
+    for tentativa in range(3):
+        try:
+            response = client.models.generate_content(
+                model="gemini-2.5-flash",
+                contents=prompt_completo
+            )
+            return response.text
+        except Exception as e:
+            if ("503" in str(e) or "429" in str(e)) and tentativa < 2:
+                time.sleep(5)
+                continue
+            return f"[Erro ao consultar a IA]: {e}\nVerifique se a sua chave GEMINI_API_KEY no arquivo .env é válida."
+
+if __name__ == "__main__":
+    teste = "Qual a porcentagem do menor produto e como funciona o saque?"
+    print(responder_duvida(teste))

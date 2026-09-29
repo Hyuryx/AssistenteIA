@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assistente IA - Vinícola Uvva | Suporte & Inteligência</title>
+  
+  <!-- Fontes do Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <!-- Header da Aplicação -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand-wrapper">
+        <div class="logo-icon">
+          <!-- Ícone de Uva / Vinícola -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v4M7 7a3 3 0 1 0 6 0 3 3 0 0 0-6 0zM11 13a3 3 0 1 0 6 0 3 3 0 0 0-6 0zM7 13a3 3 0 1 0 6 0 3 3 0 0 0-6 0zM9 19a3 3 0 1 0 6 0 3 3 0 0 0-6 0z"/>
+          </svg>
+        </div>
+        <div class="brand-info">
+          <h1>Assistente IA Uvva</h1>
+          <p><span>🍷</span> Plataforma de Suporte & Varredura Contínua</p>
+        </div>
+      </div>
+
+      <div class="header-badges">
+        <div class="badge-pill status-online" id="status-pill">Sistema Online</div>
+        <div class="badge-pill badge-purple" id="header-kb-badge">Base: Carregando...</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navegação de Abas (Menu Interativo 1, 2, 3, 4 + Uploads & Configs) -->
+  <nav class="tabs-nav" id="tabs-navigation">
+    <button class="tab-btn active" data-tab="tab-atendimento" id="nav-atendimento">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      Atendimento ao Cliente
+    </button>
+    <button class="tab-btn" data-tab="tab-conhecimento" id="nav-conhecimento">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10M6 10h10"/></svg>
+      Base & Upload de Arquivos
+    </button>
+    <button class="tab-btn" data-tab="tab-varredura" id="nav-varredura">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+      Sincronizar e Varrer Site
+    </button>
+    <button class="tab-btn" data-tab="tab-mudancas" id="nav-mudancas">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Alterações e Novidades
+    </button>
+    <button class="tab-btn" data-tab="tab-paginas" id="nav-paginas">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      Páginas Mapeadas
+    </button>
+    <button class="tab-btn" data-tab="tab-config" id="nav-config">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      Configurações
+    </button>
+  </nav>
+
+  <!-- Conteúdo Principal -->
+  <main class="main-container">
+
+    <!-- ==================== ABA 1: ATENDIMENTO AO CLIENTE (SPLIT VIEW) ==================== -->
+    <section class="tab-pane active" id="tab-atendimento">
+      <div class="support-split-layout">
+        
+        <!-- Lado Esquerdo: Pergunta do Cliente -->
+        <div class="glass-card">
+          <div class="support-panel-header">
+            <h2>
+              <span style="color: var(--accent-wine-light);">💬</span> Dúvida do Cliente
+            </h2>
+            <button class="btn-secondary" id="btn-clear-question" title="Limpar campo">
+              Limpar
+            </button>
+          </div>
+
+          <!-- Sugestões Rápidas -->
+          <div class="suggestion-chips-wrapper">
+            <div class="chips-label">Perguntas Frequentes (Clique para usar)</div>
+            <div class="chips-container">
+              <button class="chip" data-question="Qual a porcentagem do menor produto e como funciona o saque?">Menor produto e Saque</button>
+              <button class="chip" data-question="Como funciona o Cartão SVIP e quais os benefícios?">Cartão SVIP</button>
+              <button class="chip" data-question="Esqueci minha senha, como faço para recuperar?">Esqueci a Senha</button>
+              <button class="chip" data-question="Qual o tempo de processamento e taxa para retirada em PIX?">Taxa e Prazo de PIX</button>
+              <button class="chip" data-question="Vocês oferecem patrocínio para líderes de equipe?">Patrocínio a Líderes</button>
+            </div>
+          </div>
+
+          <div class="textarea-wrapper">
+            <textarea 
+              class="custom-textarea" 
+              id="input-question" 
+              placeholder="Cole aqui a mensagem ou pergunta que o cliente enviou no WhatsApp...&#10;&#10;Ex: 'Olá, qual o valor mínimo para sacar via pix e quanto tempo demora?'"
+            ></textarea>
+            <div class="textarea-footer">
+              <span id="char-counter">0 caracteres</span>
+              <span>Dica: Pressione Ctrl + Enter para enviar</span>
+            </div>
+          </div>
+
+          <button class="btn-primary" id="btn-submit-question">
+            <span id="btn-submit-text">Consultar Base & Gerar Resposta</span>
+            <div class="spinner" id="btn-spinner" style="display: none;"></div>
+          </button>
+        </div>
+
+        <!-- Lado Direito: Resposta Formatada Pronta para o Cliente -->
+        <div class="glass-card response-container">
+          <div class="support-panel-header">
+            <h2>
+              <span style="color: var(--accent-purple-light);">✨</span> Resposta Pronta (Heitor - Suporte)
+            </h2>
+            <span class="badge-pill badge-purple" id="badge-ai-model">Gemini 2.5 Flash</span>
+          </div>
+
+          <div class="response-card-body" id="response-content">
+            <div class="response-placeholder">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14h-2v-2h2zm0-4h-2V7h2z"/></svg>
+              <p>Envie uma dúvida ao lado para a IA analisar a base de dados oficial e redigir a resposta perfeita.</p>
+            </div>
+          </div>
+
+          <div class="response-actions-bar">
+            <button class="btn-secondary btn-whatsapp" id="btn-copy-response">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <span id="copy-btn-text">Copiar para WhatsApp</span>
+            </button>
+            <span style="font-size: 0.75rem; color: var(--text-dim);" id="response-timestamp"></span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== ABA 2: BASE DE CONHECIMENTO & UPLOAD ==================== -->
+    <section class="tab-pane" id="tab-conhecimento">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <div>
+            <div class="stat-val" id="stat-total-docs">0</div>
+            <div class="stat-lbl">Documentos Locais</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon" style="color: var(--accent-wine-light);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/></svg>
+          </div>
+          <div>
+            <div class="stat-val" id="stat-kb-size">0 KB</div>
+            <div class="stat-lbl">Tamanho da Base Consolidada</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon" style="color: var(--accent-emerald);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div>
+            <div class="stat-val" id="stat-kb-lines">0</div>
+            <div class="stat-lbl">Linhas de Conhecimento</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Zona de Upload de Arquivos -->
+      <div class="glass-card" style="margin-bottom: 1.5rem;">
+        <div class="support-panel-header">
+          <h2>Adicionar Novos Conhecimentos (PDF, Word, TXT, etc.)</h2>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">Processamento instantâneo via IA</span>
+        </div>
+
+        <div class="upload-dropzone" id="dropzone">
+          <input type="file" id="file-input" multiple style="display: none;">
+          <div class="dropzone-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          </div>
+          <div class="dropzone-title">Arraste e solte arquivos aqui ou clique para selecionar</div>
+          <div class="dropzone-subtitle">Qualquer arquivo adicionado aqui é imediatamente lido e integrado à memória da IA</div>
+          <div class="dropzone-formats">
+            <span class="format-tag">.PDF</span>
+            <span class="format-tag">.DOCX (Word)</span>
+            <span class="format-tag">.TXT</span>
+            <span class="format-tag">.CSV</span>
+            <span class="format-tag">.JSON</span>
+            <span class="format-tag">.MD</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lista de Documentos da Plataforma -->
+      <div class="glass-card">
+        <div class="support-panel-header">
+          <h2>Arquivos Ativos na Base de Conhecimento</h2>
+          <button class="btn-secondary" id="btn-view-raw-kb">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            Inspecionar Texto Bruto da Base
+          </button>
+        </div>
+
+        <div class="doc-table-wrapper">
+          <table class="custom-table" id="documents-table">
+            <thead>
+              <tr>
+                <th>Nome do Arquivo</th>
+                <th>Tipo</th>
+                <th>Tamanho</th>
+                <th>Última Modificação</th>
+              </tr>
+            </thead>
+            <tbody id="documents-tbody">
+              <tr>
+                <td colspan="4" style="text-align: center; color: var(--text-dim); padding: 2rem;">Carregando documentos...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABA 3: SINCRONIZAR E VARRER O SITE ==================== -->
+    <section class="tab-pane" id="tab-varredura">
+      <div class="glass-card">
+        <div class="support-panel-header">
+          <h2>Varredura Inteligente da Plataforma Oficial</h2>
+          <span class="badge-pill" id="sync-last-time">Última: Aguardando varredura</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">
+          O robô automatizado faz login no site, percorre todas as páginas e abas internas (produtos, saques, ordens, regras),
+          extrai todas as tabelas de valores e compara com a versão anterior para identificar qualquer novidade.
+        </p>
+
+        <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+          <button class="btn-primary" id="btn-trigger-sync" style="width: auto; padding: 0.85rem 2rem;">
+            <span>Iniciar Varredura e Mapeamento</span>
+          </button>
+          
+          <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--text-muted); cursor: pointer;">
+            <input type="checkbox" id="sync-headless" checked>
+            Executar em segundo plano (Silencioso)
+          </label>
+        </div>
+
+        <!-- Janela de Terminal com Logs em Tempo Real -->
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <span class="terminal-dot dot-red"></span>
+            <span class="terminal-dot dot-yellow"></span>
+            <span class="terminal-dot dot-green"></span>
+            <span class="terminal-title">status_crawler.log</span>
+          </div>
+          <div class="terminal-body" id="sync-terminal-body">
+            <div class="terminal-line">[AGUARDANDO] Clique no botão acima para iniciar a varredura do site.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABA 4: ALTERAÇÕES E NOVIDADES ==================== -->
+    <section class="tab-pane" id="tab-mudancas">
+      <div class="glass-card">
+        <div class="support-panel-header">
+          <h2>Histórico de Mudanças e Novidades Detectadas</h2>
+          <button class="btn-secondary" id="btn-refresh-changelog">Atualizar</button>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">
+          Compara os dados da varredura mais recente com a anterior para revelar imediatamente se a plataforma alterou limites de saque, porcentagens de lucro ou se lançou novas páginas.
+        </p>
+        
+        <div id="changelog-container" style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <div style="color: var(--text-dim); padding: 1.5rem; text-align: center;">Carregando histórico de alterações...</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABA 5: PÁGINAS MAPEADAS ==================== -->
+    <section class="tab-pane" id="tab-paginas">
+      <div class="glass-card">
+        <div class="support-panel-header">
+          <h2>Páginas e Telas Mapeadas na Plataforma</h2>
+          <input type="text" id="filter-pages-input" placeholder="Filtrar por nome ou URL..." class="custom-textarea" style="width: 250px; min-height: auto; padding: 0.5rem 0.8rem; font-size: 0.85rem;">
+        </div>
+
+        <div id="pages-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1rem; margin-top: 1rem;">
+          <div style="color: var(--text-dim); padding: 2rem;">Carregando páginas mapeadas...</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABA 6: CONFIGURAÇÕES ==================== -->
+    <section class="tab-pane" id="tab-config">
+      <div class="glass-card" style="max-width: 700px; margin: 0 auto;">
+        <div class="support-panel-header">
+          <h2>Configurações do Assistente & Chaves</h2>
+        </div>
+
+        <form id="config-form" style="display: flex; flex-direction: column; gap: 1.25rem;">
+          <div>
+            <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--text-muted);">
+              Chave da API Gemini (Google AI Studio)
+            </label>
+            <input type="password" id="cfg-gemini-key" class="custom-textarea" style="min-height: auto; padding: 0.75rem 1rem;" placeholder="AIzaSy... (ou cole nova chave)">
+            <span style="font-size: 0.75rem; color: var(--text-dim); display: block; margin-top: 0.3rem;">
+              Chave gratuita obtida em <a href="https://aistudio.google.com/" target="_blank" style="color: var(--accent-purple-light);">aistudio.google.com</a>
+            </span>
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--text-muted);">
+              Telefone de Acesso à Plataforma
+            </label>
+            <input type="text" id="cfg-telefone" class="custom-textarea" style="min-height: auto; padding: 0.75rem 1rem;" placeholder="21999999999">
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--text-muted);">
+              Senha de Acesso à Plataforma
+            </label>
+            <input type="password" id="cfg-senha" class="custom-textarea" style="min-height: auto; padding: 0.75rem 1rem;" placeholder="••••••••">
+          </div>
+
+          <button type="submit" class="btn-primary" style="margin-top: 0.5rem;">
+            Salvar Alterações
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal Inspecionar Texto Bruto da Base -->
+  <div id="kb-modal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); z-index: 1000; align-items: center; justify-content: center; padding: 2rem;">
+    <div class="glass-card" style="width: 100%; max-width: 900px; max-height: 85vh; display: flex; flex-direction: column;">
+      <div class="support-panel-header">
+        <h2>Conteúdo Completo da Base de Conhecimento</h2>
+        <button class="btn-secondary" id="btn-close-modal">Fechar</button>
+      </div>
+      <div style="flex: 1; overflow-y: auto; background: #08070d; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem;">
+        <pre id="modal-kb-text" style="font-family: monospace; font-size: 0.85rem; color: #cbd5e1; white-space: pre-wrap; word-break: break-word;"></pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

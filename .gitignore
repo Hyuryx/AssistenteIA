@@ -1,0 +1,29 @@
+# Ambientes virtuais
+venv/
+env/
+ENV/
+.venv/
+
+# Credenciais e segredos (NUNCA SUBIR PRO GITHUB!)
+.env
+sessao_uvva.json
+
+# Caches e arquivos temporários do Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# PyInstaller / Builds locais
+build/
+dist/
+*.spec
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
