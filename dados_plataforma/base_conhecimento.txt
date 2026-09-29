@@ -1,5 +1,5 @@
 === BASE OFICIAL DE DADOS DA PLATAFORMA (VINICOLA UVVA) ===
-Última compilação: 29/09/2026 às 14:57:02
+Última atualização: 29/09/2026 às 15:59:33
 
 
 ==================================================
@@ -90,6 +90,37 @@ Uma tiragem limitada e exclusiva no microclima tropical de altitude.
 
 
 ==================================================
+PÁGINA: Sem título
+URL: https://vinicolauvva.com/tarefas
+==================================================
+Not Found
+
+
+==================================================
+PÁGINA: Compartilhamento de equipe
+URL: https://vinicolauvva.com/tarefa-compartilhamento-equipe
+==================================================
+Compartilhamento de equipe
+Missão
+R$ 3,00
+Compartilhamento de equipe
+Divulgue a equipe e envie a evidência do compartilhamento.
+Missão única
+Como funciona
+1. Compartilhe a plataforma com seu grupo ou contatos.
+2. Faça uma captura do compartilhamento.
+3. Envie a imagem ou um link como comprovante.
+4. Aguarde a análise do administrador.
+Enviar para concluir a missão
+Conte o que você fez
+Link do comprovante ou vídeo
+Opcional se você anexar um arquivo.
+Anexar comprovante
+JPG, PNG, WEBP, MP4 ou MOV. Máximo de 30 MB. O arquivo fica armazenado em área privada.
+ENVIAR PARA ANÁLISE
+
+
+==================================================
 PÁGINA: Produtos
 URL: https://vinicolauvva.com/produtos
 ==================================================
@@ -97,108 +128,159 @@ Produtos
 Produtos
 [Série Vinho]
 [Série Taças]
-T1
-Taça T1
-🍷 Dia da Taça 🍷
+G1
+Vinícola G1
+✨ Dia do Convite ✨
 Geral · Vinícola Prime
 preço:
-R$ 80,00
-+20 pontos na compra
-Limite de compra: 3
+R$ 30,00
++10 pontos na compra
+Limite de compra: 1
 Estoque: ilimitado
-O termo 40 dias
+O termo 60 dias
 Compre agora
 O termo
-40 dias
+60 dias
 Renda diária
-R$ 4,20
+R$ 1,50
 Receita total
-R$ 168,00
-T2
-Taça T2
-🍷 Dia da Taça 🍷
+R$ 90,00
+G2
+Vinícola G2
+✨ Dia do Convite ✨
 Geral · Vinícola Prime
 preço:
-R$ 220,00
-+40 pontos na compra
+R$ 135,00
++30 pontos na compra
 Limite de compra: 3
 Estoque: ilimitado
-O termo 40 dias
+O termo 60 dias
 Compre agora
 O termo
-40 dias
+60 dias
 Renda diária
-R$ 11,60
+R$ 6,80
 Receita total
-R$ 464,00
-T3
-Taça T3
-🍷 Dia da Taça 🍷
+R$ 408,00
+G3
+Vinícola G3
+✨ Dia do Convite ✨
 Geral · Vinícola Prime
 preço:
-R$ 600,00
-+60 pontos na compra
+R$ 400,00
++50 pontos na compra
 Limite de compra: 3
 Estoque: ilimitado
-O termo 40 dias
+O termo 60 dias
 Compre agora
 O termo
-40 dias
+60 dias
 Renda diária
-R$ 31,50
+R$ 21,00
 Receita total
 R$ 1.260,00
-T3
-Taça T4
-🍷 Dia da Taça 🍷
+G4
+Vinícola G4
+✨ Dia do Convite ✨
 Geral · Vinícola Prime
 preço:
-R$ 1.500,00
-+90 pontos na compra
+R$ 1.250,00
++80 pontos na compra
 Limite de compra: 3
 Estoque: ilimitado
-O termo 40 dias
+O termo 60 dias
 Compre agora
 O termo
-40 dias
+60 dias
 Renda diária
-R$ 79,20
+R$ 65,50
 Receita total
-R$ 3.168,00
-T5
-Taça T5
-🍷 Dia da Taça 🍷
+R$ 3.990,00
+G5
+Vinícola G5
+✨ Dia do Convite ✨
 Geral · Vinícola Prime
 preço:
-R$ 3.200,00
-+130 pontos na compra
+R$ 2.900,00
++120 pontos na compra
 Limite de compra: 3
 Estoque: ilimitado
-O termo 40 dias
+O termo 60 dias
 Compre agora
 O termo
-40 dias
+60 dias
 Renda diária
-R$ 168,50
+R$ 152,00
 Receita total
-R$ 6.740,00
-T6
-Taça T6
-🍷 Dia da Taça 🍷
+R$ 9.120,00
+G6
+Vinicola G6
+✨ Dia do Convite ✨
 Geral · Vinícola Prime
 preço:
-R$ 10.000,00
-+320 pontos na compra
+R$ 5.600,00
++200 pontos na compra
 Limite de compra: 3
 Estoque: ilimitado
-O termo 40 dias
+O termo 60 dias
 Compre agora
 O termo
-40 dias
+60 dias
 Renda diária
-R$ 525,00
+R$ 294,00
 Receita total
-R$ 21.000,00
+R$ 17.640,00
+G7
+Vinícola G7
+✨ Dia do Convite ✨
+Geral · Vinícola Prime
+preço:
+R$ 9.800,00
++300 pontos na compra
+Limite de compra: 3
+Estoque: ilimitado
+O termo 60 dias
+Compre agora
+O termo
+60 dias
+Renda diária
+R$ 515,00
+Receita total
+R$ 30.900,00
+G8
+Vinícola G8
+✨ Dia do Convite ✨
+Geral · Vinícola Prime
+preço:
+R$ 13.000,00
++500 pontos na compra
+Limite de compra: 3
+Estoque: ilimitado
+O termo 60 dias
+Compre agora
+O termo
+60 dias
+Renda diária
+R$ 683,00
+Receita total
+R$ 40.900,00
+G9
+Vinícola G9
+✨ Dia do Convite ✨
+Geral · Vinícola Prime
+preço:
+R$ 25.300,00
++1000 pontos na compra
+Limite de compra: 3
+Estoque: ilimitado
+O termo 60 dias
+Compre agora
+O termo
+60 dias
+Renda diária
+R$ 1.328,00
+Receita total
+R$ 79.680,00
 Produto
 Confira os dados antes de confirmar
 Preço
@@ -222,218 +304,27 @@ O meu
 
 
 ==================================================
-PÁGINA: Retirada
-URL: https://vinicolauvva.com/retirada
+PÁGINA: Presente de Primeira Convite
+URL: https://vinicolauvva.com/tarefa-presente-convite
 ==================================================
-Retirada
-‹
-Retirada
-Faturas
-Saques: 24 horas • mínimo R$ 6,00 • taxa 6%
-**2260
-retirou
-R$ 5,82
-**9750
-retirou
-R$ 14,66
-**6956
-retirou
-R$ 10,26
-**1503
-retirou
-R$ 6,02
-**6670
-retirou
-R$ 19,19
-**5592
-retirou
-R$ 22,56
-**0335
-retirou
-R$ 22,56
-**4702
-retirou
-R$ 7,52
-**0977
-retirou
-R$ 67,16
-**2843
-retirou
-R$ 62,04
-**0038
-retirou
-R$ 20,68
-**4428
-retirou
-R$ 19,74
-**4773
-retirou
-R$ 22,14
-**9757
-retirou
-R$ 37,60
-**8832
-retirou
-R$ 63,92
-**6098
-retirou
-R$ 9,40
-**6920
-retirou
-R$ 5,64
-**2899
-retirou
-R$ 13,25
-**8641
-retirou
-R$ 7,52
-**0197
-retirou
-R$ 27,64
-Saques: 24 horas • mínimo R$ 6,00 • taxa 6%
-**2260
-retirou
-R$ 5,82
-**9750
-retirou
-R$ 14,66
-**6956
-retirou
-R$ 10,26
-**1503
-retirou
-R$ 6,02
-**6670
-retirou
-R$ 19,19
-**5592
-retirou
-R$ 22,56
-**0335
-retirou
-R$ 22,56
-**4702
-retirou
-R$ 7,52
-**0977
-retirou
-R$ 67,16
-**2843
-retirou
-R$ 62,04
-**0038
-retirou
-R$ 20,68
-**4428
-retirou
-R$ 19,74
-**4773
-retirou
-R$ 22,14
-**9757
-retirou
-R$ 37,60
-**8832
-retirou
-R$ 63,92
-**6098
-retirou
-R$ 9,40
-**6920
-retirou
-R$ 5,64
-**2899
-retirou
-R$ 13,25
-**8641
-retirou
-R$ 7,52
-**0197
-retirou
-R$ 27,64
-Saldo Atual
-R$ 0,00
-Como deseja receber sua retirada?
-Escolha o método de recebimento. Seu saldo continua sendo controlado em reais.
-🇧🇷
-PIX
-Receber em reais no Brasil
-Cadastrar chave PIX
-🌎
-USDT
-Receber em carteira internacional
-ERC20 · BEP20 · POLYGON
-Escolha
-PIX
-para receber em reais no Brasil ou
-USDT
-para receber em uma carteira de criptomoeda. Usuários internacionais não precisam cadastrar PIX.
-Primeira
-Comunidade
-Produto
-Notícias
-O meu
-Saque Realizado!
-Sua solicitação foi recebida e está sendo processada.
-Continuar
-Aviso
-OK
-
-
-==================================================
-PÁGINA: Sem título
-URL: https://vinicolauvva.com/convite
-==================================================
-Not Found
-
-
-==================================================
-PÁGINA: Saque USDT
-URL: https://vinicolauvva.com/retirada-usdt
-==================================================
-Saque USDT
-‹ Métodos
-Saque USDT
-Início
-Carteira digital
-Retirar em USDT
-Informe quanto deseja sacar em reais. A plataforma aplica a taxa configurada e mostra quanto será enviado em USDT.
-Saque mínimo via USDT: R$ 40,00
-Saldo disponível
-R$ 0,00
-Valor do saque (R$)
-Cotação
-1 USDT ≈ R$ 5,24
-Valor convertido
-0 USDT
-Taxa de saque (6,00%)
-R$ 0,00
-Valor líquido
-R$ 0,00
-Taxa da operação/serviço
-Calculada ao processar
-Você recebe aproximadamente
-0 USDT
-Rede
-Selecione a rede
-ERC20 · ERC20
-BEP20 · BEP20
-POLYGON · POLYGON
-Carteira de destino
-Solicitar saque USDT
-Sacar via PIX
-Sacar USDT
-Importante:
-o saldo continua em reais. No momento do saque, o sistema salva a cotação usada, desconta o valor solicitado do seu saldo e envia para a carteira o equivalente líquido em USDT após a taxa de saque configurada na plataforma.
-Últimos saques USDT
-Nenhum saque USDT registrado.
-
-
-==================================================
-PÁGINA: Sem título
-URL: https://vinicolauvva.com/tarefas
-==================================================
-Not Found
+Presente de Primeira Convite
+Missão
+R$ 3,00
+Presente de Primeira Convite
+Convide uma pessoa e envie a comprovação para análise.
+Missão única
+Como funciona
+1. Compartilhe seu link de convite.
+2. Oriente a pessoa a concluir o cadastro.
+3. Envie uma captura, imagem ou link que comprove o convite.
+4. Aguarde a análise do administrador.
+Enviar para concluir a missão
+Conte o que você fez
+Link do comprovante ou vídeo
+Opcional se você anexar um arquivo.
+Anexar comprovante
+JPG, PNG, WEBP, MP4 ou MOV. Máximo de 30 MB. O arquivo fica armazenado em área privada.
+ENVIAR PARA ANÁLISE
 
 
 ==================================================
@@ -501,147 +392,53 @@ Entendi
 
 
 ==================================================
-PÁGINA: Recarregar
-URL: https://vinicolauvva.com/deposito
+PÁGINA: Roleta
+URL: https://vinicolauvva.com/sorteio
 ==================================================
-Recarregar
-Recarregar
-Faturas
-Saldo Atual
-R$ 0,00
-Depositar com USDT
-Carteira digital em USDT
-›
-Valor de Recarga
-30
-80
-135
-220
-400
-600
-1.250
-1.500
-2.900
-3.200
-5.600
-9.800
-10.000
-13.000
-25.300
-R$
-Valor mínimo: R$ 30
-Canal de Recarga
-PIX
-Recarregar
-Regras de recarga:
-O valor do pedido deve corresponder ao valor do pagamento para que o crédito seja identificado corretamente.
-Após cada recarga, retorne à plataforma para criar um novo pedido. Não reutilize um QR Code antigo.
-Se o pagamento não for creditado após o prazo de processamento, consulte as faturas ou entre em contato com o suporte.
-As recargas são processadas exclusivamente pelos canais disponíveis nesta página.
-Depósitos recentes
-Você ainda não possui depósitos registrados.
-Primeira
-Comunidade
-Produto
-Notícias
-O meu
+Roleta
+Tirage Au Sort
+R$ 0,42
+R$ 0,75
+R$ 0,80
+R$ 1,25
+R$ 2,60
+R$ 4,50
+R$ 6,90
+R$ 10
+Start
+Seus tempos restantes loteria:
+1
+Raffle recorde
+Regras
+Parabéns!
+Você ganhou um prêmio.
+Ok
+Regras
+Você recebe 1 giro grátis ao criar a conta.
+1 giro grátis quando um amigo de nível 1 que você convidar comprar o primeiro plano pago.
+Dinheiro vai para o saldo. Cupom fica disponível em Cupom de desconto.
+Ok
+Sem chances
+Você não possui giros disponíveis.
+Ok
 
 
 ==================================================
-PÁGINA: Envie sua opinião em vídeo
-URL: https://vinicolauvva.com/tarefa-opiniao-video
+PÁGINA: Prêmio selfie
+URL: https://vinicolauvva.com/tarefa-premio-selfie
 ==================================================
-Envie sua opinião em vídeo
+Prêmio selfie
 Missão
-R$ 10,00
-Envie sua opinião em vídeo
-Grave sua opinião e envie o vídeo ou o link para análise.
+R$ 5,00
+Prêmio selfie
+Envie uma selfie relacionada à experiência para participar da missão.
 Missão única
 Como funciona
-1. Grave um vídeo curto com sua opinião sobre a plataforma.
-2. Você pode anexar um MP4/MOV ou informar um link do vídeo.
-3. Não inclua senhas, documentos ou dados bancários no vídeo.
-4. Aguarde a análise do administrador.
-Enviar para concluir a missão
-Conte o que você fez
-Link do comprovante ou vídeo
-Opcional se você anexar um arquivo.
-Anexar comprovante
-JPG, PNG, WEBP, MP4 ou MOV. Máximo de 30 MB. O arquivo fica armazenado em área privada.
-ENVIAR PARA ANÁLISE
-
-
-==================================================
-PÁGINA: Salário VIP mensal
-URL: https://vinicolauvva.com/salario-vip-mensal
-==================================================
-Salário VIP mensal
-‹
-Ver Programa VIP
-Vinícola UVVA · VIP 0
-Salário VIP mensal
-O salário VIP mensal pode ser resgatado uma vez por mês, desde que você mantenha os requisitos do seu nível VIP ativos.
-Progresso para VIP 1
-0/3
-Valor disponível para seu VIP
-R$ 0,00
-VIP 0
-✓
-Programa VIP ativo
-✓
-Salário mês habilitado pela administração
-✓
-Requisitos atuais do seu nível VIP mantidos
-✓
-Ainda não resgatado neste mês
-Próximo resgate mensal
-Aguardando liberação/requisitos
-Próxima virada mensal: 01/10/2026.
-Indisponível
-O sistema valida novamente seu VIP e seus requisitos no momento do resgate. Cada período pode ser resgatado somente uma vez.
-
-
-==================================================
-PÁGINA: Comunidade e Suporte
-URL: https://vinicolauvva.com/suporte?grupo=bloqueado
-==================================================
-Comunidade e Suporte
-Comunidade
-Vinícola UVVA
-Comunidade e suporte
-Os canais de suporte continuam disponíveis. O acesso aos grupos oficiais é liberado após a ativação de um plano.
-Canais disponíveis
-🔒 O acesso aos grupos oficiais é liberado somente para usuários com plano ativo. Ative um plano e volte a esta área para entrar no grupo.
-Grupo telegram
-Disponível somente com plano ativo
-Grupo WhatsApp
-Disponível somente com plano ativo
-Grupo WhatsApp
-Disponível somente com plano ativo
-Gerente Micael
-Fale com um atendente
-Primeira
-Comunidade
-Produto
-Notícias
-O meu
-
-
-==================================================
-PÁGINA: Compartilhamento de equipe
-URL: https://vinicolauvva.com/tarefa-compartilhamento-equipe
-==================================================
-Compartilhamento de equipe
-Missão
-R$ 3,00
-Compartilhamento de equipe
-Divulgue a equipe e envie a evidência do compartilhamento.
-Missão única
-Como funciona
-1. Compartilhe a plataforma com seu grupo ou contatos.
-2. Faça uma captura do compartilhamento.
-3. Envie a imagem ou um link como comprovante.
-4. Aguarde a análise do administrador.
+1. Tire uma selfie seguindo a proposta da missão.
+2. segurando o celular na mão e mostrando a tela da Vinícola Uvva
+3. Envie a imagem como comprovante.
+4. Use apenas uma imagem que você tem autorização para enviar.
+5. Aguarde a análise do administrador.
 Enviar para concluir a missão
 Conte o que você fez
 Link do comprovante ou vídeo
@@ -671,110 +468,27 @@ O meu
 
 
 ==================================================
-PÁGINA: Minha equipe
-URL: https://vinicolauvva.com/equipe
+PÁGINA: O meu produto - Vinicola Uvva
+URL: https://vinicolauvva.com/meus-produtos
 ==================================================
-Minha equipe
-retornar
-Minha equipe
-Receita total da equipe
+O meu produto - Vinicola Uvva
+‹ retornar
+O meu produto
+Histórico
+Ganhos de hoje
 R$ 0,00
-Usuários válidos
-0 pessoas
-Investimento acumulado da equipe
+Receita total
 R$ 0,00
-Recarga aprovada da equipe B+C+D
-R$ 0,00
-B
-→
-0 pessoas
-C
-→
-0 pessoas
-D
-→
-0 pessoas
-Regras da Comissão
-B nível · 10% comissão
-C nível · 3% comissão
-D nível · 1% comissão
-Detalhes da comissão da equipe
-Comissão por nível VIP
-NORMAL
-Sua taxa atual:
-B 10%
-·
-C 3%
-·
-D 1%
-Faltam
-35 membros ativos
-para VIP 3. Ao atingir, a comissão passa para
-B 12% · C 4% · D 2%
-.
-Seu convite
-Código de convite
-Copiar
-Link de convite
-Copiar
-Aqui estão as estatísticas da sua equipe. (B+C+D)
-0 pessoas
-Membros de hoje
-0 pessoas
-Membros de ontem
-R$ 0,00
-Investimento acumulado
-R$ 0,00
-Recarga aprovada B+C+D
-R$ 0,00
-Comissão acumulada
-B-10% (0)
-C-3% (0)
-D-1% (0)
-Usuários válidos
-Usuário inválido
-Conta
-Hierarquia
-Investimento
-Status
-Nenhum membro nesta categoria.
-Primeira
-Comunidade
-Produto
-Notícias
-O meu
-Link copiado com sucesso
-
---- DADOS ESTRUTURADOS / TABELAS ---
-Conta | Hierarquia | Investimento | Status
-Nenhum membro nesta categoria.
-
-
-==================================================
-PÁGINA: Informações PIX
-URL: https://vinicolauvva.com/pix-config
-==================================================
-Informações PIX
-‹
-Informações
-Dados de recebimento
-Cadastre PIX para receber em reais ou escolha USDT para uma carteira internacional.
-🇧🇷
-PIX
-Receber em reais
-🌎
-USDT
-Carteira internacional
-Nome
-Chave Pix
-CPF
-Telefone
-E-mail
-Informações da Pix
-Digite seu CPF como chave PIX.
-Documento CPF
-Enviar
-Depois de salvar a chave PIX, você voltará automaticamente para a retirada via PIX.
+Produtos dentro do prazo de validade
+Produtos fora de prazo
+Não há produtos nesta categoria.
+Não há produtos nesta categoria.
+Histórico de rendimentos
+Acompanhe cada rendimento recebido dos seus planos.
+Mostrar
+5
+10
+Nenhum rendimento recebido ainda.
 Primeira
 Comunidade
 Produto
@@ -783,17 +497,18 @@ O meu
 
 
 ==================================================
-PÁGINA: Faturas
-URL: https://vinicolauvva.com/registros?tab=deposits
+PÁGINA: Código de Resgate
+URL: https://vinicolauvva.com/cupom
 ==================================================
-Faturas
-Registros financeiros
-Registros financeiros
-Confira suas movimentações com segurança
-Todos
-Recarga
-Retirada
-Não há mais dados
+Código de Resgate
+Cupom
+Resgata
+Códigos de resgate são distribuídos diariamente no grupo oficial.
+Junte-se ao grupo oficial.
+Histórico de Resgates
+Total resgatado
+R$ 0,00
+Você ainda não possui cupons resgatados.
 Primeira
 Comunidade
 Produto
@@ -802,88 +517,23 @@ O meu
 
 
 ==================================================
-PÁGINA: Convidar amigos - Vinícola Uvva
-URL: https://vinicolauvva.com/convida-amigos
+PÁGINA: Comunidade e Suporte
+URL: https://vinicolauvva.com/suporte
 ==================================================
-Convidar amigos - Vinícola Uvva
-‹
-Convidar amigos
-Compartilhe seu convite
-Envie seu código ou link pessoal para amigos. Os novos cadastros feitos por esse convite ficam vinculados à sua equipe.
-Código de convite
-XITIQ5K13P
-Copiar
-Link de convite
-https://vinicolauvva.com/cadastro?ref=XITIQ5K13P
-Copiar
-Para acompanhar membros, níveis B, C e D, comissões e demais detalhes, acesse a página completa da sua equipe.
-Ver equipe completa
-››
-
-
-==================================================
-PÁGINA: Notícias · Vinícola Uvva
-URL: https://vinicolauvva.com/noticias
-==================================================
-Notícias · Vinícola Uvva
-Notícias
-Central Vinícola Uvva
-Notícias da Vinícola Uvva
-Acompanhe comunicados, novidades e informações oficiais publicadas pela equipe Vinícola Uvva.
-Notícias
-6 publicações
-Selfies
-87 publicações
-Depoimentos
-38 publicações
-Conquistas VIP
-24 publicações
-28/09/2026 às 19:24
-Destaque
-Grupo no Whatsapp suspenso
-Olá, pessoal! Nosso grupo no WhatsApp foi suspenso temporariamente. Já solicitamos uma análise, que pode levar até 24 horas. Agradecemos a compreensão de todos e avisaremos assim que tivermos uma atualização.
-27/09/2026 às 23:10
-Destaque
-🍷 **Nova Safra chegando na Vinícola Uvva: Taças!**
-🍷 Nova Safra chegando na Vinícola Uvva: Taças!
-Preparamos uma nova linha de produtos para você conhecer e acompanhar dentro da plataforma.
-A safra Serie Taças chega trazendo novas opções, novos valores e novas oportunidades para quem deseja continuar evoluindo na Vinícola Uvva.
-Fique atento ao lançamento e confira todos os detalhes assim que os novos produtos forem liberados. 🍇✨
-26/09/2026 às 07:13
-Destaque
-TORNE-SE UM MEMBRO VIP!
-Torne-se um membro VIP da Vinícola Uvva e confira as recompensas disponíveis.
-Benefícios semanais e mensais
-Recompensas conforme o nível VIP
-Confira acima a tabela com os valores e benefícios de cada nível.
-Consulte as condições de cada categoria antes de participar.
-23/09/2026 às 23:06
-Destaque
-Poste um vídeo no TikTok
-Quer receber recompensas? Participe da missão TikTok da Vinícola Uvva!
-1 - Publique um vídeo no TikTok relacionado à Vinícola Uvva.
-2 - Inclua a hashtag #vinicolauvva no vídeo ou na legenda.
-3 - Copie o link do vídeo publicado e envie para análise.
-4 - Após a aprovação, a recompensa será creditada.
-5 - A missão ficará disponível novamente após 00:00 (horário de São Paulo).
-Participe da missão e compartilhe a Vinícola Uvva no TikTok!
-23/09/2026 às 20:02
-Destaque
-Reunião vinícola uvva
-A reunião começou!
-Entre agora no grupo oficial da Vinícola Uvva para acompanhar a reunião e receber todas as informações e comunicados.
-Aguardamos todos vocês no grupo oficial.
-23/09/2026 às 07:54
-Destaque
-Seja bem-vindo a Vinícola Uvva
-## Bem-vindo à Vinícola Uvva
-A Vinícola Uvva nasce com a proposta de unir tradição, qualidade e inovação em uma experiência inspirada no universo dos vinhos e dos grandes vinhedos.
-Nossa plataforma foi desenvolvida para oferecer aos membros uma experiência completa, com acesso a produtos, benefícios, níveis VIP, recompensas, atividades, notícias e recursos exclusivos.
-Ao fazer parte da Vinícola Uvva, cada membro pode acompanhar sua evolução dentro da plataforma, conhecer novas oportunidades, participar das atividades disponíveis e avançar gradualmente de acordo com os requisitos estabelecidos para cada nível.
-Valorizamos uma comunidade ativa, organizada e conectada, onde cada participante pode acompanhar suas informações, produtos, equipe, recompensas e novidades em um único ambiente.
-A identidade da Vinícola Uvva representa elegância, crescimento e reconhecimento, inspirada na tradição dos grandes vinhos e na busca constante por novas conquistas.
-**Vinícola Uvva**
-**Juntos brindamos grandes conquistas.**
+Comunidade e Suporte
+Comunidade
+Vinícola UVVA
+Comunidade e suporte
+Os canais de suporte continuam disponíveis. O acesso aos grupos oficiais é liberado após a ativação de um plano.
+Canais disponíveis
+Grupo telegram
+Disponível somente com plano ativo
+Grupo WhatsApp
+Disponível somente com plano ativo
+Grupo WhatsApp
+Disponível somente com plano ativo
+Gerente Micael
+Fale com um atendente
 Primeira
 Comunidade
 Produto
@@ -1024,119 +674,6 @@ O meu
 
 
 ==================================================
-PÁGINA: Sem título
-URL: https://vinicolauvva.com/investimento
-==================================================
-Not Found
-
-
-==================================================
-PÁGINA: Poste um vídeo no TikTok todos os dias
-URL: https://vinicolauvva.com/tarefa-top?slug=video-tiktok
-==================================================
-Poste um vídeo no TikTok todos os dias
-Missão
-R$ 1,50
-Poste um vídeo no TikTok todos os dias
-Publique um vídeo no TikTok diariamente e envie o link ou comprovante para análise.
-Diária · reseta às 00:00
-Como funciona
-1. Publique um vídeo no TikTok relacionado à Vinícola Uvva.
-2. Inclua #vinicolauvva no vídeo ou na legenda.
-3. Copie o link do vídeo publicado e envie para análise.
-4. Após a aprovação, a recompensa será creditada.
-5. A missão fica disponível novamente após 00:00 (horário de São Paulo).
-Enviar para concluir a missão
-Conte o que você fez
-Link do comprovante ou vídeo
-Opcional se você anexar um arquivo.
-Anexar comprovante
-JPG, PNG, WEBP, MP4 ou MOV. Máximo de 30 MB. O arquivo fica armazenado em área privada.
-ENVIAR PARA ANÁLISE
-
-
-==================================================
-PÁGINA: Faturas
-URL: https://vinicolauvva.com/registros?tab=all
-==================================================
-Faturas
-Registros financeiros
-Registros financeiros
-Confira suas movimentações com segurança
-Todos
-Recarga
-Retirada
-Não há mais dados
-Primeira
-Comunidade
-Produto
-Notícias
-O meu
-
-
-==================================================
-PÁGINA: Roleta
-URL: https://vinicolauvva.com/sorteio
-==================================================
-Roleta
-Tirage Au Sort
-R$ 0,42
-R$ 0,75
-R$ 0,80
-R$ 1,25
-R$ 2,60
-R$ 4,50
-R$ 6,90
-R$ 10
-Start
-Seus tempos restantes loteria:
-1
-Raffle recorde
-Regras
-Parabéns!
-Você ganhou um prêmio.
-Ok
-Regras
-Você recebe 1 giro grátis ao criar a conta.
-1 giro grátis quando um amigo de nível 1 que você convidar comprar o primeiro plano pago.
-Dinheiro vai para o saldo. Cupom fica disponível em Cupom de desconto.
-Ok
-Sem chances
-Você não possui giros disponíveis.
-Ok
-
-
-==================================================
-PÁGINA: Salário VIP semanal
-URL: https://vinicolauvva.com/salario-vip-semanal
-==================================================
-Salário VIP semanal
-‹
-Ver Programa VIP
-Vinícola UVVA · VIP 0
-Salário VIP semanal
-O salário VIP semanal pode ser resgatado uma vez por semana, desde que você mantenha os requisitos do seu nível VIP ativos.
-Progresso para VIP 1
-0/3
-Valor disponível para seu VIP
-R$ 0,00
-VIP 0
-✓
-Programa VIP ativo
-✓
-Salário semana habilitado pela administração
-✓
-Requisitos atuais do seu nível VIP mantidos
-✓
-Ainda não resgatado nesta semana
-Próximo resgate semanal
-Aguardando liberação/requisitos
-Próxima virada semanal: 05/10/2026.
-Indisponível
-O sistema valida novamente seu VIP e seus requisitos no momento do resgate. Cada período pode ser resgatado somente uma vez.
-
-
-==================================================
 PÁGINA: Vinicola Uvva
 URL: https://vinicolauvva.com/home
 ==================================================
@@ -1206,21 +743,20 @@ O meu
 
 
 ==================================================
-PÁGINA: Prêmio selfie
-URL: https://vinicolauvva.com/tarefa-premio-selfie
+PÁGINA: Envie sua opinião em vídeo
+URL: https://vinicolauvva.com/tarefa-opiniao-video
 ==================================================
-Prêmio selfie
+Envie sua opinião em vídeo
 Missão
-R$ 5,00
-Prêmio selfie
-Envie uma selfie relacionada à experiência para participar da missão.
+R$ 10,00
+Envie sua opinião em vídeo
+Grave sua opinião e envie o vídeo ou o link para análise.
 Missão única
 Como funciona
-1. Tire uma selfie seguindo a proposta da missão.
-2. segurando o celular na mão e mostrando a tela da Vinícola Uvva
-3. Envie a imagem como comprovante.
-4. Use apenas uma imagem que você tem autorização para enviar.
-5. Aguarde a análise do administrador.
+1. Grave um vídeo curto com sua opinião sobre a plataforma.
+2. Você pode anexar um MP4/MOV ou informar um link do vídeo.
+3. Não inclua senhas, documentos ou dados bancários no vídeo.
+4. Aguarde a análise do administrador.
 Enviar para concluir a missão
 Conte o que você fez
 Link do comprovante ou vídeo
@@ -1231,135 +767,122 @@ ENVIAR PARA ANÁLISE
 
 
 ==================================================
-PÁGINA: Produtos
-URL: https://vinicolauvva.com/produtos?serie=serie_extra
+PÁGINA: Poste um vídeo no TikTok todos os dias
+URL: https://vinicolauvva.com/tarefa-top?slug=video-tiktok
 ==================================================
-Produtos
-Produtos
-[Série Vinho]
-[Série Taças]
-T1
-Taça T1
-🍷 Dia da Taça 🍷
-Geral · Vinícola Prime
-preço:
-R$ 80,00
-+20 pontos na compra
-Limite de compra: 3
-Estoque: ilimitado
-O termo 40 dias
-Compre agora
-O termo
-40 dias
-Renda diária
-R$ 4,20
-Receita total
-R$ 168,00
-T2
-Taça T2
-🍷 Dia da Taça 🍷
-Geral · Vinícola Prime
-preço:
-R$ 220,00
-+40 pontos na compra
-Limite de compra: 3
-Estoque: ilimitado
-O termo 40 dias
-Compre agora
-O termo
-40 dias
-Renda diária
-R$ 11,60
-Receita total
-R$ 464,00
-T3
-Taça T3
-🍷 Dia da Taça 🍷
-Geral · Vinícola Prime
-preço:
-R$ 600,00
-+60 pontos na compra
-Limite de compra: 3
-Estoque: ilimitado
-O termo 40 dias
-Compre agora
-O termo
-40 dias
-Renda diária
-R$ 31,50
-Receita total
-R$ 1.260,00
-T3
-Taça T4
-🍷 Dia da Taça 🍷
-Geral · Vinícola Prime
-preço:
-R$ 1.500,00
-+90 pontos na compra
-Limite de compra: 3
-Estoque: ilimitado
-O termo 40 dias
-Compre agora
-O termo
-40 dias
-Renda diária
-R$ 79,20
-Receita total
-R$ 3.168,00
-T5
-Taça T5
-🍷 Dia da Taça 🍷
-Geral · Vinícola Prime
-preço:
-R$ 3.200,00
-+130 pontos na compra
-Limite de compra: 3
-Estoque: ilimitado
-O termo 40 dias
-Compre agora
-O termo
-40 dias
-Renda diária
-R$ 168,50
-Receita total
-R$ 6.740,00
-T6
-Taça T6
-🍷 Dia da Taça 🍷
-Geral · Vinícola Prime
-preço:
+Poste um vídeo no TikTok todos os dias
+Missão
+R$ 1,50
+Poste um vídeo no TikTok todos os dias
+Publique um vídeo no TikTok diariamente e envie o link ou comprovante para análise.
+Diária · reseta às 00:00
+Como funciona
+1. Publique um vídeo no TikTok relacionado à Vinícola Uvva.
+2. Inclua #vinicolauvva no vídeo ou na legenda.
+3. Copie o link do vídeo publicado e envie para análise.
+4. Após a aprovação, a recompensa será creditada.
+5. A missão fica disponível novamente após 00:00 (horário de São Paulo).
+Enviar para concluir a missão
+Conte o que você fez
+Link do comprovante ou vídeo
+Opcional se você anexar um arquivo.
+Anexar comprovante
+JPG, PNG, WEBP, MP4 ou MOV. Máximo de 30 MB. O arquivo fica armazenado em área privada.
+ENVIAR PARA ANÁLISE
+
+
+==================================================
+PÁGINA: Programa VIP
+URL: https://vinicolauvva.com/programavip
+==================================================
+Programa VIP
+‹
+Vinícola UVVA
+Programa VIP
+Evolua de nível, fortaleça sua equipe e desbloqueie recompensas exclusivas do Programa VIP.
+Seu nível atual
+VIP 0
+Membros ativos B
+0
+Recarga aprovada B+C+D
+R$ 0,00
+Meta próxima recarga
+R$ 1.000,00
+Progresso para VIP 1
+0/3
+Como se tornar VIP
+Seu nível VIP aumenta conforme você cumpre as metas de membros ativos diretos definidas pela plataforma. Mantenha os requisitos do seu nível ativos para continuar elegível aos salários.
+Recompensas VIP
+Cada nível pode liberar um valor de salário semanal e mensal. Os valores e metas são definidos pela administração e aparecem abaixo em tempo real.
+Resgate por período
+Salário VIP semanal
+Resgate por período
+Salário VIP mensal
+Níveis e recompensas
+VIP 0
+Seu nível atual
+Nível inicial
+Semanal
+R$ 0,00
+Mensal
+R$ 0,00
+VIP 1
+VIP 1
+3 membros ativos em B + R$ 1.000,00 em recargas aprovadas B+C+D
+Semanal
+R$ 5,00
+Mensal
+R$ 0,00
+VIP 2
+VIP 2
+15 membros ativos em B + R$ 5.000,00 em recargas aprovadas B+C+D
+Semanal
+R$ 10,00
+Mensal
+R$ 150,00
+VIP 3
+VIP 3
+35 membros ativos em B + R$ 10.000,00 em recargas aprovadas B+C+D
+Semanal
+R$ 25,00
+Mensal
+R$ 800,00
+VIP 4
+VIP 4
+40 membros ativos em B + R$ 20.000,00 em recargas aprovadas B+C+D
+Semanal
+R$ 60,00
+Mensal
+R$ 1.400,00
+VIP 5
+VIP 5
+70 membros ativos em B + R$ 35.000,00 em recargas aprovadas B+C+D
+Semanal
+R$ 120,00
+Mensal
+R$ 2.500,00
+VIP 6
+VIP 6
+100 membros ativos em B + R$ 70.000,00 em recargas aprovadas B+C+D
+Semanal
+R$ 300,00
+Mensal
+R$ 5.000,00
+VIP 7
+VIP 7
+140 membros ativos em B + R$ 100.000,00 em recargas aprovadas B+C+D
+Semanal
+R$ 1.200,00
+Mensal
 R$ 10.000,00
-+320 pontos na compra
-Limite de compra: 3
-Estoque: ilimitado
-O termo 40 dias
-Compre agora
-O termo
-40 dias
-Renda diária
-R$ 525,00
-Receita total
-R$ 21.000,00
-Produto
-Confira os dados antes de confirmar
-Preço
-—
-Renda diária
-—
-Renda total
-—
-Validade
-—
-Cashback
-—
-Cancelar
-Confirmar
-✓
-Primeira
-Comunidade
-Produto
-Notícias
-O meu
+VIP 8
+VIP 8
+250 membros ativos em B + R$ 700.000,00 em recargas aprovadas B+C+D
+Semanal
+R$ 3.000,00
+Mensal
+R$ 25.000,00
+As regras e valores podem ser atualizados pela administração da plataforma.
 
 
 ==================================================
@@ -1370,56 +893,271 @@ Not Found
 
 
 ==================================================
-PÁGINA: Pontos · Vinícola Uvva
-URL: https://vinicolauvva.com/pontos
+PÁGINA: Notícias · Vinícola Uvva
+URL: https://vinicolauvva.com/noticias
 ==================================================
-Pontos · Vinícola Uvva
-‹ Voltar
-Pontos
-Programa de Pontos
-VIP0 · conversão progressiva
-SEUS PONTOS
-0
-10 pontos = R$ 1,00
-Quantos pontos deseja trocar?
-0
-Pontos
-⇄
-R$ 0,00
-Saldo em reais
-Trocar pontos por saldo
-Mínimo de 10 pontos e resgates em múltiplos de 10. Quanto maior seu VIP, melhor a conversão.
-Conversão por VIP
-VIP0
-10 pts = R$ 1,00
-x1
-VIP1
-10 pts = R$ 2,00
-x2
-VIP2
-10 pts = R$ 3,00
-x3
-VIP3
-10 pts = R$ 4,00
-x4
-VIP4
-10 pts = R$ 5,00
-x5
-VIP5
-10 pts = R$ 6,00
-x6
-VIP6
-10 pts = R$ 7,00
-x7
-VIP7
-10 pts = R$ 8,00
-x8
-VIP8
-10 pts = R$ 9,00
-x9
-Histórico
-Você ainda não possui movimentações de pontos.
-Os pontos são creditados conforme os produtos configurados pela administração. O valor da troca usa o VIP atual no momento do resgate.
+Notícias · Vinícola Uvva
+Notícias
+Central Vinícola Uvva
+Notícias da Vinícola Uvva
+Acompanhe comunicados, novidades e informações oficiais publicadas pela equipe Vinícola Uvva.
+Notícias
+6 publicações
+Selfies
+87 publicações
+Depoimentos
+38 publicações
+Conquistas VIP
+24 publicações
+28/09/2026 às 19:24
+Destaque
+Grupo no Whatsapp suspenso
+Olá, pessoal! Nosso grupo no WhatsApp foi suspenso temporariamente. Já solicitamos uma análise, que pode levar até 24 horas. Agradecemos a compreensão de todos e avisaremos assim que tivermos uma atualização.
+27/09/2026 às 23:10
+Destaque
+🍷 **Nova Safra chegando na Vinícola Uvva: Taças!**
+🍷 Nova Safra chegando na Vinícola Uvva: Taças!
+Preparamos uma nova linha de produtos para você conhecer e acompanhar dentro da plataforma.
+A safra Serie Taças chega trazendo novas opções, novos valores e novas oportunidades para quem deseja continuar evoluindo na Vinícola Uvva.
+Fique atento ao lançamento e confira todos os detalhes assim que os novos produtos forem liberados. 🍇✨
+26/09/2026 às 07:13
+Destaque
+TORNE-SE UM MEMBRO VIP!
+Torne-se um membro VIP da Vinícola Uvva e confira as recompensas disponíveis.
+Benefícios semanais e mensais
+Recompensas conforme o nível VIP
+Confira acima a tabela com os valores e benefícios de cada nível.
+Consulte as condições de cada categoria antes de participar.
+23/09/2026 às 23:06
+Destaque
+Poste um vídeo no TikTok
+Quer receber recompensas? Participe da missão TikTok da Vinícola Uvva!
+1 - Publique um vídeo no TikTok relacionado à Vinícola Uvva.
+2 - Inclua a hashtag #vinicolauvva no vídeo ou na legenda.
+3 - Copie o link do vídeo publicado e envie para análise.
+4 - Após a aprovação, a recompensa será creditada.
+5 - A missão ficará disponível novamente após 00:00 (horário de São Paulo).
+Participe da missão e compartilhe a Vinícola Uvva no TikTok!
+23/09/2026 às 20:02
+Destaque
+Reunião vinícola uvva
+A reunião começou!
+Entre agora no grupo oficial da Vinícola Uvva para acompanhar a reunião e receber todas as informações e comunicados.
+Aguardamos todos vocês no grupo oficial.
+23/09/2026 às 07:54
+Destaque
+Seja bem-vindo a Vinícola Uvva
+## Bem-vindo à Vinícola Uvva
+A Vinícola Uvva nasce com a proposta de unir tradição, qualidade e inovação em uma experiência inspirada no universo dos vinhos e dos grandes vinhedos.
+Nossa plataforma foi desenvolvida para oferecer aos membros uma experiência completa, com acesso a produtos, benefícios, níveis VIP, recompensas, atividades, notícias e recursos exclusivos.
+Ao fazer parte da Vinícola Uvva, cada membro pode acompanhar sua evolução dentro da plataforma, conhecer novas oportunidades, participar das atividades disponíveis e avançar gradualmente de acordo com os requisitos estabelecidos para cada nível.
+Valorizamos uma comunidade ativa, organizada e conectada, onde cada participante pode acompanhar suas informações, produtos, equipe, recompensas e novidades em um único ambiente.
+A identidade da Vinícola Uvva representa elegância, crescimento e reconhecimento, inspirada na tradição dos grandes vinhos e na busca constante por novas conquistas.
+**Vinícola Uvva**
+**Juntos brindamos grandes conquistas.**
+Primeira
+Comunidade
+Produto
+Notícias
+O meu
+
+
+==================================================
+PÁGINA: Sem título
+URL: https://vinicolauvva.com/investimento
+==================================================
+Not Found
+
+
+==================================================
+PÁGINA: Faturas
+URL: https://vinicolauvva.com/registros?tab=all
+==================================================
+Faturas
+Registros financeiros
+Registros financeiros
+Confira suas movimentações com segurança
+Todos
+Recarga
+Retirada
+Não há mais dados
+Primeira
+Comunidade
+Produto
+Notícias
+O meu
+
+
+==================================================
+PÁGINA: Check-in diário
+URL: https://vinicolauvva.com/checkin
+==================================================
+Check-in diário
+Check-in diário
+Bônus de check-in diário
+R$ 0,50
+R$ 0,00
+Saldo da conta
+R$ 0,00
+Receita de check-in
+Faça seu check-in
+Receba sua recompensa diária
+IR
+Regras de check-in
+1. Brinde diário gratuito no valor de R$ 0,50.
+2. Você pode fazer check-in uma vez por dia.
+3. Após o início de um novo dia, você pode fazer check-in novamente.
+Sequência atual: 0 dias · Próximo bônus: R$ 0,50
+Primeira
+Comunidade
+Produto
+Notícias
+O meu
+Recompensa recebida!
++
+R$ 0,50
+foi creditado no saldo da conta.
+Não foi possível concluir
+Erro ao fazer check-in.
+Entendi
+
+
+==================================================
+PÁGINA: Minha equipe
+URL: https://vinicolauvva.com/equipe
+==================================================
+Minha equipe
+retornar
+Minha equipe
+Receita total da equipe
+R$ 0,00
+Usuários válidos
+0 pessoas
+Investimento acumulado da equipe
+R$ 0,00
+Recarga aprovada da equipe B+C+D
+R$ 0,00
+B
+→
+0 pessoas
+C
+→
+0 pessoas
+D
+→
+0 pessoas
+Regras da Comissão
+B nível · 10% comissão
+C nível · 3% comissão
+D nível · 1% comissão
+Detalhes da comissão da equipe
+Comissão por nível VIP
+NORMAL
+Sua taxa atual:
+B 10%
+·
+C 3%
+·
+D 1%
+Faltam
+35 membros ativos
+para VIP 3. Ao atingir, a comissão passa para
+B 12% · C 4% · D 2%
+.
+Seu convite
+Código de convite
+Copiar
+Link de convite
+Copiar
+Aqui estão as estatísticas da sua equipe. (B+C+D)
+0 pessoas
+Membros de hoje
+0 pessoas
+Membros de ontem
+R$ 0,00
+Investimento acumulado
+R$ 0,00
+Recarga aprovada B+C+D
+R$ 0,00
+Comissão acumulada
+B-10% (0)
+C-3% (0)
+D-1% (0)
+Usuários válidos
+Usuário inválido
+Conta
+Hierarquia
+Investimento
+Status
+Nenhum membro nesta categoria.
+Primeira
+Comunidade
+Produto
+Notícias
+O meu
+Link copiado com sucesso
+
+--- DADOS ESTRUTURADOS / TABELAS ---
+Conta | Hierarquia | Investimento | Status
+Nenhum membro nesta categoria.
+
+
+==================================================
+PÁGINA: Informações PIX
+URL: https://vinicolauvva.com/pix-config
+==================================================
+Informações PIX
+‹
+Informações
+Dados de recebimento
+Cadastre PIX para receber em reais ou escolha USDT para uma carteira internacional.
+🇧🇷
+PIX
+Receber em reais
+🌎
+USDT
+Carteira internacional
+Nome
+Chave Pix
+CPF
+Telefone
+E-mail
+Informações da Pix
+Digite seu CPF como chave PIX.
+Documento CPF
+Enviar
+Depois de salvar a chave PIX, você voltará automaticamente para a retirada via PIX.
+Primeira
+Comunidade
+Produto
+Notícias
+O meu
+
+
+==================================================
+PÁGINA: Faturas
+URL: https://vinicolauvva.com/registros?tab=withdrawals
+==================================================
+Faturas
+Registros financeiros
+Registros financeiros
+Confira suas movimentações com segurança
+Todos
+Recarga
+Retirada
+Não há mais dados
+Primeira
+Comunidade
+Produto
+Notícias
+O meu
+
+
+==================================================
+PÁGINA: Sem título
+URL: https://vinicolauvva.com/historico
+==================================================
+Not Found
 
 
 ==================================================
@@ -1606,98 +1344,56 @@ O meu
 
 
 ==================================================
-PÁGINA: Faturas
-URL: https://vinicolauvva.com/registros?tab=withdraw
+PÁGINA: Pontos · Vinícola Uvva
+URL: https://vinicolauvva.com/pontos
 ==================================================
-Faturas
-Registros financeiros
-Registros financeiros
-Confira suas movimentações com segurança
-Todos
-Recarga
-Retirada
-Não há mais dados
-Primeira
-Comunidade
-Produto
-Notícias
-O meu
-
-
-==================================================
-PÁGINA: Comunidade e Suporte
-URL: https://vinicolauvva.com/suporte
-==================================================
-Comunidade e Suporte
-Comunidade
-Vinícola UVVA
-Comunidade e suporte
-Os canais de suporte continuam disponíveis. O acesso aos grupos oficiais é liberado após a ativação de um plano.
-Canais disponíveis
-Grupo telegram
-Disponível somente com plano ativo
-Grupo WhatsApp
-Disponível somente com plano ativo
-Grupo WhatsApp
-Disponível somente com plano ativo
-Gerente Micael
-Fale com um atendente
-Primeira
-Comunidade
-Produto
-Notícias
-O meu
-
-
-==================================================
-PÁGINA: Informações PIX
-URL: https://vinicolauvva.com/retirada?method=pix
-==================================================
-Informações PIX
-‹
-Informações
-Dados de recebimento
-Cadastre PIX para receber em reais ou escolha USDT para uma carteira internacional.
-🇧🇷
-PIX
-Receber em reais
-🌎
-USDT
-Carteira internacional
-Nome
-Chave Pix
-CPF
-Telefone
-E-mail
-Informações da Pix
-Digite seu CPF como chave PIX.
-Documento CPF
-Enviar
-Depois de salvar a chave PIX, você voltará automaticamente para a retirada via PIX.
-Primeira
-Comunidade
-Produto
-Notícias
-O meu
-
-
-==================================================
-PÁGINA: Detalhes da Equipe
-URL: https://vinicolauvva.com/detalhes-equipe?nivel=1
-==================================================
-Detalhes da Equipe
-Detalhes da Equipe
-B
-C
-D
-Não há mais dados
-Não há mais dados
-Não há mais dados
-Primeira
-Comunidade
-Produto
-Notícias
-O meu
+Pontos · Vinícola Uvva
+‹ Voltar
+Pontos
+Programa de Pontos
+VIP0 · conversão progressiva
+SEUS PONTOS
+0
+10 pontos = R$ 1,00
+Quantos pontos deseja trocar?
+0
+Pontos
+⇄
+R$ 0,00
+Saldo em reais
+Trocar pontos por saldo
+Mínimo de 10 pontos e resgates em múltiplos de 10. Quanto maior seu VIP, melhor a conversão.
+Conversão por VIP
+VIP0
+10 pts = R$ 1,00
+x1
+VIP1
+10 pts = R$ 2,00
+x2
+VIP2
+10 pts = R$ 3,00
+x3
+VIP3
+10 pts = R$ 4,00
+x4
+VIP4
+10 pts = R$ 5,00
+x5
+VIP5
+10 pts = R$ 6,00
+x6
+VIP6
+10 pts = R$ 7,00
+x7
+VIP7
+10 pts = R$ 8,00
+x8
+VIP8
+10 pts = R$ 9,00
+x9
+Histórico
+Você ainda não possui movimentações de pontos.
+Os pontos são creditados conforme os produtos configurados pela administração. O valor da troca usa o VIP atual no momento do resgate.
 
 
 ==================================================
@@ -2442,473 +2138,182 @@ O meu
 
 
 ==================================================
-PÁGINA: Presente de Primeira Convite
-URL: https://vinicolauvva.com/tarefa-presente-convite
+PÁGINA: Convidar amigos - Vinícola Uvva
+URL: https://vinicolauvva.com/convida-amigos
 ==================================================
-Presente de Primeira Convite
-Missão
-R$ 3,00
-Presente de Primeira Convite
-Convide uma pessoa e envie a comprovação para análise.
-Missão única
-Como funciona
-1. Compartilhe seu link de convite.
-2. Oriente a pessoa a concluir o cadastro.
-3. Envie uma captura, imagem ou link que comprove o convite.
-4. Aguarde a análise do administrador.
-Enviar para concluir a missão
-Conte o que você fez
-Link do comprovante ou vídeo
-Opcional se você anexar um arquivo.
-Anexar comprovante
-JPG, PNG, WEBP, MP4 ou MOV. Máximo de 30 MB. O arquivo fica armazenado em área privada.
-ENVIAR PARA ANÁLISE
-
-
-==================================================
-PÁGINA: Check-in diário
-URL: https://vinicolauvva.com/checkin
-==================================================
-Check-in diário
-Check-in diário
-Bônus de check-in diário
-R$ 0,50
-R$ 0,00
-Saldo da conta
-R$ 0,00
-Receita de check-in
-Faça seu check-in
-Receba sua recompensa diária
-IR
-Regras de check-in
-1. Brinde diário gratuito no valor de R$ 0,50.
-2. Você pode fazer check-in uma vez por dia.
-3. Após o início de um novo dia, você pode fazer check-in novamente.
-Sequência atual: 0 dias · Próximo bônus: R$ 0,50
-Primeira
-Comunidade
-Produto
-Notícias
-O meu
-Recompensa recebida!
-+
-R$ 0,50
-foi creditado no saldo da conta.
-Não foi possível concluir
-Erro ao fazer check-in.
-Entendi
-
-
-==================================================
-PÁGINA: Sem título
-URL: https://vinicolauvva.com/meu-time
-==================================================
-Not Found
-
-
-==================================================
-PÁGINA: Notícias · Vinícola Uvva
-URL: https://vinicolauvva.com/noticias?categoria=noticias
-==================================================
-Notícias · Vinícola Uvva
-Notícias
-Central Vinícola Uvva
-Notícias da Vinícola Uvva
-Acompanhe comunicados, novidades e informações oficiais publicadas pela equipe Vinícola Uvva.
-Notícias
-6 publicações
-Selfies
-87 publicações
-Depoimentos
-38 publicações
-Conquistas VIP
-24 publicações
-28/09/2026 às 19:24
-Destaque
-Grupo no Whatsapp suspenso
-Olá, pessoal! Nosso grupo no WhatsApp foi suspenso temporariamente. Já solicitamos uma análise, que pode levar até 24 horas. Agradecemos a compreensão de todos e avisaremos assim que tivermos uma atualização.
-27/09/2026 às 23:10
-Destaque
-🍷 **Nova Safra chegando na Vinícola Uvva: Taças!**
-🍷 Nova Safra chegando na Vinícola Uvva: Taças!
-Preparamos uma nova linha de produtos para você conhecer e acompanhar dentro da plataforma.
-A safra Serie Taças chega trazendo novas opções, novos valores e novas oportunidades para quem deseja continuar evoluindo na Vinícola Uvva.
-Fique atento ao lançamento e confira todos os detalhes assim que os novos produtos forem liberados. 🍇✨
-26/09/2026 às 07:13
-Destaque
-TORNE-SE UM MEMBRO VIP!
-Torne-se um membro VIP da Vinícola Uvva e confira as recompensas disponíveis.
-Benefícios semanais e mensais
-Recompensas conforme o nível VIP
-Confira acima a tabela com os valores e benefícios de cada nível.
-Consulte as condições de cada categoria antes de participar.
-23/09/2026 às 23:06
-Destaque
-Poste um vídeo no TikTok
-Quer receber recompensas? Participe da missão TikTok da Vinícola Uvva!
-1 - Publique um vídeo no TikTok relacionado à Vinícola Uvva.
-2 - Inclua a hashtag #vinicolauvva no vídeo ou na legenda.
-3 - Copie o link do vídeo publicado e envie para análise.
-4 - Após a aprovação, a recompensa será creditada.
-5 - A missão ficará disponível novamente após 00:00 (horário de São Paulo).
-Participe da missão e compartilhe a Vinícola Uvva no TikTok!
-23/09/2026 às 20:02
-Destaque
-Reunião vinícola uvva
-A reunião começou!
-Entre agora no grupo oficial da Vinícola Uvva para acompanhar a reunião e receber todas as informações e comunicados.
-Aguardamos todos vocês no grupo oficial.
-23/09/2026 às 07:54
-Destaque
-Seja bem-vindo a Vinícola Uvva
-## Bem-vindo à Vinícola Uvva
-A Vinícola Uvva nasce com a proposta de unir tradição, qualidade e inovação em uma experiência inspirada no universo dos vinhos e dos grandes vinhedos.
-Nossa plataforma foi desenvolvida para oferecer aos membros uma experiência completa, com acesso a produtos, benefícios, níveis VIP, recompensas, atividades, notícias e recursos exclusivos.
-Ao fazer parte da Vinícola Uvva, cada membro pode acompanhar sua evolução dentro da plataforma, conhecer novas oportunidades, participar das atividades disponíveis e avançar gradualmente de acordo com os requisitos estabelecidos para cada nível.
-Valorizamos uma comunidade ativa, organizada e conectada, onde cada participante pode acompanhar suas informações, produtos, equipe, recompensas e novidades em um único ambiente.
-A identidade da Vinícola Uvva representa elegância, crescimento e reconhecimento, inspirada na tradição dos grandes vinhos e na busca constante por novas conquistas.
-**Vinícola Uvva**
-**Juntos brindamos grandes conquistas.**
-Primeira
-Comunidade
-Produto
-Notícias
-O meu
-
-
-==================================================
-PÁGINA: Sem título
-URL: https://vinicolauvva.com/historico
-==================================================
-Not Found
-
-
-==================================================
-PÁGINA: Programa VIP
-URL: https://vinicolauvva.com/programavip
-==================================================
-Programa VIP
+Convidar amigos - Vinícola Uvva
 ‹
-Vinícola UVVA
-Programa VIP
-Evolua de nível, fortaleça sua equipe e desbloqueie recompensas exclusivas do Programa VIP.
-Seu nível atual
-VIP 0
-Membros ativos B
-0
-Recarga aprovada B+C+D
-R$ 0,00
-Meta próxima recarga
-R$ 1.000,00
-Progresso para VIP 1
-0/3
-Como se tornar VIP
-Seu nível VIP aumenta conforme você cumpre as metas de membros ativos diretos definidas pela plataforma. Mantenha os requisitos do seu nível ativos para continuar elegível aos salários.
-Recompensas VIP
-Cada nível pode liberar um valor de salário semanal e mensal. Os valores e metas são definidos pela administração e aparecem abaixo em tempo real.
-Resgate por período
-Salário VIP semanal
-Resgate por período
-Salário VIP mensal
-Níveis e recompensas
-VIP 0
-Seu nível atual
-Nível inicial
-Semanal
-R$ 0,00
-Mensal
-R$ 0,00
-VIP 1
-VIP 1
-3 membros ativos em B + R$ 1.000,00 em recargas aprovadas B+C+D
-Semanal
-R$ 5,00
-Mensal
-R$ 0,00
-VIP 2
-VIP 2
-15 membros ativos em B + R$ 5.000,00 em recargas aprovadas B+C+D
-Semanal
-R$ 10,00
-Mensal
-R$ 150,00
-VIP 3
-VIP 3
-35 membros ativos em B + R$ 10.000,00 em recargas aprovadas B+C+D
-Semanal
-R$ 25,00
-Mensal
-R$ 800,00
-VIP 4
-VIP 4
-40 membros ativos em B + R$ 20.000,00 em recargas aprovadas B+C+D
-Semanal
-R$ 60,00
-Mensal
-R$ 1.400,00
-VIP 5
-VIP 5
-70 membros ativos em B + R$ 35.000,00 em recargas aprovadas B+C+D
-Semanal
-R$ 120,00
-Mensal
-R$ 2.500,00
-VIP 6
-VIP 6
-100 membros ativos em B + R$ 70.000,00 em recargas aprovadas B+C+D
-Semanal
-R$ 300,00
-Mensal
-R$ 5.000,00
-VIP 7
-VIP 7
-140 membros ativos em B + R$ 100.000,00 em recargas aprovadas B+C+D
-Semanal
-R$ 1.200,00
-Mensal
-R$ 10.000,00
-VIP 8
-VIP 8
-250 membros ativos em B + R$ 700.000,00 em recargas aprovadas B+C+D
-Semanal
-R$ 3.000,00
-Mensal
-R$ 25.000,00
-As regras e valores podem ser atualizados pela administração da plataforma.
+Convidar amigos
+Compartilhe seu convite
+Envie seu código ou link pessoal para amigos. Os novos cadastros feitos por esse convite ficam vinculados à sua equipe.
+Código de convite
+XITIQ5K13P
+Copiar
+Link de convite
+https://vinicolauvva.com/cadastro?ref=XITIQ5K13P
+Copiar
+Para acompanhar membros, níveis B, C e D, comissões e demais detalhes, acesse a página completa da sua equipe.
+Ver equipe completa
+››
 
 
 ==================================================
-PÁGINA: Código de Resgate
-URL: https://vinicolauvva.com/cupom
+PÁGINA: Retirada
+URL: https://vinicolauvva.com/retirada
 ==================================================
-Código de Resgate
-Cupom
-Resgata
-Códigos de resgate são distribuídos diariamente no grupo oficial.
-Junte-se ao grupo oficial.
-Histórico de Resgates
-Total resgatado
-R$ 0,00
-Você ainda não possui cupons resgatados.
-Primeira
-Comunidade
-Produto
-Notícias
-O meu
-
-
-==================================================
-PÁGINA: O meu produto - Vinicola Uvva
-URL: https://vinicolauvva.com/meus-produtos
-==================================================
-O meu produto - Vinicola Uvva
-‹ retornar
-O meu produto
-Histórico
-Ganhos de hoje
-R$ 0,00
-Receita total
-R$ 0,00
-Produtos dentro do prazo de validade
-Produtos fora de prazo
-Não há produtos nesta categoria.
-Não há produtos nesta categoria.
-Histórico de rendimentos
-Acompanhe cada rendimento recebido dos seus planos.
-Mostrar
-5
-10
-Nenhum rendimento recebido ainda.
-Primeira
-Comunidade
-Produto
-Notícias
-O meu
-
-
-==================================================
-PÁGINA: Baú · Vinícola Uvva
-URL: https://vinicolauvva.com/bau
-==================================================
-Baú · Vinícola Uvva
-‹
-Baús de Recompensa
-Vinícola Uvva
-Saldo
-R$ 0,00
-Conquiste e abra seus baús
-Cada baú possui uma meta de indicações. Complete a quantidade exigida nos níveis definidos para liberar o prêmio. Cada baú pode ser aberto uma única vez e, ao abrir, a recompensa é creditada automaticamente no saldo.
-BLOQUEADO
-Bau G1
-Complete a meta para liberar este baú.
-Meta de indicações
-3 pessoas · Somente nível B
-Quem conta
-Plano ativo OU depósito aprovado
-0/3
-3 restantes
-Prêmio: R$ 5,00
-Complete a meta
-BLOQUEADO
-Bau G2
-Complete a meta para liberar este baú.
-Meta de indicações
-20 pessoas · Somente nível B
-Quem conta
-Plano ativo OU depósito aprovado
-0/20
-20 restantes
-Prêmio: R$ 50,00
-Complete a meta
-BLOQUEADO
-Bau G3
-Complete a meta para liberar este baú.
-Meta de indicações
-50 pessoas · Somente nível B
-Quem conta
-Plano ativo OU depósito aprovado
-0/50
-50 restantes
-Prêmio: R$ 250,00
-Complete a meta
-BLOQUEADO
-Bau  G4
-Complete a meta para liberar este baú.
-Meta de indicações
-100 pessoas · Somente nível B
-Quem conta
-Plano ativo OU depósito aprovado
-0/100
-100 restantes
-Prêmio: R$ 500,00
-Complete a meta
-BLOQUEADO
-Bau G5
-Complete a meta para liberar este baú.
-Meta de indicações
-250 pessoas · Somente nível B
-Quem conta
-Plano ativo OU depósito aprovado
-0/250
-250 restantes
-Prêmio: R$ 1.200,00
-Complete a meta
-BLOQUEADO
-Bau G6
-Complete a meta para liberar este baú.
-Meta de indicações
-500 pessoas · Somente nível B
-Quem conta
-Plano ativo OU depósito aprovado
-0/500
-500 restantes
-Prêmio: R$ 2.000,00
-Complete a meta
-BLOQUEADO
-Bau G7
-Complete a meta para liberar este baú.
-Meta de indicações
-800 pessoas · Somente nível B
-Quem conta
-Plano ativo OU depósito aprovado
-0/800
-800 restantes
-Prêmio: R$ 4.000,00
-Complete a meta
-BLOQUEADO
-Bau G8
-Complete a meta para liberar este baú.
-Meta de indicações
-1000 pessoas · Somente nível B
-Quem conta
-Plano ativo OU depósito aprovado
-0/1000
-1000 restantes
-Prêmio: R$ 5.000,00
-Complete a meta
-
-
-==================================================
-PÁGINA: Faturas
-URL: https://vinicolauvva.com/registros?tab=withdrawals
-==================================================
-Faturas
-Registros financeiros
-Registros financeiros
-Confira suas movimentações com segurança
-Todos
-Recarga
 Retirada
-Não há mais dados
-Primeira
-Comunidade
-Produto
-Notícias
-O meu
-
-
-==================================================
-PÁGINA: Informações PIX
-URL: https://vinicolauvva.com/pix-config?from=retirada
-==================================================
-Informações PIX
 ‹
-Informações
-Dados de recebimento
-Cadastre PIX para receber em reais ou escolha USDT para uma carteira internacional.
+Retirada
+Faturas
+Saques: 24 horas • mínimo R$ 6,00 • taxa 6%
+**0478
+retirou
+R$ 6,96
+**7244
+retirou
+R$ 20,77
+**6941
+retirou
+R$ 5,92
+**6280
+retirou
+R$ 9,23
+**1915
+retirou
+R$ 8,74
+**1790
+retirou
+R$ 6,39
+**1064
+retirou
+R$ 5,73
+**4578
+retirou
+R$ 16,66
+**1414
+retirou
+R$ 16,92
+**1203
+retirou
+R$ 9,78
+**1835
+retirou
+R$ 90,62
+**4624
+retirou
+R$ 5,73
+**5995
+retirou
+R$ 15,04
+**8641
+retirou
+R$ 8,46
+**7113
+retirou
+R$ 62,04
+**0219
+retirou
+R$ 59,71
+**6669
+retirou
+R$ 15,60
+**3476
+retirou
+R$ 17,58
+**1550
+retirou
+R$ 7,52
+**3531
+retirou
+R$ 9,02
+Saques: 24 horas • mínimo R$ 6,00 • taxa 6%
+**0478
+retirou
+R$ 6,96
+**7244
+retirou
+R$ 20,77
+**6941
+retirou
+R$ 5,92
+**6280
+retirou
+R$ 9,23
+**1915
+retirou
+R$ 8,74
+**1790
+retirou
+R$ 6,39
+**1064
+retirou
+R$ 5,73
+**4578
+retirou
+R$ 16,66
+**1414
+retirou
+R$ 16,92
+**1203
+retirou
+R$ 9,78
+**1835
+retirou
+R$ 90,62
+**4624
+retirou
+R$ 5,73
+**5995
+retirou
+R$ 15,04
+**8641
+retirou
+R$ 8,46
+**7113
+retirou
+R$ 62,04
+**0219
+retirou
+R$ 59,71
+**6669
+retirou
+R$ 15,60
+**3476
+retirou
+R$ 17,58
+**1550
+retirou
+R$ 7,52
+**3531
+retirou
+R$ 9,02
+Saldo Atual
+R$ 0,00
+Como deseja receber sua retirada?
+Escolha o método de recebimento. Seu saldo continua sendo controlado em reais.
 🇧🇷
 PIX
-Receber em reais
+Receber em reais no Brasil
+Cadastrar chave PIX
 🌎
 USDT
-Carteira internacional
-Nome
-Chave Pix
-CPF
-Telefone
-E-mail
-Informações da Pix
-Digite seu CPF como chave PIX.
-Documento CPF
-Enviar
-Depois de salvar a chave PIX, você voltará automaticamente para a retirada via PIX.
+Receber em carteira internacional
+ERC20 · BEP20 · POLYGON
+Escolha
+PIX
+para receber em reais no Brasil ou
+USDT
+para receber em uma carteira de criptomoeda. Usuários internacionais não precisam cadastrar PIX.
 Primeira
 Comunidade
 Produto
 Notícias
 O meu
-
-
-==================================================
-PÁGINA: Depósito USDT
-URL: https://vinicolauvva.com/deposito-usdt
-==================================================
-Depósito USDT
-‹ PIX
-Depósito USDT
-Início
-Carteira digital
-Depósito em USDT
-Informe o valor em reais. A plataforma converte para USDT e, após a confirmação, credita o mesmo valor em reais no seu saldo.
-Seu saldo atual
-R$ 0,00
-Valor do depósito (R$)
-Conversão estimada
-Digite um valor em reais
-1 USDT ≈ R$ 5,24
-Taxa da operação/serviço: calculada ao gerar o endereço.
-Rede
-Selecione a rede
-ERC20 · ERC20
-BEP20 · BEP20
-POLYGON · POLYGON
-Gerar endereço USDT
-Depositar via PIX
-Depositar USDT
-Como funciona:
-você escolhe um valor em reais, a plataforma calcula o equivalente em USDT e salva a cotação daquela operação. Após a confirmação da blockchain, o crédito em reais é calculado pelo valor USDT efetivamente confirmado, limitado ao valor originalmente solicitado.
-Últimos depósitos USDT
-Nenhum depósito USDT registrado.
+Saque Realizado!
+Sua solicitação foi recebida e está sendo processada.
+Continuar
+Aviso
+OK
 
 
 ==================================================
@@ -3196,6 +2601,411 @@ Depoimento de investidor Daniel Carnica
 Depoimento de investidor
 Minha experiência com a Vinícola Uvva tem sido muito positiva. A plataforma é simples de utilizar, as informações são apresentadas de forma clara e consigo acompanhar minhas atividades e benefícios com facilidade.
 Também gostei da organização dos produtos, do sistema de níveis e das diferentes funcionalidades disponíveis na plataforma. Até o momento, minha experiência tem sido satisfatória e espero continuar acompanhando o crescimento e as novidades da Vinícola Uvva.
+Primeira
+Comunidade
+Produto
+Notícias
+O meu
+
+
+==================================================
+PÁGINA: Salário VIP mensal
+URL: https://vinicolauvva.com/salario-vip-mensal
+==================================================
+Salário VIP mensal
+‹
+Ver Programa VIP
+Vinícola UVVA · VIP 0
+Salário VIP mensal
+O salário VIP mensal pode ser resgatado uma vez por mês, desde que você mantenha os requisitos do seu nível VIP ativos.
+Progresso para VIP 1
+0/3
+Valor disponível para seu VIP
+R$ 0,00
+VIP 0
+✓
+Programa VIP ativo
+✓
+Salário mês habilitado pela administração
+✓
+Requisitos atuais do seu nível VIP mantidos
+✓
+Ainda não resgatado neste mês
+Próximo resgate mensal
+Aguardando liberação/requisitos
+Próxima virada mensal: 01/10/2026.
+Indisponível
+O sistema valida novamente seu VIP e seus requisitos no momento do resgate. Cada período pode ser resgatado somente uma vez.
+
+
+==================================================
+PÁGINA: Sem título
+URL: https://vinicolauvva.com/meu-time
+==================================================
+Not Found
+
+
+==================================================
+PÁGINA: Recarregar
+URL: https://vinicolauvva.com/deposito
+==================================================
+Recarregar
+Recarregar
+Faturas
+Saldo Atual
+R$ 0,00
+Depositar com USDT
+Carteira digital em USDT
+›
+Valor de Recarga
+30
+80
+135
+220
+400
+600
+1.250
+1.500
+2.900
+3.200
+5.600
+9.800
+10.000
+13.000
+25.300
+R$
+Valor mínimo: R$ 30
+Canal de Recarga
+PIX
+Recarregar
+Regras de recarga:
+O valor do pedido deve corresponder ao valor do pagamento para que o crédito seja identificado corretamente.
+Após cada recarga, retorne à plataforma para criar um novo pedido. Não reutilize um QR Code antigo.
+Se o pagamento não for creditado após o prazo de processamento, consulte as faturas ou entre em contato com o suporte.
+As recargas são processadas exclusivamente pelos canais disponíveis nesta página.
+Depósitos recentes
+Você ainda não possui depósitos registrados.
+Primeira
+Comunidade
+Produto
+Notícias
+O meu
+
+
+==================================================
+PÁGINA: Salário VIP semanal
+URL: https://vinicolauvva.com/salario-vip-semanal
+==================================================
+Salário VIP semanal
+‹
+Ver Programa VIP
+Vinícola UVVA · VIP 0
+Salário VIP semanal
+O salário VIP semanal pode ser resgatado uma vez por semana, desde que você mantenha os requisitos do seu nível VIP ativos.
+Progresso para VIP 1
+0/3
+Valor disponível para seu VIP
+R$ 0,00
+VIP 0
+✓
+Programa VIP ativo
+✓
+Salário semana habilitado pela administração
+✓
+Requisitos atuais do seu nível VIP mantidos
+✓
+Ainda não resgatado nesta semana
+Próximo resgate semanal
+Aguardando liberação/requisitos
+Próxima virada semanal: 05/10/2026.
+Indisponível
+O sistema valida novamente seu VIP e seus requisitos no momento do resgate. Cada período pode ser resgatado somente uma vez.
+
+
+==================================================
+PÁGINA: Comunidade e Suporte
+URL: https://vinicolauvva.com/suporte?grupo=bloqueado
+==================================================
+Comunidade e Suporte
+Comunidade
+Vinícola UVVA
+Comunidade e suporte
+Os canais de suporte continuam disponíveis. O acesso aos grupos oficiais é liberado após a ativação de um plano.
+Canais disponíveis
+🔒 O acesso aos grupos oficiais é liberado somente para usuários com plano ativo. Ative um plano e volte a esta área para entrar no grupo.
+Grupo telegram
+Disponível somente com plano ativo
+Grupo WhatsApp
+Disponível somente com plano ativo
+Grupo WhatsApp
+Disponível somente com plano ativo
+Gerente Micael
+Fale com um atendente
+Primeira
+Comunidade
+Produto
+Notícias
+O meu
+
+
+==================================================
+PÁGINA: Saque USDT
+URL: https://vinicolauvva.com/retirada-usdt
+==================================================
+Saque USDT
+‹ Métodos
+Saque USDT
+Início
+Carteira digital
+Retirar em USDT
+Informe quanto deseja sacar em reais. A plataforma aplica a taxa configurada e mostra quanto será enviado em USDT.
+Saque mínimo via USDT: R$ 40,00
+Saldo disponível
+R$ 0,00
+Valor do saque (R$)
+Cotação
+1 USDT ≈ R$ 5,22
+Valor convertido
+0 USDT
+Taxa de saque (6,00%)
+R$ 0,00
+Valor líquido
+R$ 0,00
+Taxa da operação/serviço
+Calculada ao processar
+Você recebe aproximadamente
+0 USDT
+Rede
+Selecione a rede
+ERC20 · ERC20
+BEP20 · BEP20
+POLYGON · POLYGON
+Carteira de destino
+Solicitar saque USDT
+Sacar via PIX
+Sacar USDT
+Importante:
+o saldo continua em reais. No momento do saque, o sistema salva a cotação usada, desconta o valor solicitado do seu saldo e envia para a carteira o equivalente líquido em USDT após a taxa de saque configurada na plataforma.
+Últimos saques USDT
+Nenhum saque USDT registrado.
+
+
+==================================================
+PÁGINA: Faturas
+URL: https://vinicolauvva.com/registros?tab=deposits
+==================================================
+Faturas
+Registros financeiros
+Registros financeiros
+Confira suas movimentações com segurança
+Todos
+Recarga
+Retirada
+Não há mais dados
+Primeira
+Comunidade
+Produto
+Notícias
+O meu
+
+
+==================================================
+PÁGINA: Faturas
+URL: https://vinicolauvva.com/registros?tab=withdraw
+==================================================
+Faturas
+Registros financeiros
+Registros financeiros
+Confira suas movimentações com segurança
+Todos
+Recarga
+Retirada
+Não há mais dados
+Primeira
+Comunidade
+Produto
+Notícias
+O meu
+
+
+==================================================
+PÁGINA: Depósito USDT
+URL: https://vinicolauvva.com/deposito-usdt
+==================================================
+Depósito USDT
+‹ PIX
+Depósito USDT
+Início
+Carteira digital
+Depósito em USDT
+Informe o valor em reais. A plataforma converte para USDT e, após a confirmação, credita o mesmo valor em reais no seu saldo.
+Seu saldo atual
+R$ 0,00
+Valor do depósito (R$)
+Conversão estimada
+Digite um valor em reais
+1 USDT ≈ R$ 5,22
+Taxa da operação/serviço: calculada ao gerar o endereço.
+Rede
+Selecione a rede
+ERC20 · ERC20
+BEP20 · BEP20
+POLYGON · POLYGON
+Gerar endereço USDT
+Depositar via PIX
+Depositar USDT
+Como funciona:
+você escolhe um valor em reais, a plataforma calcula o equivalente em USDT e salva a cotação daquela operação. Após a confirmação da blockchain, o crédito em reais é calculado pelo valor USDT efetivamente confirmado, limitado ao valor originalmente solicitado.
+Últimos depósitos USDT
+Nenhum depósito USDT registrado.
+
+
+==================================================
+PÁGINA: Notícias · Vinícola Uvva
+URL: https://vinicolauvva.com/noticias?categoria=noticias
+==================================================
+Notícias · Vinícola Uvva
+Notícias
+Central Vinícola Uvva
+Notícias da Vinícola Uvva
+Acompanhe comunicados, novidades e informações oficiais publicadas pela equipe Vinícola Uvva.
+Notícias
+6 publicações
+Selfies
+87 publicações
+Depoimentos
+38 publicações
+Conquistas VIP
+24 publicações
+28/09/2026 às 19:24
+Destaque
+Grupo no Whatsapp suspenso
+Olá, pessoal! Nosso grupo no WhatsApp foi suspenso temporariamente. Já solicitamos uma análise, que pode levar até 24 horas. Agradecemos a compreensão de todos e avisaremos assim que tivermos uma atualização.
+27/09/2026 às 23:10
+Destaque
+🍷 **Nova Safra chegando na Vinícola Uvva: Taças!**
+🍷 Nova Safra chegando na Vinícola Uvva: Taças!
+Preparamos uma nova linha de produtos para você conhecer e acompanhar dentro da plataforma.
+A safra Serie Taças chega trazendo novas opções, novos valores e novas oportunidades para quem deseja continuar evoluindo na Vinícola Uvva.
+Fique atento ao lançamento e confira todos os detalhes assim que os novos produtos forem liberados. 🍇✨
+26/09/2026 às 07:13
+Destaque
+TORNE-SE UM MEMBRO VIP!
+Torne-se um membro VIP da Vinícola Uvva e confira as recompensas disponíveis.
+Benefícios semanais e mensais
+Recompensas conforme o nível VIP
+Confira acima a tabela com os valores e benefícios de cada nível.
+Consulte as condições de cada categoria antes de participar.
+23/09/2026 às 23:06
+Destaque
+Poste um vídeo no TikTok
+Quer receber recompensas? Participe da missão TikTok da Vinícola Uvva!
+1 - Publique um vídeo no TikTok relacionado à Vinícola Uvva.
+2 - Inclua a hashtag #vinicolauvva no vídeo ou na legenda.
+3 - Copie o link do vídeo publicado e envie para análise.
+4 - Após a aprovação, a recompensa será creditada.
+5 - A missão ficará disponível novamente após 00:00 (horário de São Paulo).
+Participe da missão e compartilhe a Vinícola Uvva no TikTok!
+23/09/2026 às 20:02
+Destaque
+Reunião vinícola uvva
+A reunião começou!
+Entre agora no grupo oficial da Vinícola Uvva para acompanhar a reunião e receber todas as informações e comunicados.
+Aguardamos todos vocês no grupo oficial.
+23/09/2026 às 07:54
+Destaque
+Seja bem-vindo a Vinícola Uvva
+## Bem-vindo à Vinícola Uvva
+A Vinícola Uvva nasce com a proposta de unir tradição, qualidade e inovação em uma experiência inspirada no universo dos vinhos e dos grandes vinhedos.
+Nossa plataforma foi desenvolvida para oferecer aos membros uma experiência completa, com acesso a produtos, benefícios, níveis VIP, recompensas, atividades, notícias e recursos exclusivos.
+Ao fazer parte da Vinícola Uvva, cada membro pode acompanhar sua evolução dentro da plataforma, conhecer novas oportunidades, participar das atividades disponíveis e avançar gradualmente de acordo com os requisitos estabelecidos para cada nível.
+Valorizamos uma comunidade ativa, organizada e conectada, onde cada participante pode acompanhar suas informações, produtos, equipe, recompensas e novidades em um único ambiente.
+A identidade da Vinícola Uvva representa elegância, crescimento e reconhecimento, inspirada na tradição dos grandes vinhos e na busca constante por novas conquistas.
+**Vinícola Uvva**
+**Juntos brindamos grandes conquistas.**
+Primeira
+Comunidade
+Produto
+Notícias
+O meu
+
+
+==================================================
+PÁGINA: Detalhes da Equipe
+URL: https://vinicolauvva.com/detalhes-equipe?nivel=1
+==================================================
+Detalhes da Equipe
+Detalhes da Equipe
+B
+C
+D
+Não há mais dados
+Não há mais dados
+Não há mais dados
+Primeira
+Comunidade
+Produto
+Notícias
+O meu
+
+
+==================================================
+PÁGINA: Informações PIX
+URL: https://vinicolauvva.com/retirada?method=pix
+==================================================
+Informações PIX
+‹
+Informações
+Dados de recebimento
+Cadastre PIX para receber em reais ou escolha USDT para uma carteira internacional.
+🇧🇷
+PIX
+Receber em reais
+🌎
+USDT
+Carteira internacional
+Nome
+Chave Pix
+CPF
+Telefone
+E-mail
+Informações da Pix
+Digite seu CPF como chave PIX.
+Documento CPF
+Enviar
+Depois de salvar a chave PIX, você voltará automaticamente para a retirada via PIX.
+Primeira
+Comunidade
+Produto
+Notícias
+O meu
+
+
+==================================================
+PÁGINA: Informações PIX
+URL: https://vinicolauvva.com/pix-config?from=retirada
+==================================================
+Informações PIX
+‹
+Informações
+Dados de recebimento
+Cadastre PIX para receber em reais ou escolha USDT para uma carteira internacional.
+🇧🇷
+PIX
+Receber em reais
+🌎
+USDT
+Carteira internacional
+Nome
+Chave Pix
+CPF
+Telefone
+E-mail
+Informações da Pix
+Digite seu CPF como chave PIX.
+Documento CPF
+Enviar
+Depois de salvar a chave PIX, você voltará automaticamente para a retirada via PIX.
 Primeira
 Comunidade
 Produto
