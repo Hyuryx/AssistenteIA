@@ -9,7 +9,15 @@ echo    ASSISTENTE IA - ENVIAR ATUALIZACOES PARA GITHUB E VERCEL
 echo ==============================================================
 echo.
 
-echo [1/5] Verificando arquivos alterados...
+echo [1/6] Sincronizando alteracoes em documentos e recompilando base...
+if exist ".\venv\Scripts\python.exe" (
+    .\venv\Scripts\python.exe -c "from app import rebuild_knowledge_base; import asyncio; asyncio.run(rebuild_knowledge_base())"
+) else (
+    python -c "from app import rebuild_knowledge_base; import asyncio; asyncio.run(rebuild_knowledge_base())" 2>nul
+)
+
+echo.
+echo [2/6] Verificando arquivos alterados...
 git status -s
 echo.
 
@@ -19,18 +27,19 @@ if "%msg%"=="" (
 )
 
 echo.
-echo [2/5] Preparando arquivos alterados...
+echo [3/6] Preparando arquivos alterados...
 git add .
 
-echo [3/5] Gravando alteracoes: "%msg%"...
+echo.
+echo [4/6] Gravando alteracoes: "%msg%"...
 git commit -m "%msg%"
 
 echo.
-echo [4/5] Sincronizando com o GitHub...
+echo [5/6] Sincronizando com o GitHub...
 git pull --rebase origin main
 
 echo.
-echo [5/5] Enviando para o GitHub (https://github.com/Hyuryx/AssistenteIA)...
+echo [6/6] Enviando para o GitHub (https://github.com/Hyuryx/AssistenteIA)...
 git push origin main
 
 echo.
