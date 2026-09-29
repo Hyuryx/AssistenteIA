@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = await res.json();
       
       if (!data.documents || data.documents.length === 0) {
-        documentsTbody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: var(--text-dim); padding: 2rem;">Nenhum documento encontrado.</td></tr>`;
+        documentsTbody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: var(--text-dim); padding: 2rem;">Nenhum documento encontrado.</td></tr>`;
         return;
       }
 
@@ -258,22 +258,98 @@ document.addEventListener('DOMContentLoaded', () => {
         let badgeClass = 'txt';
         if (doc.extension === '.pdf') badgeClass = 'pdf';
         else if (doc.extension.includes('doc')) badgeClass = 'docx';
+        else if (doc.extension.includes('xls')) badgeClass = 'docx';
+
+        const deleteBtn = doc.is_main_kb ? '' : `
+          <button class="btn-delete-doc" data-file="${encodeURIComponent(doc.name)}" title="Excluir arquivo" style="background: none; border: none; color: #f87171; cursor: pointer; padding: 4px 8px; border-radius: 4px; transition: background 0.2s;">
+            🗑️
+          </button>
+        `;
 
         return `
           <tr>
             <td>
               <strong style="${doc.is_main_kb ? 'color: var(--accent-wine-light);' : ''}">${doc.name}</strong>
-              ${doc.is_main_kb ? ' <span style="font-size: 0.7rem; background: rgba(159, 18, 57, 0.2); color: #f43f5e; padding: 2px 6px; border-radius: 4px; margin-left: 6px;">Consolidada</span>' : ''}
+              ${doc.is_main_kb ? ' <span style="font-size: 0.7rem; background: rgba(159, 18, 57, 0.2); color: #f43f5e; padding: 2px 6px; border-radius: 4px; margin-left: 6px;">Cérebro do Projeto</span>' : ''}
             </td>
             <td><span class="file-ext-badge ${badgeClass}">${doc.extension.replace('.', '').toUpperCase()}</span></td>
             <td>${doc.size_kb} KB</td>
             <td>${doc.modified}</td>
+            <td style="text-align: right;">${deleteBtn}</td>
           </tr>
         `;
       }).join('');
+
+      // Adiciona listener aos botões de deletar
+      document.querySelectorAll('.btn-delete-doc').forEach(btn => {
+        btn.addEventListener('click', async (e) => {
+          e.stopPropagation();
+          const fname = decodeURIComponent(btn.getAttribute('data-file'));
+          if (!confirm(`Deseja realmente excluir o arquivo "${fname}"?`)) return;
+          try {
+            const delRes = await fetch(`${API_BASE}/api/documents/${encodeURIComponent(fname)}`, { method: 'DELETE' });
+            const delData = await delRes.json();
+            if (delRes.ok && delData.success) {
+              showToast(`Arquivo "${fname}" excluído!`, 'success');
+              carregarDocumentos();
+              atualizarStats();
+            } else {
+              showToast(`Erro ao excluir: ${delData.detail || delData.message}`, 'error');
+            }
+          } catch (err) {
+            showToast(`Falha na requisição: ${err.message}`, 'error');
+          }
+        });
+      });
+
     } catch (err) {
-      documentsTbody.innerHTML = `<tr><td colspan="4" style="color: #f87171; text-align: center;">Erro ao carregar documentos: ${err.message}</td></tr>`;
+      documentsTbody.innerHTML = `<tr><td colspan="5" style="color: #f87171; text-align: center;">Erro ao carregar documentos: ${err.message}</td></tr>`;
     }
+  }
+
+  // Botão Recompilar Base
+  const btnRebuildKb = document.getElementById('btn-rebuild-kb');
+  if (btnRebuildKb) {
+    btnRebuildKb.addEventListener('click', async () => {
+      showToast('Recompilando base_conhecimento.txt...', 'info');
+      try {
+        const res = await fetch(`${API_BASE}/api/rebuild-knowledge-base`, { method: 'POST' });
+        const data = await res.json();
+        if (res.ok && data.success) {
+          showToast(data.message, 'success');
+          carregarDocumentos();
+          atualizarStats();
+        } else {
+          showToast(data.detail || 'Erro ao recompilar', 'error');
+        }
+      } catch (err) {
+        showToast('Erro: ' + err.message, 'error');
+      }
+    });
+  }
+
+  // Botão Limpar Tudo (Resetar do Zero)
+  const btnResetKb = document.getElementById('btn-reset-kb');
+  if (btnResetKb) {
+    btnResetKb.addEventListener('click', async () => {
+      if (!confirm('ATENÇÃO: Deseja apagar todos os arquivos da pasta dados_plataforma para começar do zero?')) {
+        return;
+      }
+      showToast('Limpando pasta de dados...', 'info');
+      try {
+        const res = await fetch(`${API_BASE}/api/documents/reset`, { method: 'POST' });
+        const data = await res.json();
+        if (res.ok && data.success) {
+          showToast(data.message, 'success');
+          carregarDocumentos();
+          atualizarStats();
+        } else {
+          showToast(data.detail || 'Erro ao resetar', 'error');
+        }
+      } catch (err) {
+        showToast('Erro: ' + err.message, 'error');
+      }
+    });
   }
 
   // Inspecionar Base Bruta (Modal)

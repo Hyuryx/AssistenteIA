@@ -204,6 +204,74 @@ async def upload_document(file: UploadFile = File(...)):
             "message": f"Arquivo salvo, mas ocorreu um erro na extração de texto: {str(e)}"
         }
 
+@app.delete("/api/documents/{filename}")
+async def delete_document(filename: str):
+    target = DATA_DIR / filename
+    if not target.exists():
+        raise HTTPException(status_code=404, detail="Arquivo não encontrado.")
+    try:
+        target.unlink()
+        return {"success": True, "message": f"Arquivo '{filename}' removido com sucesso!"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Erro ao remover arquivo: {str(e)}")
+
+@app.post("/api/documents/reset")
+async def reset_platform_data():
+    """Limpa todos os arquivos de dados_plataforma para recomeçar do zero."""
+    erros = []
+    removidos = []
+    for item in DATA_DIR.glob("*"):
+        try:
+            if item.is_file():
+                item.unlink()
+                removidos.append(item.name)
+        except Exception as e:
+            erros.append(f"{item.name}: {str(e)}")
+            
+    # Cria uma base_conhecimento.txt limpa inicial
+    with open(KB_TEXT_FILE, "w", encoding="utf-8") as f:
+        f.write(f"=== BASE OFICIAL DE DADOS DA PLATAFORMA (VINICOLA UVVA) ===\n")
+        f.write(f"Iniciada do zero em: {time.strftime('%d/%m/%Y às %H:%M:%S')}\n\n")
+
+    return {
+        "success": True,
+        "message": f"Pasta dados_plataforma limpa com sucesso! {len(removidos)} arquivos apagados.",
+        "removidos": removidos,
+        "erros": erros
+    }
+
+@app.post("/api/rebuild-knowledge-base")
+async def rebuild_knowledge_base():
+    """Recompila base_conhecimento.txt a partir de conteudo_recente.json e documentos da pasta."""
+    try:
+        from scraper import integrar_manuais_locais
+        
+        paginas_coletadas = {}
+        if LATEST_DATA_FILE.exists():
+            with open(LATEST_DATA_FILE, "r", encoding="utf-8") as f:
+                paginas_coletadas = json.load(f)
+
+        with open(KB_TEXT_FILE, "w", encoding="utf-8") as f:
+            f.write(f"=== BASE OFICIAL DE DADOS DA PLATAFORMA (VINICOLA UVVA) ===\n")
+            f.write(f"Última compilação: {time.strftime('%d/%m/%Y às %H:%M:%S')}\n\n")
+            for url, info in paginas_coletadas.items():
+                f.write(f"\n{'='*50}\n")
+                f.write(f"PÁGINA: {info.get('titulo', 'Sem título')}\n")
+                f.write(f"URL: {url}\n")
+                f.write(f"{'='*50}\n")
+                f.write(info.get('texto', ''))
+                f.write("\n\n")
+                if info.get('tabelas'):
+                    f.write("--- DADOS ESTRUTURADOS / TABELAS ---\n")
+                    for tab in info['tabelas']:
+                        f.write(tab + "\n")
+                    f.write("\n")
+
+        integrar_manuais_locais()
+        return {"success": True, "message": "Base de conhecimento recompilada com sucesso!"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Erro ao recompilar base: {str(e)}")
+
 @app.get("/api/knowledge-base")
 async def get_knowledge_base():
     if not KB_TEXT_FILE.exists():

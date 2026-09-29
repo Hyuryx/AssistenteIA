@@ -2,7 +2,33 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Enviar Atualizações para o GitHub e Vercel",
+      "label": "Escanear Plataforma e Atualizar Vercel (1 Clique)",
+      "type": "shell",
+      "command": "${workspaceFolder}\\escanear_e_atualizar.bat",
+      "windows": {
+        "command": "${workspaceFolder}\\escanear_e_atualizar.bat"
+      },
+      "options": {
+        "env": {
+          "PATH": "C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;${env:PATH}"
+        }
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Apenas Enviar Alterações para GitHub e Vercel",
       "type": "shell",
       "command": "${workspaceFolder}\\enviar_atualizacoes.bat",
       "windows": {

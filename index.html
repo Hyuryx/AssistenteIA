@@ -215,10 +215,18 @@
       <div class="glass-card">
         <div class="support-panel-header">
           <h2>Arquivos Ativos na Base de Conhecimento</h2>
-          <button class="btn-secondary" id="btn-view-raw-kb">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-            Inspecionar Texto Bruto da Base
-          </button>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <button class="btn-secondary" id="btn-rebuild-kb" title="Reunir todos os textos do site e documentos na base_conhecimento.txt">
+              ⚡ Recompilar Base
+            </button>
+            <button class="btn-secondary" id="btn-reset-kb" style="color: #f87171; border-color: rgba(248, 113, 113, 0.3);" title="Apagar todos os arquivos e recomeçar do zero">
+              🗑️ Limpar Tudo (Do Zero)
+            </button>
+            <button class="btn-secondary" id="btn-view-raw-kb">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              Inspecionar Base
+            </button>
+          </div>
         </div>
 
         <div class="doc-table-wrapper">
@@ -229,6 +237,7 @@
                 <th>Tipo</th>
                 <th>Tamanho</th>
                 <th>Última Modificação</th>
+                <th style="text-align: right;">Ações</th>
               </tr>
             </thead>
             <tbody id="documents-tbody">

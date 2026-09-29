@@ -182,13 +182,23 @@ def executar_varredura(headless: bool = False):
 
             # Aguarda redirecionamento pós-login
             try:
-                page.wait_for_url(lambda u: "login" not in u.lower(), timeout=15000)
+                page.wait_for_url(lambda u: ("login" not in u.lower() or "login_success=1" in u.lower() or "home" in u.lower()), timeout=15000)
                 print("[SUCESSO] Login realizado com êxito!")
+                time.sleep(2)
                 fechar_modais_e_popups(page)
             except Exception:
                 print("[AVISO] Aguardando confirmação de login... se houver verificação na tela, por favor conclua no navegador.")
                 time.sleep(5)
                 fechar_modais_e_popups(page)
+
+            # Se ainda estiver na tela de login, navega diretamente para /home
+            if "login" in page.url.lower():
+                try:
+                    page.goto(f"{BASE_URL}/home", wait_until="domcontentloaded", timeout=15000)
+                    time.sleep(2)
+                    fechar_modais_e_popups(page)
+                except Exception:
+                    pass
 
             # Salva o estado da sessão (cookies/tokens) para evitar logins repetidos
             context.storage_state(path=str(SESSION_FILE))
@@ -200,6 +210,30 @@ def executar_varredura(headless: bool = False):
         # 3. Mapeamento de links e abas internas
         print("\nMapeando abas e rotas internas disponíveis na plataforma...")
         urls_para_visitar.add(page.url)
+
+        # Adiciona rotas oficiais conhecidas da Vinícola Uvva para varredura completa
+        rotas_conhecidas = [
+            f"{BASE_URL}/home",
+            f"{BASE_URL}/equipe",
+            f"{BASE_URL}/retirada",
+            f"{BASE_URL}/deposito",
+            f"{BASE_URL}/cupom",
+            f"{BASE_URL}/programavip",
+            f"{BASE_URL}/salario-vip-semanal",
+            f"{BASE_URL}/checkin",
+            f"{BASE_URL}/perfil",
+            f"{BASE_URL}/regras",
+            f"{BASE_URL}/tarefas",
+            f"{BASE_URL}/convite",
+            f"{BASE_URL}/meu-time",
+            f"{BASE_URL}/historico",
+            f"{BASE_URL}/noticias",
+            f"{BASE_URL}/investimento",
+            f"{BASE_URL}/produtos"
+        ]
+        for rota in rotas_conhecidas:
+            urls_para_visitar.add(rota)
+
         coletar_links_pagina()
 
         # 3. Visita as páginas internas para extração minuciosa
@@ -292,15 +326,15 @@ def integrar_manuais_locais():
         from docx import Document
         
         pdf_files = glob.glob(str(DATA_DIR / "*.pdf"))
-        docx_files = glob.glob(str(DATA_DIR / "*.docx"))
+        docx_files = glob.glob(str(DATA_DIR / "*.docx")) + glob.glob(str(DATA_DIR / "*.doc"))
         txt_files = glob.glob(str(DATA_DIR / "*.txt"))
         
         with open(KB_TEXT_FILE, "a", encoding="utf-8") as f:
             for pdf_file in pdf_files:
                 nome = Path(pdf_file).name
-                print(f" -> Extraindo: {nome}")
+                print(f" -> Extraindo PDF: {nome}")
                 f.write(f"\n\n{'='*50}\n")
-                f.write(f"DOCUMENTO DE SUPORTE OFICIAL: {nome}\n")
+                f.write(f"DOCUMENTO DE SUPORTE OFICIAL (PDF): {nome}\n")
                 f.write(f"{'='*50}\n")
                 reader = PdfReader(pdf_file)
                 for page in reader.pages:
@@ -310,22 +344,35 @@ def integrar_manuais_locais():
                         
             for docx_file in docx_files:
                 nome = Path(docx_file).name
-                print(f" -> Extraindo: {nome}")
+                print(f" -> Extraindo Documento Word: {nome}")
                 f.write(f"\n\n{'='*50}\n")
-                f.write(f"DOCUMENTO DE SUPORTE OFICIAL: {nome}\n")
+                f.write(f"DOCUMENTO DE SUPORTE OFICIAL (WORD): {nome}\n")
                 f.write(f"{'='*50}\n")
-                doc = Document(docx_file)
-                for para in doc.paragraphs:
-                    if para.text.strip():
-                        f.write(para.text + "\n")
+                try:
+                    doc = Document(docx_file)
+                    for para in doc.paragraphs:
+                        if para.text.strip():
+                            f.write(para.text + "\n")
+                    for table in doc.tables:
+                        for row in table.rows:
+                            linha_t = " | ".join([cell.text.strip() for cell in row.cells if cell.text.strip()])
+                            if linha_t:
+                                f.write(linha_t + "\n")
+                except Exception as doc_err:
+                    print(f"Tentativa de leitura Word via docx falhou para {nome}: {doc_err}")
+                    try:
+                        with open(docx_file, "r", encoding="utf-8", errors="ignore") as df:
+                            f.write(df.read() + "\n")
+                    except Exception:
+                        pass
                         
             for txt_file in txt_files:
                 nome = Path(txt_file).name
                 if "base_conhecimento" in nome:
                     continue
-                print(f" -> Extraindo: {nome}")
+                print(f" -> Extraindo TXT: {nome}")
                 f.write(f"\n\n{'='*50}\n")
-                f.write(f"DOCUMENTO DE SUPORTE OFICIAL: {nome}\n")
+                f.write(f"DOCUMENTO DE SUPORTE OFICIAL (TXT): {nome}\n")
                 f.write(f"{'='*50}\n")
                 with open(txt_file, "r", encoding="utf-8") as tf:
                     f.write(tf.read() + "\n")
