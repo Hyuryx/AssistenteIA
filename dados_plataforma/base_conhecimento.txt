@@ -3202,3 +3202,374 @@ Produto
 Notícias
 O meu
 
+
+
+==================================================
+DOCUMENTO DE SUPORTE OFICIAL (PDF): Apresentacao.pdf
+==================================================
+VINÍCOLA
+UVVA
+Apresentação institucional da plataforma
+Produtos, comunidade, Programa VIP, equipe, 
+recompensas e experiência digital em um só 
+ecossistema.
+Juntos brindamos grandes conquistas
+2026
+V I N Í C O L A U V VAA P R E S E N T A Ç Ã O
+Uma experiência criada para conectar pessoas e 
+oportunidades
+A Vinícola Uvva reúne em uma única plataforma recursos para 
+acompanhar produtos, equipe, níveis VIP, recompensas, pontos, 
+notícias e suporte.
+A plataforma foi lançada em 23 de setembro de 2026 e foi estruturada para oferecer 
+uma jornada simples: cadastro, acesso aos produtos, acompanhamento das atividades 
+e participação nos recursos disponíveis.
+A proposta visual combina a identidade do vinho com uma experiência digital 
+acessível em celular e computador.
+Apresentação institucional baseada nos recursos atuais da plataforma Vinícola Uvva.
+2
+V I N Í C O L A U V VAP L A T A F O R M A
+Tudo em um só lugar
+Produtos
+Conheça opções disponíveis e acompanhe 
+suas aquisições.
+Equipe
+Visualize indicações, níveis B/C/D e evolução 
+da rede.
+Programa VIP
+Acompanhe metas, níveis, salários e 
+benefícios configurados.
+Baú do Tesouro
+Complete metas de indicação e desbloqueie 
+recompensas.
+Pontos
+Acumule e acompanhe pontos dentro das 
+regras da plataforma.
+Notícias e suporte
+Receba comunicados e acesse os canais 
+oficiais de atendimento.
+Valores, metas e benefícios seguem as regras vigentes configuradas na plataforma.
+3
+V I N Í C O L A U V VAP R I M E I R O S  P A S S O S
+Como começar
+1
+Cadastre-se
+Crie sua conta e acesse o 
+ambiente da plataforma.2
+Recarregue
+Adicione saldo usando os meios 
+disponíveis na plataforma.3
+Escolha
+Consulte produtos e recursos 
+disponíveis para sua conta.4
+Acompanhe
+Monitore produtos, equipe, VIP, 
+pontos e recompensas.
+A jornada foi desenhada para funcionar principalmente no celular, com navegação simples e atalhos para as áreas mais 
+utilizadas.
+Valores, metas e benefícios seguem as regras vigentes configuradas na plataforma.
+4
+V I N Í C O L A U V VAP R O D U T O S
+Produtos e experiência Vinícola Uvva
+Uma vitrine organizada 
+para facilitar a escolha
+Cada produto pode apresentar informações 
+como valor, período, rendimento previsto e 
+regras específicas definidas pela 
+administração.
+O usuário acompanha as opções diretamente 
+na plataforma, com foco em clareza visual e 
+acesso rápido pelo celular.
+Valores e condições dos produtos podem variar conforme cadastro e configuração administrativa.
+5
+V I N Í C O L A U V VAM I N H A  C A R T E I R A
+Acompanhe seus produtos e resultados
+Produtos ativos
+Veja os produtos ainda dentro do período e as informações de cada aquisição.
+Histórico e detalhes
+Consulte prazo, valores recebidos e informações associadas ao produto.
+Acompanhamento pelo celular
+A área foi desenhada para leitura rápida, com acesso direto pelo menu inferior.
+Rendimentos e valores dependem das regras de cada produto; esta apresentação não constitui promessa de retorno.
+6
+V I N Í C O L A U V VAP R O G R A M A  V I P
+Programa VIP: evolução por metas
+O Programa VIP organiza a evolução do usuário em níveis 
+progressivos. Cada nível pode exigir metas específicas de 
+membros da equipe e volume qualificado.
+No projeto atual, a estrutura contempla VIP 0 até VIP 8, com 
+requisitos e benefícios configurados pela administração.
+A progressão é acompanhada em tempo real 
+dentro da plataforma.
+As metas e valores exibidos no sistema são definidos pela administração e podem ser atualizados.
+7
+V I N Í C O L A U V VAB E N E F Í C I O S  V I P
+Salário semanal e mensal
+Semanal Mensal
+Elegibilidade
+O usuário precisa atender aos requisitos do nível VIP e às regras vigentes para o 
+período.
+Períodos de resgate
+O sistema controla o resgate por período semanal ou mensal para evitar 
+duplicidade.
+Valores configuráveis
+A administração define quais níveis recebem benefício e os respectivos valores.
+Valores, metas e benefícios seguem as regras vigentes configuradas na plataforma.
+8
+V I N Í C O L A U V VAE Q U I P E  E  I N D I C A Ç Õ E S
+Equipe B, C e D
+A área de equipe permite acompanhar indicações 
+e visualizar a estrutura em três níveis: B, C e D.
+B
+Indicações diretas 
+do usuário.
+C
+Segundo nível da 
+rede.
+D
+Terceiro nível da 
+rede.
+O usuário também pode acessar o link e o código de convite e 
+entrar em contato com integrantes da equipe quando houver 
+telefone disponível.
+Valores, metas e benefícios seguem as regras vigentes configuradas na plataforma.
+9
+V I N Í C O L A U V VAC O M I S S Õ E S
+Comissões que podem evoluir com o VIP
+Exemplo de estrutura configurável
+NORMALB
+10%C
+3%D
+1%
+VIP 3B
+12%C
+4%D
+2%
+VIP 4B
+14%C
+6%D
+3%As porcentagens podem ser configuradas 
+conforme o nível VIP. Assim, a plataforma 
+consegue aplicar regras diferentes de comissão 
+para cada faixa de evolução.
+A regra efetiva é sempre aquela definida no painel 
+administrativo e aplicada pelo backend da plataforma.
+Percentuais mostrados acima são exemplos de configuração discutidos no projeto e podem ser alterados.
+10
+V I N Í C O L A U V VAR E C O M P E N S A S
+Baú do T esouro: metas que liberam recompensas
+Cada baú pode ter sua própria meta de indicações, 
+imagem fechada, imagem aberta, bônus e regra de 
+quais níveis contam.
+Meta
+Ex.: quantidade de pessoas 
+qualificadas.
+Níveis
+Pode contar B, B+C ou B+C+D.
+Qualificação
+Pode exigir plano ativo ou 
+depósito aprovado.
+Abertura
+Ao cumprir a meta, o prêmio é 
+creditado e o baú muda para aberto.
+Valores, metas e benefícios seguem as regras vigentes configuradas na plataforma.
+11
+V I N Í C O L A U V VAP O N T O S
+Pontos e benefícios complementares
+PONTOS
+6O sistema de pontos adiciona uma camada extra de progressão 
+dentro da plataforma. O usuário consegue visualizar seu saldo de 
+pontos e acessar a área específica para acompanhar as regras 
+disponíveis.
+Acúmulo
+Pontos podem ser gerados 
+conforme recursos e regras 
+habilitados.
+VIP
+O multiplicador/conversão 
+pode variar de acordo 
+com o nível VIP.
+Resgate
+A área de pontos concentra 
+as opções disponíveis para o 
+usuário.
+Valores, metas e benefícios seguem as regras vigentes configuradas na plataforma.
+12
+V I N Í C O L A U V VAS V I P
+Cartão SVIP: benefícios adicionais
+SVIP
+Cartão de benefícios
+Uma camada opcional de vantagens para 
+usuários que ativarem o recurso.
+Saques
+Possibilidade de condições diferenciadas e processamento prioritário conforme configuração.
+Suporte
+Atendimento prioritário para usuários com SVIP ativo.
+Benefícios extras
+A plataforma pode aplicar vantagens adicionais definidas pela administração.
+A ativação, preço e benefícios do SVIP dependem das configurações vigentes da plataforma.
+13
+V I N Í C O L A U V VAC O M U N I D A D E
+Notícias, comunidade e participação
+A área de notícias foi criada para reunir comunicados 
+da plataforma, imagens, vídeos e publicações da 
+comunidade.
+Conteúdo
+Notícias podem incluir texto, 
+imagem e vídeo.
+Participação
+Selfies e materiais aprovados 
+podem ser utilizados em 
+publicações.
+A proposta é manter o usuário informado sobre novidades e 
+recursos disponíveis dentro do ecossistema Vinícola Uvva.
+Valores, metas e benefícios seguem as regras vigentes configuradas na plataforma.
+14
+V I N Í C O L A U V VAA C E S S O  E  R E L A C I O N A M E N T O
+Suporte, convite e aplicativo
+Suporte oficial
+Canais oficiais configurados pela 
+administração ajudam o usuário a encontrar 
+atendimento e orientações.
+Convide amigos
+Cada usuário pode acessar seu link e código 
+de convite e acompanhar a equipe pela 
+plataforma.
+Aplicativo
+A experiência pode ser instalada como PWA 
+no Android e adicionada à tela de início no 
+iPhone, quando o navegador permitir.
+Acesso rápido, comunicação centralizada e uma experiência pensada para o celular .
+Valores, metas e benefícios seguem as regras vigentes configuradas na plataforma.
+15
+V I N Í C O L A U V VAD E P O I M E N T O S
+A comunidade também faz parte da experiência
+A plataforma possui espaço para notícias, selfies e 
+depoimentos enviados por membros da 
+comunidade, sujeitos à aprovação antes da 
+publicação.
+“Cada história ajuda a mostrar a 
+experiência real de quem participa da 
+comunidade.”
+Depoimentos devem refletir experiências reais e não devem ser 
+apresentados como garantia de resultados financeiros.
+Use somente depoimentos autorizados e compatíveis com a experiência real do usuário.
+16
+Uma plataforma para acompanhar sua jornada
+Produtos • Equipe • VIP • Recompensas • Pontos • Notícias • Suporte
+Vinícola Uvva - juntos brindamos grandes conquistas.
+Informações, valores, metas e benefícios estão sujeitos às regras vigentes exibidas na plataforma. Esta apresentação é institucional e não constitui promessa ou garantia 
+de retorno financeiro.
+
+
+==================================================
+DOCUMENTO DE SUPORTE OFICIAL (WORD): Manual.docx
+==================================================
+MANUAL DE RESPOSTAS
+DO SUPORTE
+Vinícola Uvva
+Respostas organizadas por assunto para consulta rápida durante o atendimento.
+USO INTERNO • SUPORTE AO CLIENTE
+Como usar este manual
+Procure primeiro pelo assunto da dúvida do cliente. Cada item possui um título objetivo e, logo abaixo, uma resposta pronta para copiar e enviar.
+Quando houver mais de uma forma útil de responder ao mesmo tema, as versões foram mantidas como resposta curta ou resposta completa.
+As informações e condições apresentadas neste manual foram organizadas a partir do arquivo original fornecido. Antes de responder, confira se regras, horários, percentuais e campanhas continuam válidos na plataforma.
+Índice por assunto
+1. Atendimento e saudações
+2. Informações institucionais
+3. Planos, ciclos e rendimentos
+4. Depósitos e saldo
+5. Saques e retiradas
+6. Códigos, pontos e recompensas
+7. VIP, SVIP e líderes
+8. Tarefas, notícias e participação
+9. Reuniões e comunicados
+10. Grupos e moderação
+11. Como funciona a plataforma
+12. Situações especiais
+1. Atendimento e saudações
+Mensagens para iniciar, conduzir ou encerrar um contato de suporte.
+Bom dia — boas-vindas
+Bom dia — versão para grupo
+Bom dia — versão curta
+Apresentação — suporte online
+Apresentação — gerente online
+Oferecer ajuda
+Ficar disponível para ajudar
+Pedir informações por texto
+2. Informações institucionais
+Respostas sobre identidade, presença, início e proposta da plataforma.
+Quem somos / onde fica a referência no Brasil
+Por quanto tempo a plataforma pretende atuar no Brasil?
+Transparência com investidores
+Planejamento atual e duração do projeto
+Início oficial da plataforma
+A Vinícola Uvva foi oficialmente lançada no dia 23 de setembro de 2026.
+Apresentação oficial do projeto
+3. Planos, ciclos e rendimentos
+Respostas relacionadas à ativação, duração dos planos e rendimentos.
+Plano ativado com sucesso
+Plano inicial para líder
+Cliente acha o ciclo de 60 dias longo
+4. Depósitos e saldo
+Orientações relacionadas a depósito, PIX e limitações temporárias.
+Como fazer um depósito
+Muitos depósitos em pouco tempo
+5. Saques e retiradas
+Mensagens sobre regras de saque e confirmações após a retirada.
+Saque precisa esperar o fim do ciclo?
+Como funcionam os saques — versão completa
+Parabenizar pela retirada — curta
+Parabenizar pela retirada — completa
+Pedir para compartilhar a retirada no grupo
+6. Códigos, pontos e recompensas
+Respostas sobre resgate de código e pontos recebidos em compras.
+Quando o código será liberado?
+Como funciona o Resgate de Código?
+Como funcionam os pontos recebidos nas compras?
+7. VIP, SVIP e líderes
+Respostas para benefícios, salários VIP, líderes e desenvolvimento de equipe.
+Vocês oferecem patrocínio para líderes?
+Líderes de níveis inferiores podem participar?
+Como funciona o Cartão SVIP?
+Salário VIP — qual nível será considerado?
+Quando atingir o VIP 4
+8. Tarefas, notícias e participação
+Mensagens sobre feed de notícias, tarefas e participação em campanhas.
+Orientar a conferir a aba Notícias
+Por que acompanhar o feed de Notícias?
+As tarefas são obrigatórias?
+9. Reuniões e comunicados
+Respostas para datas ainda não definidas e avisos relacionados a reuniões.
+Data da reunião ainda não definida
+10. Grupos e moderação
+Mensagens para manter os grupos organizados e explicar fechamentos temporários.
+Não divulgar outros projetos no grupo
+Acesso ao Grupo WhatsApp
+O Grupo WhatsApp está disponível somente para clientes com plano ativo.
+Por que o grupo ficou fechado?
+Aviso sobre possível fechamento temporário do grupo
+11. Como funciona a plataforma
+Explicação completa, organizada em etapas, para clientes que perguntarem como usar a plataforma.
+Visão geral do funcionamento
+12. Situações especiais
+Respostas para dúvidas específicas que não se encaixam nas categorias anteriores.
+Cliente pergunta sobre vínculo com a TFE
+
+Entendo sua dúvida. A Vinícola Uvva possui sistema de indicação e benefícios de equipe, mas **indicar pessoas não é uma obrigação para utilizar a plataforma**.
+Os usuários podem participar normalmente, adquirir os produtos disponíveis e acompanhar as regras e benefícios diretamente pelo sistema. Nosso objetivo é manter todas as informações de funcionamento de forma clara e transparente para que cada pessoa possa analisar antes de participar.
+
+Os códigos de resgate são limitados. 🎁
+Todos os dias é liberada uma quantidade definida de códigos e cada código também possui um limite de resgates.
+Quando esse limite diário ou o limite daquele código é atingido, ele deixa de ficar disponível. Por isso, é importante ficar atento e tentar resgatar assim que os códigos forem liberados.
+
+Quem não conseguiu pegar o código ontem, não desanime. 🎁🍇
+Hoje tem uma nova oportunidade, então fiquem atentos ao grupo e à plataforma para tentar novamente.
+O importante é continuar acompanhando, porque todos terão novas chances de conseguir resgatar. ✨
+
+O valor do código de resgate não é fixo. 🎁
+Cada código é gerado com um valor **aleatório**, então um resgate pode liberar um valor diferente do outro. O usuário só consegue saber quanto recebeu depois de inserir e resgatar o código na plataforma.
+Ou seja: **cada código pode ter uma recompensa diferente.**
+
+Parabéns pela sua retirada! 🎉💸 Que venham muitas outras conquistas pela frente. 🍇
+FIM DO MANUAL
