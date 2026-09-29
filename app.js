@@ -235,26 +235,55 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ==================== ESTATÍSTICAS E STATUS ====================
+  // ==================== ESTATÍSTICAS E STATUS DINÂMICO ====================
+  const badgeApiStatus = document.getElementById('badge-api-status');
+  const badgeKbStatus = document.getElementById('badge-kb-status');
+
   async function atualizarStats() {
     try {
       const res = await fetch(`${API_BASE}/api/stats`);
-      if (!res.ok) return;
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
 
-      if (headerKbBadge) {
-        const pages = data.total_pages || 50;
-        const size = data.kb_size_kb || 132;
-        headerKbBadge.textContent = `Base: ${pages} Páginas (${size} KB)`;
+      // 1. Atualiza Badge da API Key (Verde = Ativa, Laranja = Esgotada, Vermelho = Offline)
+      if (badgeApiStatus) {
+        const apiKeyInfo = data.api_key || {};
+        const color = apiKeyInfo.color || (data.has_api_key ? 'green' : 'red');
+        const label = apiKeyInfo.label || (data.has_api_key ? 'Ativa' : 'Offline');
+
+        badgeApiStatus.textContent = label;
+        badgeApiStatus.className = `badge-pill badge-status-${color}`;
+        badgeApiStatus.title = apiKeyInfo.desc || `Status: ${label}`;
+      }
+
+      // 2. Atualiza Badge da Base de Dados (Verde = Ativa, Laranja = Em Manutenção, Vermelho = Offline)
+      if (badgeKbStatus) {
+        const kbInfo = data.knowledge_base || {};
+        const color = kbInfo.color || (data.total_pages > 0 ? 'green' : 'red');
+        const label = kbInfo.label || (data.total_pages > 0 ? `Ativa (${data.total_pages} Páginas)` : 'Offline');
+
+        badgeKbStatus.textContent = label;
+        badgeKbStatus.className = `badge-pill badge-status-${color}`;
+        badgeKbStatus.title = kbInfo.desc || `Status: ${label}`;
       }
     } catch (err) {
-      if (headerKbBadge) {
-        headerKbBadge.textContent = 'Base: 50 Páginas Ativas';
+      // Se não conseguir conectar com a API ou se estiver offline
+      if (badgeApiStatus) {
+        badgeApiStatus.textContent = 'Offline';
+        badgeApiStatus.className = 'badge-pill badge-status-red';
+        badgeApiStatus.title = 'Servidor ou API inacessível';
+      }
+      if (badgeKbStatus) {
+        badgeKbStatus.textContent = 'Offline';
+        badgeKbStatus.className = 'badge-pill badge-status-red';
+        badgeKbStatus.title = 'Base de dados inacessível';
       }
     }
   }
 
+  // Atualiza imediatamente e verifica a cada 30 segundos
   atualizarStats();
+  setInterval(atualizarStats, 30000);
 });
 
 // ==================== TOAST FEEDBACK ====================

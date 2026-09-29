@@ -89,6 +89,27 @@ async def chat_endpoint(req: ChatRequest):
 
 @app.get("/api/stats")
 async def stats_endpoint():
+    import atendente
+    api_key_val = os.getenv("GEMINI_API_KEY", "").strip()
+    
+    # 1. Status da API Key (Ativa [verde], Esgotada [laranja], Offline [vermelho])
+    if not api_key_val:
+        api_status = "offline"
+        api_label = "Offline"
+        api_color = "red"
+        api_desc = "Sem chave configurada no servidor"
+    elif getattr(atendente, "ULTIMO_ERRO_QUOTA", False):
+        api_status = "exhausted"
+        api_label = "Esgotada"
+        api_color = "orange"
+        api_desc = "Limite de requisições excedido temporariamente"
+    else:
+        api_status = "active"
+        api_label = "Ativa"
+        api_color = "green"
+        api_desc = "Conectada ao Gemini 2.5 Flash"
+
+    # 2. Status da Base de Dados (Ativa [verde], Em Manutenção [laranja], Offline [vermelho])
     total_docs = len(list(DATA_DIR.glob("*.*")))
     kb_size = KB_TEXT_FILE.stat().st_size if KB_TEXT_FILE.exists() else 0
     kb_lines = 0
@@ -108,14 +129,44 @@ async def stats_endpoint():
         except Exception:
             pass
 
+    if sync_state.get("is_running"):
+        kb_status = "maintenance"
+        kb_label = "Em Manutenção"
+        kb_color = "orange"
+        kb_desc = "Varrendo novas informações..."
+    elif not KB_TEXT_FILE.exists() or kb_size == 0:
+        kb_status = "offline"
+        kb_label = "Offline"
+        kb_color = "red"
+        kb_desc = "Base de dados vazia ou não encontrada"
+    else:
+        kb_status = "active"
+        kb_label = f"Ativa ({total_pages} Páginas)" if total_pages > 0 else "Ativa"
+        kb_color = "green"
+        kb_desc = f"{round(kb_size / 1024, 1)} KB • {kb_lines} linhas"
+
     return {
+        "api_key": {
+            "status": api_status,
+            "label": api_label,
+            "color": api_color,
+            "desc": api_desc
+        },
+        "knowledge_base": {
+            "status": kb_status,
+            "label": kb_label,
+            "color": kb_color,
+            "desc": kb_desc,
+            "total_documents": total_docs,
+            "kb_size_kb": round(kb_size / 1024, 1),
+            "kb_lines": kb_lines,
+            "total_pages": total_pages
+        },
         "total_documents": total_docs,
         "kb_size_kb": round(kb_size / 1024, 1),
         "kb_lines": kb_lines,
         "total_pages": total_pages,
-        "has_api_key": bool(os.getenv("GEMINI_API_KEY", "").strip()),
-        "has_credentials": bool(os.getenv("TELEFONE_LOGIN", "").strip() and os.getenv("SENHA_LOGIN", "").strip()),
-        "sync_state": sync_state
+        "has_api_key": bool(api_key_val)
     }
 
 @app.get("/api/documents")

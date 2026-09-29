@@ -31,9 +31,19 @@
       </div>
 
       <div class="header-badges">
-        <div class="badge-pill status-online" id="status-pill">● Suporte Online</div>
-        <div class="badge-pill badge-purple" id="header-kb-badge">Base: Carregando...</div>
-        <button class="btn-secondary" id="btn-open-kb-modal" style="padding: 0.4rem 0.85rem; font-size: 0.8rem; display: flex; align-items: center; gap: 0.4rem;">
+        <!-- Indicador 1: API Key -->
+        <div class="status-indicator-box">
+          <div class="status-label">API Key</div>
+          <div class="badge-pill badge-status-green" id="badge-api-status" title="Status da chave da API Gemini">Verificando...</div>
+        </div>
+
+        <!-- Indicador 2: Base de Dados -->
+        <div class="status-indicator-box">
+          <div class="status-label">Base de Dados</div>
+          <div class="badge-pill badge-status-green" id="badge-kb-status" title="Status da base oficial de conhecimento">Carregando...</div>
+        </div>
+
+        <button class="btn-secondary" id="btn-open-kb-modal" style="padding: 0.45rem 0.85rem; font-size: 0.8rem; display: flex; align-items: center; gap: 0.4rem; align-self: flex-end;">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
           Consultar Base
         </button>

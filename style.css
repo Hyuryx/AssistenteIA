@@ -162,13 +162,28 @@ body {
   color: var(--text-muted);
 }
 
-.badge-pill.status-online {
-  background: rgba(16, 185, 129, 0.1);
-  border-color: rgba(16, 185, 129, 0.3);
+.status-indicator-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.status-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-dim);
+  padding-left: 0.25rem;
+}
+
+.badge-pill.badge-status-green {
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.35);
   color: #34d399;
 }
 
-.badge-pill.status-online::before {
+.badge-pill.badge-status-green::before {
   content: '';
   width: 7px;
   height: 7px;
@@ -177,10 +192,34 @@ body {
   box-shadow: 0 0 8px #10b981;
 }
 
-.badge-pill.badge-purple {
-  background: rgba(147, 51, 234, 0.12);
-  border-color: rgba(147, 51, 234, 0.3);
-  color: var(--accent-purple-light);
+.badge-pill.badge-status-orange {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.35);
+  color: #fbbf24;
+}
+
+.badge-pill.badge-status-orange::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #f59e0b;
+  box-shadow: 0 0 8px #f59e0b;
+}
+
+.badge-pill.badge-status-red {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.35);
+  color: #f87171;
+}
+
+.badge-pill.badge-status-red::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ef4444;
+  box-shadow: 0 0 8px #ef4444;
 }
 
 /* Nav Tabs */
