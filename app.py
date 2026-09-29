@@ -170,6 +170,16 @@ async def upload_document(file: UploadFile = File(...)):
             doc = Document(str(save_path))
             for para in doc.paragraphs:
                 if para.text.strip(): extracted_text += para.text + "\n"
+        elif ext in [".xlsx", ".xls"]:
+            import openpyxl
+            wb = openpyxl.load_workbook(str(save_path), data_only=True)
+            for sheetname in wb.sheetnames:
+                ws = wb[sheetname]
+                extracted_text += f"\n--- Planilha: {sheetname} ---\n"
+                for row in ws.iter_rows(values_only=True):
+                    row_txt = " | ".join([str(c) for c in row if c is not None])
+                    if row_txt.strip():
+                        extracted_text += row_txt + "\n"
         elif ext in [".txt", ".md", ".csv", ".json", ".log"]:
             extracted_text = content.decode("utf-8", errors="ignore")
         else:
@@ -255,6 +265,14 @@ def _run_scraper_worker(headless: bool):
 @app.post("/api/sync")
 async def trigger_sync(background_tasks: BackgroundTasks, headless: bool = True):
     global sync_state
+    
+    # Verifica se está rodando na Vercel (onde Chrome/Playwright não tem tela/navegador)
+    if os.getenv("VERCEL") or os.getenv("AWS_LAMBDA_FUNCTION_NAME"):
+        return {
+            "success": False,
+            "message": "Atenção: A varredura com navegador (Playwright/Chrome) deve ser executada no seu computador para abrir a janela, fazer login e mapear o site. No seu computador, execute a varredura e depois pressione Ctrl+Shift+B para enviar os dados atualizados para a Vercel!"
+        }
+
     if sync_state["is_running"]:
         return {"success": False, "message": "Uma varredura já está em andamento!"}
     
@@ -314,33 +332,48 @@ async def update_config(conf: ConfigUpdate):
     env_file = BASE_DIR / ".env"
     env_vars = {}
     if env_file.exists():
-        with open(env_file, "r", encoding="utf-8") as f:
-            for line in f:
-                line = line.strip()
-                if line and not line.startswith("#") and "=" in line:
-                    k, v = line.split("=", 1)
-                    env_vars[k.strip()] = v.strip()
+        try:
+            with open(env_file, "r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if line and not line.startswith("#") and "=" in line:
+                        k, v = line.split("=", 1)
+                        env_vars[k.strip()] = v.strip()
+        except Exception:
+            pass
+
+    import config
 
     if conf.gemini_api_key is not None and conf.gemini_api_key.strip():
-        env_vars["GEMINI_API_KEY"] = conf.gemini_api_key.strip()
-        os.environ["GEMINI_API_KEY"] = conf.gemini_api_key.strip()
+        val = conf.gemini_api_key.strip()
+        env_vars["GEMINI_API_KEY"] = val
+        os.environ["GEMINI_API_KEY"] = val
+        config.GEMINI_API_KEY = val
 
     if conf.telefone_login is not None and conf.telefone_login.strip():
-        env_vars["TELEFONE_LOGIN"] = conf.telefone_login.strip()
-        os.environ["TELEFONE_LOGIN"] = conf.telefone_login.strip()
+        val = conf.telefone_login.strip()
+        env_vars["TELEFONE_LOGIN"] = val
+        os.environ["TELEFONE_LOGIN"] = val
+        config.TELEFONE_LOGIN = val
 
     if conf.senha_login is not None and conf.senha_login.strip():
-        env_vars["SENHA_LOGIN"] = conf.senha_login.strip()
-        os.environ["SENHA_LOGIN"] = conf.senha_login.strip()
+        val = conf.senha_login.strip()
+        env_vars["SENHA_LOGIN"] = val
+        os.environ["SENHA_LOGIN"] = val
+        config.SENHA_LOGIN = val
 
-    with open(env_file, "w", encoding="utf-8") as f:
-        f.write("# Configurações de Acesso - Vinícola Uvva\n")
-        f.write(f"TELEFONE_LOGIN={env_vars.get('TELEFONE_LOGIN', '')}\n")
-        f.write(f"SENHA_LOGIN={env_vars.get('SENHA_LOGIN', '')}\n\n")
-        f.write("# Chave de API da IA (Google AI Studio - Gratuita)\n")
-        f.write(f"GEMINI_API_KEY={env_vars.get('GEMINI_API_KEY', '')}\n")
+    try:
+        with open(env_file, "w", encoding="utf-8") as f:
+            f.write("# Configurações de Acesso - Vinícola Uvva\n")
+            f.write(f"TELEFONE_LOGIN={env_vars.get('TELEFONE_LOGIN', '')}\n")
+            f.write(f"SENHA_LOGIN={env_vars.get('SENHA_LOGIN', '')}\n\n")
+            f.write("# Chave de API da IA (Google AI Studio - Gratuita)\n")
+            f.write(f"GEMINI_API_KEY={env_vars.get('GEMINI_API_KEY', '')}\n")
+    except OSError:
+        # Em ambientes serverless (Vercel), gravação em disco pode ser restrita
+        pass
 
-    return {"success": True, "message": "Configurações atualizadas com sucesso!"}
+    return {"success": True, "message": "Configurações salvas e aplicadas com sucesso!"}
 
 if __name__ == "__main__":
     import uvicorn

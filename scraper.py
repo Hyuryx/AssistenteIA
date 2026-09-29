@@ -44,6 +44,24 @@ def extrair_tabelas_e_cartoes(soup: BeautifulSoup) -> list:
             
     return dados_estruturados
 
+def fechar_modais_e_popups(page):
+    """Fecha anúncios, caps, avisos promocionais e modais que cobrem a tela."""
+    seletores = [
+        "button[aria-label='Close']", ".modal-close", ".btn-close",
+        ".close", "#closeModal", "button:has-text('Fechar')",
+        "button:has-text('Entendi')", "button:has-text('Confirmar')",
+        "button:has-text('OK')", ".popup-close", ".van-popup__close-icon",
+        ".layui-layer-close", ".alert-close", ".dialog-close"
+    ]
+    for sel in seletores:
+        try:
+            elem = page.locator(sel).first
+            if elem.is_visible(timeout=400):
+                elem.click(timeout=1000)
+                time.sleep(0.5)
+        except Exception:
+            pass
+
 def executar_varredura(headless: bool = False):
     """
     Inicia o navegador, realiza o login (ou reutiliza sessão) e
@@ -142,10 +160,13 @@ def executar_varredura(headless: bool = False):
         print(f"\nAcessando {BASE_URL} para iniciar sessão...")
         page.goto(BASE_URL, wait_until="domcontentloaded", timeout=30000)
         time.sleep(2)
+        fechar_modais_e_popups(page)
 
         if "login" in page.url.lower():
             print("Sessão não autenticada. Efetuando login...")
             page.goto(LOGIN_URL, wait_until="domcontentloaded", timeout=30000)
+            time.sleep(1)
+            fechar_modais_e_popups(page)
             
             # Preenche formulário de login
             page.wait_for_selector("#identificador", timeout=10000)
@@ -163,15 +184,18 @@ def executar_varredura(headless: bool = False):
             try:
                 page.wait_for_url(lambda u: "login" not in u.lower(), timeout=15000)
                 print("[SUCESSO] Login realizado com êxito!")
+                fechar_modais_e_popups(page)
             except Exception:
                 print("[AVISO] Aguardando confirmação de login... se houver verificação na tela, por favor conclua no navegador.")
                 time.sleep(5)
+                fechar_modais_e_popups(page)
 
             # Salva o estado da sessão (cookies/tokens) para evitar logins repetidos
             context.storage_state(path=str(SESSION_FILE))
             print(f"Estado de login salvo em: {SESSION_FILE.name}")
         else:
             print("[INFO] Sessão ativa reconhecida. Não precisou relogar!")
+            fechar_modais_e_popups(page)
 
         # 3. Mapeamento de links e abas internas
         print("\nMapeando abas e rotas internas disponíveis na plataforma...")
@@ -189,7 +213,9 @@ def executar_varredura(headless: bool = False):
 
             try:
                 page.goto(url_atual, wait_until="domcontentloaded", timeout=20000)
-                time.sleep(2)  # Permite scripts assíncronos carregarem tabelas/valores
+                time.sleep(1)
+                fechar_modais_e_popups(page)
+                time.sleep(1)  # Permite scripts assíncronos carregarem tabelas/valores
 
                 # Clicar em eventuais abas secundárias dentro da página (subtabs como VIP 1, VIP 2, etc.)
                 sub_tabs = page.locator(".tab, [role='tab'], .nav-link, button.tab-btn").all()
@@ -303,9 +329,30 @@ def integrar_manuais_locais():
                 f.write(f"{'='*50}\n")
                 with open(txt_file, "r", encoding="utf-8") as tf:
                     f.write(tf.read() + "\n")
+
+            # Processa planilhas Excel (XLSX, XLS)
+            excel_files = glob.glob(str(DATA_DIR / "*.xlsx")) + glob.glob(str(DATA_DIR / "*.xls"))
+            for excel_file in excel_files:
+                nome = Path(excel_file).name
+                print(f" -> Extraindo Planilha Excel: {nome}")
+                f.write(f"\n\n{'='*50}\n")
+                f.write(f"DOCUMENTO DE SUPORTE OFICIAL (PLANILHA EXCEL): {nome}\n")
+                f.write(f"{'='*50}\n")
+                try:
+                    import openpyxl
+                    wb = openpyxl.load_workbook(excel_file, data_only=True)
+                    for sheetname in wb.sheetnames:
+                        sheet = wb[sheetname]
+                        f.write(f"\n--- Aba: {sheetname} ---\n")
+                        for row in sheet.iter_rows(values_only=True):
+                            linha_texto = " | ".join([str(celula) for celula in row if celula is not None])
+                            if linha_texto.strip():
+                                f.write(linha_texto + "\n")
+                except Exception as ex_err:
+                    print(f"Erro ao extrair Excel {nome}: {ex_err}")
                         
-        if pdf_files or docx_files or txt_files:
-            print("[SUCESSO] Manuais locais integrados à inteligência do robô!")
+        if pdf_files or docx_files or txt_files or excel_files:
+            print("[SUCESSO] Manuais e planilhas locais integrados à inteligência do robô!")
     except Exception as e:
         print(f"[AVISO] Não foi possível processar manuais locais: {e}")
 

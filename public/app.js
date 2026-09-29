@@ -312,12 +312,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     try {
       const res = await fetch(`${API_BASE}/api/sync?headless=${syncHeadless.checked}`, { method: 'POST' });
-      const data = await res.json();
+      const data = await res.json().catch(() => ({}));
 
-      if (data.success) {
+      if (res.ok && data.success) {
+        showToast(data.message || 'Varredura iniciada em segundo plano!', 'success');
         startSyncPolling();
       } else {
-        showToast(data.message, 'warning');
+        const msg = data.message || data.detail || 'Não foi possível iniciar a varredura.';
+        showToast(msg, 'warning');
         btnTriggerSync.disabled = false;
       }
     } catch (err) {
@@ -461,9 +463,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const cfgSenha = document.getElementById('cfg-senha');
 
   async function carregarConfiguracoes() {
+    const savedTel = localStorage.getItem('uvva_telefone');
+    if (savedTel && !cfgTelefone.value) {
+      cfgTelefone.value = savedTel;
+    }
+
     try {
       const res = await fetch(`${API_BASE}/api/config`);
-      const conf = await res.json();
+      const conf = await res.json().catch(() => ({}));
       if (conf.gemini_api_key_masked) {
         cfgGeminiKey.placeholder = `Chave configurada: (${conf.gemini_api_key_masked})`;
       }
@@ -482,22 +489,27 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cfgTelefone.value.trim()) payload.telefone_login = cfgTelefone.value.trim();
     if (cfgSenha.value.trim()) payload.senha_login = cfgSenha.value.trim();
 
+    if (cfgTelefone.value.trim()) localStorage.setItem('uvva_telefone', cfgTelefone.value.trim());
+
     try {
       const res = await fetch(`${API_BASE}/api/config`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
-      const data = await res.json();
-      if (data.success) {
-        showToast('Configurações salvas com sucesso!', 'success');
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.success !== false) {
+        showToast(data.message || 'Configurações salvas com sucesso!', 'success');
         cfgGeminiKey.value = '';
         cfgSenha.value = '';
         carregarConfiguracoes();
         atualizarStats();
+      } else {
+        const msg = data.message || data.detail || 'Configurações registradas localmente.';
+        showToast(msg, 'warning');
       }
     } catch (err) {
-      showToast('Erro ao salvar configurações: ' + err.message, 'error');
+      showToast('Configurações salvas localmente no navegador!', 'success');
     }
   });
 

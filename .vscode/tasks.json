@@ -26,6 +26,17 @@
         "clear": false
       },
       "problemMatcher": []
+    },
+    {
+      "label": "Iniciar Servidor Web Local (Robô & Varredura)",
+      "type": "shell",
+      "command": "${workspaceFolder}\\venv\\Scripts\\python.exe ${workspaceFolder}\\app.py",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "focus": false
+      },
+      "problemMatcher": []
     }
   ]
 }
