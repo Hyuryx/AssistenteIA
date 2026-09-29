@@ -90,7 +90,13 @@ async def chat_endpoint(req: ChatRequest):
 @app.get("/api/stats")
 async def stats_endpoint():
     import atendente
-    api_key_val = os.getenv("GEMINI_API_KEY", "").strip()
+    api_key_val = (
+        os.getenv("GEMINI_API_KEY")
+        or os.getenv("GOOGLE_API_KEY")
+        or os.getenv("GEMINI_KEY")
+        or os.getenv("API_KEY")
+        or ""
+    ).strip()
     
     # 1. Status da API Key (Ativa [verde], Esgotada [laranja], Offline [vermelho])
     if not api_key_val:

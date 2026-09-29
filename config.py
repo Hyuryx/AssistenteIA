@@ -28,7 +28,13 @@ LOGIN_URL = f"{BASE_URL}/login"
 # Credenciais
 TELEFONE_LOGIN = os.getenv("TELEFONE_LOGIN", "").strip()
 SENHA_LOGIN = os.getenv("SENHA_LOGIN", "").strip()
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "").strip()
+GEMINI_API_KEY = (
+    os.getenv("GEMINI_API_KEY")
+    or os.getenv("GOOGLE_API_KEY")
+    or os.getenv("GEMINI_KEY")
+    or os.getenv("API_KEY")
+    or ""
+).strip()
 
 # Diretórios e Arquivos de Armazenamento
 DATA_DIR = BASE_DIR / "dados_plataforma"
