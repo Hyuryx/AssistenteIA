@@ -126,13 +126,57 @@ body {
   background: linear-gradient(to bottom right, rgba(255,255,255,0.3), transparent);
 }
 
+.logo-icon svg {
+  animation: swing-grape 4s ease-in-out infinite;
+  transform-origin: center top;
+}
+
+.logo-icon::before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  animation: drop-grape 4s ease-in infinite;
+  z-index: 10;
+}
+
+@keyframes swing-grape {
+  0%, 100% { transform: rotate(-8deg); }
+  50% { transform: rotate(8deg); }
+}
+
+@keyframes drop-grape {
+  0%, 30% {
+    opacity: 0;
+    transform: translate(-50%, -5px) scale(0.5);
+  }
+  40% {
+    opacity: 1;
+    transform: translate(-50%, 2px) scale(1);
+  }
+  60% {
+    opacity: 0;
+    transform: translate(-50%, 25px) scale(0.3);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .brand-info h1 {
   font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+  background: linear-gradient(to right, #ffffff 20%, #c084fc 40%, #ffffff 60%);
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: shimmer-text 5s linear infinite;
 }
 
 .brand-info p {
@@ -141,6 +185,21 @@ body {
   display: flex;
   align-items: center;
   gap: 0.4rem;
+}
+
+.shimmer-sub {
+  background: linear-gradient(to right, var(--text-muted) 20%, #ffffff 40%, var(--text-muted) 60%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer-text 5s linear infinite, scale-pulse 2s infinite alternate ease-in-out;
+  display: inline-block;
+}
+
+@keyframes shimmer-text {
+  0% { background-position: -200% center; }
+  15% { background-position: 200% center; }
+  100% { background-position: 200% center; }
 }
 
 .header-badges {
@@ -969,4 +1028,20 @@ body {
 
 .btn-attendant.active .attendant-role {
   color: #c084fc;
+}
+
+/* Efeito Pulsante Suave para Textos (ex: Rodapé) */
+.pulse-text {
+  font-weight: 500;
+  display: inline-block;
+  animation: scale-pulse 2s infinite alternate ease-in-out;
+}
+
+@keyframes scale-pulse {
+  0% {
+    transform: scale(0.97);
+  }
+  100% {
+    transform: scale(1.02);
+  }
 }
