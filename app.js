@@ -315,6 +315,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ==================== FRASES RÁPIDAS ====================
+  const btnCopyQuickPhrases = document.querySelectorAll('.btn-copy-quick-phrase');
+  btnCopyQuickPhrases.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const card = e.target.closest('.phrase-card');
+      if (card) {
+        const text = card.querySelector('.phrase-text').textContent;
+        navigator.clipboard.writeText(text).then(() => {
+          const originalHTML = btn.innerHTML;
+          btn.innerHTML = '✅ Copiado!';
+          btn.style.color = 'var(--accent-green)';
+          btn.style.borderColor = 'var(--accent-green)';
+          showToast('Frase copiada para a área de transferência!', 'success');
+          setTimeout(() => {
+            btn.innerHTML = originalHTML;
+            btn.style.color = '';
+            btn.style.borderColor = '';
+          }, 2000);
+        });
+      }
+    });
+  });
+
   // ==================== ESTATÍSTICAS E STATUS DINÂMICO ====================
   const badgeApiStatus = document.getElementById('badge-api-status');
   const badgeKbStatus = document.getElementById('badge-kb-status');
