@@ -26,7 +26,7 @@ def monitorar_api_bg():
             try:
                 res = requests.get(f"https://generativelanguage.googleapis.com/v1beta/models?key={api_key}", timeout=5)
                 if res.status_code == 200:
-                    api_health_state.update({"status": "active", "label": "Ativa", "color": "green", "desc": "Conectada ao Gemini 1.5 Flash (Online)"})
+                    api_health_state.update({"status": "active", "label": "Ativa", "color": "green", "desc": "Conectada ao Gemini 3.8 Flash (Online)"})
                 elif res.status_code == 429:
                     api_health_state.update({"status": "exhausted", "label": "Esgotada", "color": "orange", "desc": "Limite de requisições excedido temporariamente"})
                 elif res.status_code in [400, 403]:
