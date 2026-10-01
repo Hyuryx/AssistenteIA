@@ -127,16 +127,27 @@ def salvar_metricas_ia(metricas: dict):
 
 @app.post("/api/chat")
 @app.post("/chat")
-async def chat_endpoint(req: ChatRequest):
-    question = req.question.strip()
-    attendant = (req.attendant or "Heitor").strip()
-    if not question:
-        raise HTTPException(status_code=400, detail="A pergunta não pode estar vazia.")
+async def chat_endpoint(
+    question: Optional[str] = Form(""),
+    attendant: Optional[str] = Form("Heitor"),
+    files: List[UploadFile] = File(default=[])
+):
+    question = (question or "").strip()
+    attendant = (attendant or "Heitor").strip()
+    
+    arquivos_data = []
+    for f in files:
+        if f.filename:
+            content = await f.read()
+            arquivos_data.append({"filename": f.filename, "content_type": f.content_type, "data": content})
+
+    if not question and not arquivos_data:
+        raise HTTPException(status_code=400, detail="A pergunta não pode estar vazia sem anexos.")
     
     try:
         # Chama a função oficial do atendente
         loop = asyncio.get_event_loop()
-        answer = await loop.run_in_executor(None, responder_duvida, question, attendant)
+        answer = await loop.run_in_executor(None, responder_duvida, question, attendant, arquivos_data)
         
         # Incrementa contador de aprendizado da IA
         m = carregar_metricas_ia()

@@ -115,14 +115,31 @@
         </div>
 
         <div class="textarea-wrapper">
+          <div id="image-preview-container" style="display: flex; gap: 8px; padding: 8px 12px 0; flex-wrap: wrap;"></div>
           <textarea 
             class="custom-textarea" 
             id="input-question" 
             placeholder="Cole aqui a mensagem ou pergunta que o cliente enviou no WhatsApp...&#10;&#10;Ex: 'Olá, qual o valor mínimo para sacar via pix e quanto tempo demora?'"
           ></textarea>
-          <div class="textarea-footer">
-            <span id="char-counter">0 caracteres</span>
-            <span>Dica: Pressione Ctrl + Enter para enviar</span>
+          <div class="textarea-footer" style="display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end; width: 100%;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+              <span id="char-counter">0 caracteres</span>
+              <span>Dica: Pressione Ctrl + Enter para enviar</span>
+            </div>
+            <div style="display: flex; gap: 8px; align-items: center;">
+              <button type="button" class="btn-secondary" id="btn-record-audio" title="Gravar Áudio" style="padding: 0.5rem; display: flex; align-items: center; justify-content: center; border-radius: 50%; aspect-ratio: 1/1;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+              </button>
+              <div id="audio-visualizer" style="display: none; gap: 3px; align-items: center; justify-content: center; height: 32px; padding: 0 12px; cursor: pointer; background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.4); border-radius: 16px;" title="Parar Gravação">
+                <div class="wave-bar" style="width: 4px; height: 4px; background: #ef4444; border-radius: 2px; transition: height 0.05s ease;"></div>
+                <div class="wave-bar" style="width: 4px; height: 4px; background: #ef4444; border-radius: 2px; transition: height 0.05s ease;"></div>
+                <div class="wave-bar" style="width: 4px; height: 4px; background: #ef4444; border-radius: 2px; transition: height 0.05s ease;"></div>
+                <div class="wave-bar" style="width: 4px; height: 4px; background: #ef4444; border-radius: 2px; transition: height 0.05s ease;"></div>
+                <div class="wave-bar" style="width: 4px; height: 4px; background: #ef4444; border-radius: 2px; transition: height 0.05s ease;"></div>
+              </div>
+              <input type="file" id="file-upload" accept="image/*,audio/*" style="display: none;" multiple>
+              <span id="file-count" style="display: none;"></span>
+            </div>
           </div>
         </div>
 

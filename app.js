@@ -103,6 +103,8 @@ document.addEventListener('DOMContentLoaded', () => {
     btnClear.addEventListener('click', () => {
       inputQuestion.value = '';
       if (charCounter) charCounter.textContent = '0 caracteres';
+      accumulatedFiles = [];
+      if (typeof updateImagePreviews === 'function') updateImagePreviews();
       inputQuestion.focus();
     });
   }
@@ -131,10 +133,251 @@ document.addEventListener('DOMContentLoaded', () => {
     btnSubmit.addEventListener('click', enviarPergunta);
   }
 
+  const fileUpload = document.getElementById('file-upload');
+  const fileCount = document.getElementById('file-count');
+
+  if (fileUpload && fileCount) {
+    fileUpload.addEventListener('change', () => {
+      const count = fileUpload.files.length;
+      fileCount.textContent = count > 0 ? `${count} anexo(s)` : '';
+    });
+  }
+
+  // ==================== GRAVAÇÃO DE ÁUDIO (Speech to Text) ====================
+  const btnRecordAudio = document.getElementById('btn-record-audio');
+  const audioVisualizer = document.getElementById('audio-visualizer');
+  const waveBars = document.querySelectorAll('.wave-bar');
+  let isRecording = false;
+  let recognition = null;
+  let audioContext = null;
+  let analyser = null;
+  let microphone = null;
+  let animationFrameId = null;
+  let stream = null;
+
+  if (btnRecordAudio) {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (SpeechRecognition) {
+      recognition = new SpeechRecognition();
+      recognition.lang = 'pt-BR';
+      recognition.interimResults = false;
+      recognition.continuous = true; // Mantém gravando até pararmos
+
+      recognition.onstart = async () => {
+        isRecording = true;
+        btnRecordAudio.style.display = 'none';
+        if (audioVisualizer) audioVisualizer.style.display = 'flex';
+        showToast('Gravando... Fale agora. O áudio será finalizado após 6s de silêncio.', 'info');
+        
+        try {
+          stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+          audioContext = new (window.AudioContext || window.webkitAudioContext)();
+          analyser = audioContext.createAnalyser();
+          microphone = audioContext.createMediaStreamSource(stream);
+          microphone.connect(analyser);
+          analyser.fftSize = 256;
+          
+          const bufferLength = analyser.frequencyBinCount;
+          const dataArray = new Uint8Array(bufferLength);
+          let lastSoundTime = Date.now();
+          
+          function updateWaves() {
+            if (!isRecording) return;
+            analyser.getByteFrequencyData(dataArray);
+            
+            let sum = 0;
+            for(let i = 0; i < bufferLength; i++) {
+              sum += dataArray[i];
+            }
+            const average = sum / bufferLength;
+
+            // Detecta silêncio (média muito baixa) por 6 segundos para parar
+            if (average > 2) {
+              lastSoundTime = Date.now();
+            } else if (Date.now() - lastSoundTime > 6000) {
+              showToast('Áudio finalizado automaticamente por silêncio.', 'info');
+              stopRecording();
+              return;
+            }
+
+            const normalized = Math.min(average / 50, 1);
+            
+            waveBars.forEach((bar) => {
+              const noise = Math.random() * 0.4;
+              const height = 4 + (normalized * 20 * (1 + noise));
+              bar.style.height = `${Math.max(4, height)}px`;
+            });
+            
+            animationFrameId = requestAnimationFrame(updateWaves);
+          }
+          updateWaves();
+        } catch (err) {
+          console.warn('Erro ao obter áudio para ondas visuais:', err);
+        }
+      };
+
+      recognition.onresult = (event) => {
+        let finalTranscript = '';
+        for (let i = event.resultIndex; i < event.results.length; ++i) {
+          if (event.results[i].isFinal) {
+            finalTranscript += event.results[i][0].transcript;
+          }
+        }
+        if (finalTranscript) {
+          const currentVal = inputQuestion.value.trim();
+          inputQuestion.value = currentVal ? currentVal + ' ' + finalTranscript : finalTranscript;
+          if (charCounter) charCounter.textContent = `${inputQuestion.value.length} caracteres`;
+        }
+      };
+
+      recognition.onerror = (event) => {
+        if (event.error !== 'no-speech') {
+          showToast('Erro no reconhecimento de voz: ' + event.error, 'error');
+        }
+        // Em caso de no-speech da API, ignoramos se ainda estamos gravando
+      };
+
+      recognition.onend = () => {
+        // Se a API parar sozinha por algum motivo que não foi nós chamando stopRecording
+        if (isRecording) {
+          // Restart para forçar continuar escutando até o timeout de 6s atuar
+          try { recognition.start(); } catch(e) {}
+        }
+      };
+    } else {
+      btnRecordAudio.style.display = 'none';
+      console.warn("SpeechRecognition não suportado neste navegador.");
+    }
+
+    function stopRecording() {
+      if (recognition && isRecording) {
+        try { recognition.stop(); } catch(e) {}
+        isRecording = false;
+        btnRecordAudio.style.display = 'flex';
+        if (audioVisualizer) audioVisualizer.style.display = 'none';
+        showToast('Gravação finalizada.', 'success');
+        
+        if (animationFrameId) cancelAnimationFrame(animationFrameId);
+        if (microphone) microphone.disconnect();
+        if (analyser) analyser.disconnect();
+        if (audioContext && audioContext.state !== 'closed') audioContext.close();
+        if (stream) stream.getTracks().forEach(t => t.stop());
+      }
+    }
+
+    btnRecordAudio.addEventListener('click', () => {
+      if (!recognition) {
+        showToast('Reconhecimento de voz não suportado neste navegador.', 'error');
+        return;
+      }
+      if (isRecording) {
+        stopRecording();
+      } else {
+        recognition.start();
+      }
+    });
+
+    if (audioVisualizer) {
+      audioVisualizer.addEventListener('click', () => {
+        stopRecording();
+      });
+    }
+  }
+
+  // ==================== COLAR E GERENCIAR IMAGENS ====================
+  const imagePreviewContainer = document.getElementById('image-preview-container');
+  let accumulatedFiles = [];
+
+  function updateImagePreviews() {
+    if (!imagePreviewContainer) return;
+    imagePreviewContainer.innerHTML = '';
+    const dt = new DataTransfer();
+    
+    accumulatedFiles.forEach((file, index) => {
+      dt.items.add(file);
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const wrapper = document.createElement('div');
+        wrapper.style.position = 'relative';
+        wrapper.style.width = '64px';
+        wrapper.style.height = '64px';
+        wrapper.style.borderRadius = '8px';
+        wrapper.style.overflow = 'hidden';
+        wrapper.style.border = '2px solid var(--border-subtle)';
+        wrapper.style.boxShadow = '0 2px 4px rgba(0,0,0,0.5)';
+        
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        img.style.width = '100%';
+        img.style.height = '100%';
+        img.style.objectFit = 'cover';
+        
+        const removeBtn = document.createElement('button');
+        removeBtn.innerHTML = '×';
+        removeBtn.style.position = 'absolute';
+        removeBtn.style.top = '2px';
+        removeBtn.style.right = '2px';
+        removeBtn.style.background = 'rgba(0,0,0,0.7)';
+        removeBtn.style.color = '#fff';
+        removeBtn.style.border = 'none';
+        removeBtn.style.borderRadius = '50%';
+        removeBtn.style.width = '18px';
+        removeBtn.style.height = '18px';
+        removeBtn.style.fontSize = '14px';
+        removeBtn.style.lineHeight = '1';
+        removeBtn.style.cursor = 'pointer';
+        removeBtn.style.display = 'flex';
+        removeBtn.style.alignItems = 'center';
+        removeBtn.style.justifyContent = 'center';
+        
+        removeBtn.onclick = () => {
+          accumulatedFiles.splice(index, 1);
+          updateImagePreviews();
+        };
+        
+        wrapper.appendChild(img);
+        wrapper.appendChild(removeBtn);
+        imagePreviewContainer.appendChild(wrapper);
+      };
+      reader.readAsDataURL(file);
+    });
+    
+    if (fileUpload) {
+      fileUpload.files = dt.files;
+    }
+    if (fileCount) {
+      const count = accumulatedFiles.length;
+      fileCount.textContent = count > 0 ? `${count} imagem(ns)` : '';
+    }
+  }
+
+  if (inputQuestion && fileUpload) {
+    inputQuestion.addEventListener('paste', (e) => {
+      const items = (e.clipboardData || e.originalEvent.clipboardData).items;
+      let hasImage = false;
+
+      for (let item of items) {
+        if (item.type.indexOf('image') === 0) {
+          const file = item.getAsFile();
+          if (file) {
+            accumulatedFiles.push(file);
+            hasImage = true;
+          }
+        }
+      }
+
+      if (hasImage) {
+        updateImagePreviews();
+      }
+    });
+  }
+
   async function enviarPergunta() {
     const question = inputQuestion.value.trim();
-    if (!question) {
-      showToast('Por favor, digite ou cole uma pergunta.', 'warning');
+    const files = fileUpload ? fileUpload.files : [];
+    
+    if (!question && files.length === 0) {
+      showToast('Por favor, digite uma pergunta ou anexe um arquivo (imagem/áudio).', 'warning');
       inputQuestion.focus();
       return;
     }
@@ -153,16 +396,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const startTime = performance.now();
 
     try {
+      const formData = new FormData();
+      formData.append('question', question);
+      formData.append('attendant', currentAttendant);
+      if (files.length > 0) {
+        for (let i = 0; i < files.length; i++) {
+          formData.append('files', files[i]);
+        }
+      }
+
       let res = await fetch(`${API_BASE}/api/chat`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question, attendant: currentAttendant })
+        body: formData
       });
       if (!res.ok && res.status === 404) {
         res = await fetch(`${API_BASE}/chat`, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ question, attendant: currentAttendant })
+          body: formData
         });
       }
       const data = await res.json();
@@ -175,6 +425,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (data.success) {
         formatarEExibirResposta(data.answer);
         atualizarStats();
+        // Clear input after success
+        inputQuestion.value = '';
+        if (charCounter) charCounter.textContent = '0 caracteres';
+        accumulatedFiles = [];
+        if (typeof updateImagePreviews === 'function') updateImagePreviews();
       } else {
         responseContent.innerHTML = `<div style="color: #f87171; padding: 1rem;">${data.answer || 'Erro ao consultar o assistente.'}</div>`;
       }

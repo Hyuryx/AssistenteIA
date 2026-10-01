@@ -62,7 +62,7 @@ def carregar_base_conhecimento() -> str:
     except Exception as e:
         return f"Erro ao ler base: {e}"
 
-def responder_duvida(pergunta_cliente: str, atendente_nome: str = "Heitor") -> str:
+def responder_duvida(pergunta_cliente: str, atendente_nome: str = "Heitor", arquivos: list = None) -> str:
     """
     Recebe a pergunta do cliente e o nome do atendente (Heitor ou Chloe),
     injeta o contexto da base de dados e aciona a IA para compor a resposta formal.
@@ -118,16 +118,26 @@ Gere a resposta formal e educada pronta para o cliente agora:
 
     # Utiliza o SDK google-genai
     from google import genai
-    import time
+    from google.genai import types
     import time
     
     client = genai.Client(api_key=api_key)
+    
+    conteudo_enviado = [prompt_completo]
+    if arquivos:
+        for arq in arquivos:
+            conteudo_enviado.append(
+                types.Part.from_bytes(
+                    data=arq["data"],
+                    mime_type=arq["content_type"]
+                )
+            )
     
     for tentativa in range(3):
         try:
             response = client.models.generate_content(
                 model="gemini-3.8-flash",
-                contents=prompt_completo
+                contents=conteudo_enviado
             )
             return response.text
         except Exception as e:
