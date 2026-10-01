@@ -2,7 +2,7 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Escanear Plataforma e Atualizar Vercel (1 Clique)",
+      "label": "Escanear Plataforma e Atualizar GitHub (1 Clique)",
       "type": "shell",
       "command": "${workspaceFolder}\\escanear_e_atualizar.bat",
       "windows": {
@@ -28,7 +28,7 @@
       "problemMatcher": []
     },
     {
-      "label": "Apenas Enviar Alterações para GitHub e Vercel",
+      "label": "Apenas Enviar Alterações para o GitHub",
       "type": "shell",
       "command": "${workspaceFolder}\\enviar_atualizacoes.bat",
       "windows": {

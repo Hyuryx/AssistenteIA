@@ -264,6 +264,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (stream) stream.getTracks().forEach(t => t.stop());
       }
     }
+    
+    window.stopVoiceRecording = stopRecording;
 
     btnRecordAudio.addEventListener('click', () => {
       if (!recognition) {
@@ -373,6 +375,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   async function enviarPergunta() {
+    if (window.stopVoiceRecording) {
+      window.stopVoiceRecording();
+    }
+    
     const question = inputQuestion.value.trim();
     const files = fileUpload ? fileUpload.files : [];
     
@@ -442,7 +448,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
     } finally {
       btnSubmit.disabled = false;
-      btnSubmitText.textContent = 'Consultar Base & Gerar Resposta';
+      btnSubmitText.textContent = 'Gerar Resposta';
       btnSpinner.style.display = 'none';
     }
   }
