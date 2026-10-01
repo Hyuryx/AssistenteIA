@@ -136,7 +136,7 @@ async def stats_endpoint():
         api_status = "active"
         api_label = "Ativa"
         api_color = "green"
-        api_desc = "Conectada ao Gemini 2.5 Flash"
+        api_desc = "Conectada ao Gemini 3.8 Flash"
 
     # 2. Status da Base de Dados (Ativa [verde], Em Manutenção [laranja], Offline [vermelho])
     total_docs = len(list(DATA_DIR.glob("*.*")))

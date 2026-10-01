@@ -62,6 +62,9 @@
         "panel": "new",
         "focus": false
       },
+      "group": {
+        "kind": "build"
+      },
       "problemMatcher": []
     }
   ]

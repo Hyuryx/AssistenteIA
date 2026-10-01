@@ -37,6 +37,8 @@ def atualizar_arquivos_locais(mudancas):
                 with open(txt_file, "w", encoding="utf-8") as f:
                     f.write(novo_conteudo)
                 print(f" -> Arquivo TXT atualizado: {Path(txt_file).name}")
+            import time
+            time.sleep(4) # Evita limite de 15 RPM da API Gratuita
         except Exception as e:
             print(f"Erro ao processar TXT {txt_file}: {e}")
 
@@ -58,6 +60,8 @@ def atualizar_arquivos_locais(mudancas):
                         novo_doc.add_paragraph(linha)
                 novo_doc.save(docx_file)
                 print(f" -> Arquivo DOCX atualizado: {Path(docx_file).name}")
+            import time
+            time.sleep(4) # Evita limite de 15 RPM da API Gratuita
         except Exception as e:
             print(f"Erro ao processar DOCX {docx_file}: {e}")
             
@@ -82,7 +86,7 @@ Mantenha o formato de texto. Retorne APENAS o texto atualizado, sem comentários
     for tentativa in range(3):
         try:
             response = client.models.generate_content(
-                model='gemini-2.5-flash',
+                model='gemini-3.8-flash',
                 contents=prompt
             )
             return response.text.strip()
