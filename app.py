@@ -7,6 +7,38 @@ import asyncio
 from pathlib import Path
 from typing import List, Optional
 from threading import Thread
+import requests
+
+api_health_state = {
+    "status": "offline",
+    "label": "Offline",
+    "color": "red",
+    "desc": "Verificando..."
+}
+
+def monitorar_api_bg():
+    while True:
+        from config import obter_gemini_api_key
+        api_key = obter_gemini_api_key()
+        if not api_key:
+            api_health_state.update({"status": "offline", "label": "Offline", "color": "red", "desc": "Sem chave configurada no servidor"})
+        else:
+            try:
+                res = requests.get(f"https://generativelanguage.googleapis.com/v1beta/models?key={api_key}", timeout=5)
+                if res.status_code == 200:
+                    api_health_state.update({"status": "active", "label": "Ativa", "color": "green", "desc": "Conectada ao Gemini 3.8 Flash (Online)"})
+                elif res.status_code == 429:
+                    api_health_state.update({"status": "exhausted", "label": "Esgotada", "color": "orange", "desc": "Limite de requisições excedido temporariamente"})
+                elif res.status_code in [400, 403]:
+                    api_health_state.update({"status": "offline", "label": "Offline", "color": "red", "desc": "Chave de API inválida ou sem permissão"})
+                else:
+                    api_health_state.update({"status": "unstable", "label": "Instável", "color": "gray", "desc": f"Erro de comunicação: HTTP {res.status_code}"})
+            except Exception:
+                api_health_state.update({"status": "unstable", "label": "Instável", "color": "gray", "desc": "Sem conexão com a internet ou timeout"})
+        import time
+        time.sleep(15)
+
+Thread(target=monitorar_api_bg, daemon=True).start()
 
 # Garante suporte a UTF-8
 if hasattr(sys.stdout, "reconfigure"):
@@ -119,24 +151,14 @@ async def chat_endpoint(req: ChatRequest):
 @app.get("/stats")
 async def stats_endpoint():
     import atendente
+    from config import obter_gemini_api_key
     api_key_val = obter_gemini_api_key()
     
-    # 1. Status da API Key (Ativa [verde], Esgotada [laranja], Offline [vermelho])
-    if not api_key_val:
-        api_status = "offline"
-        api_label = "Offline"
-        api_color = "red"
-        api_desc = "Sem chave configurada no servidor"
-    elif getattr(atendente, "ULTIMO_ERRO_QUOTA", False):
-        api_status = "exhausted"
-        api_label = "Esgotada"
-        api_color = "orange"
-        api_desc = "Limite de requisições excedido temporariamente"
-    else:
-        api_status = "active"
-        api_label = "Ativa"
-        api_color = "green"
-        api_desc = "Conectada ao Gemini 3.8 Flash"
+    # 1. Status da API Key em tempo real (atualizado pela thread)
+    api_status = api_health_state["status"]
+    api_label = api_health_state["label"]
+    api_color = api_health_state["color"]
+    api_desc = api_health_state["desc"]
 
     # 2. Status da Base de Dados (Ativa [verde], Em Manutenção [laranja], Offline [vermelho])
     total_docs = len(list(DATA_DIR.glob("*.*")))

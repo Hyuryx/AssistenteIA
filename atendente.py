@@ -51,7 +51,6 @@ Sempre que precisar ensinar um caminho ao cliente, utilize este mapeamento para 
    - Tela de Recarregar: Contém as opções de valores e métodos para depósito e histórico de recarga.
 """
 
-ULTIMO_ERRO_QUOTA = False
 
 def carregar_base_conhecimento() -> str:
     """Lê o texto consolidado extraído do site."""
@@ -120,7 +119,7 @@ Gere a resposta formal e educada pronta para o cliente agora:
     # Utiliza o SDK google-genai
     from google import genai
     import time
-    global ULTIMO_ERRO_QUOTA
+    import time
     
     client = genai.Client(api_key=api_key)
     
@@ -130,11 +129,8 @@ Gere a resposta formal e educada pronta para o cliente agora:
                 model="gemini-3.8-flash",
                 contents=prompt_completo
             )
-            ULTIMO_ERRO_QUOTA = False
             return response.text
         except Exception as e:
-            if "429" in str(e) or "RESOURCE_EXHAUSTED" in str(e):
-                ULTIMO_ERRO_QUOTA = True
             if ("503" in str(e) or "429" in str(e)) and tentativa < 2:
                 time.sleep(5)
                 continue

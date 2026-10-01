@@ -390,9 +390,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Atualiza imediatamente e verifica a cada 30 segundos
+  // Atualiza imediatamente e verifica a cada 5 segundos (tempo real)
   atualizarStats();
-  setInterval(atualizarStats, 30000);
+  setInterval(atualizarStats, 5000);
 });
 
 // ==================== TOAST FEEDBACK ====================
