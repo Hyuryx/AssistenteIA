@@ -175,6 +175,7 @@ body {
   background: linear-gradient(to right, #ffffff 20%, #c084fc 40%, #ffffff 60%);
   background-size: 200% auto;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shimmer-text 5s linear infinite;
 }

@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnSpinner = document.getElementById('btn-spinner');
   const responseContent = document.getElementById('response-content');
   const btnCopy = document.getElementById('btn-copy-response');
+  const btnRetry = document.getElementById('btn-retry-response');
   const copyBtnText = document.getElementById('copy-btn-text');
   const btnClear = document.getElementById('btn-clear-question');
   const charCounter = document.getElementById('char-counter');
@@ -131,6 +132,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (btnSubmit) {
     btnSubmit.addEventListener('click', enviarPergunta);
+  }
+  if (btnRetry) {
+    btnRetry.addEventListener('click', enviarPergunta);
   }
 
   const fileUpload = document.getElementById('file-upload');
@@ -390,6 +394,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Estado de carregamento
     btnSubmit.disabled = true;
+    if (btnRetry) btnRetry.style.display = 'none';
     btnSubmitText.textContent = `Consultando base como ${currentAttendant}...`;
     btnSpinner.style.display = 'inline-block';
     responseContent.innerHTML = `
@@ -438,6 +443,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (typeof updateImagePreviews === 'function') updateImagePreviews();
       } else {
         responseContent.innerHTML = `<div style="color: #f87171; padding: 1rem;">${data.answer || 'Erro ao consultar o assistente.'}</div>`;
+        if (btnRetry) btnRetry.style.display = 'flex';
       }
     } catch (err) {
       responseContent.innerHTML = `
@@ -446,6 +452,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <small style="color: var(--text-dim);">Dica: Se estiver usando o arquivo local, execute <code>iniciar_servidor.bat</code> ou acesse a URL publicada na Vercel.</small>
         </div>
       `;
+      if (btnRetry) btnRetry.style.display = 'flex';
     } finally {
       btnSubmit.disabled = false;
       btnSubmitText.textContent = 'Gerar Resposta';
