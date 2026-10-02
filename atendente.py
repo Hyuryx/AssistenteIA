@@ -120,6 +120,7 @@ Gere a resposta formal e educada pronta para o cliente agora:
     from google import genai
     from google.genai import types
     import time
+    import random
     
     client = genai.Client(api_key=api_key)
     
@@ -133,18 +134,19 @@ Gere a resposta formal e educada pronta para o cliente agora:
                 )
             )
     
-    for tentativa in range(3):
+    for tentativa in range(5):
         try:
             response = client.models.generate_content(
-                model="gemini-3.8-flash",
+                model="gemini-1.5-flash",
                 contents=conteudo_enviado
             )
             return response.text
         except Exception as e:
-            if ("503" in str(e) or "429" in str(e)) and tentativa < 2:
-                time.sleep(5)
+            erro_str = str(e).lower()
+            if ("503" in erro_str or "429" in erro_str or "unavailable" in erro_str) and tentativa < 4:
+                time.sleep((2 ** tentativa) + random.random())
                 continue
-            return f"[Erro ao consultar a IA]: {e}\nVerifique se a sua chave GEMINI_API_KEY no arquivo .env é válida."
+            return f"[Erro ao consultar a IA]: {e}\nO modelo está com alta demanda ou ocorreu uma falha. Clique em Recarregar."
 
 if __name__ == "__main__":
     teste = "Qual a porcentagem do menor produto e como funciona o saque?"
