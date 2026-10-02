@@ -62,6 +62,26 @@ def carregar_base_conhecimento() -> str:
     except Exception as e:
         return f"Erro ao ler base: {e}"
 
+def filtrar_contexto(texto: str, pergunta: str) -> str:
+    import re
+    limite = 15000
+    if len(texto) <= limite:
+        return texto
+    termos = [t.lower() for t in pergunta.split() if len(t) > 3]
+    if not termos:
+        return texto[:limite]
+    blocos = re.split(r'={10,}', texto)
+    blocos_relevantes = []
+    if blocos:
+        blocos_relevantes.append(blocos[0])
+    for bloco in blocos[1:]:
+        if any(t in bloco.lower() for t in termos):
+            blocos_relevantes.append(bloco)
+    resumo = '\n==========\n'.join(blocos_relevantes)
+    if len(resumo) < 500:
+        return texto[:limite]
+    return resumo[:limite]
+
 def responder_duvida(pergunta_cliente: str, atendente_nome: str = "Heitor", arquivos: list = None) -> str:
     """
     Recebe a pergunta do cliente e o nome do atendente (Heitor ou Chloe),
@@ -71,7 +91,9 @@ def responder_duvida(pergunta_cliente: str, atendente_nome: str = "Heitor", arqu
     artigo = "a" if nome == "Chloe" else "o"
     system_prompt = gerar_system_prompt(nome)
 
-    base_texto = carregar_base_conhecimento()
+    base_texto_integral = carregar_base_conhecimento()
+    base_texto = filtrar_contexto(base_texto_integral, pergunta_cliente)
+    
     if not base_texto:
         return (
             "[AVISO] Nenhuma base de dados encontrada!\n"
@@ -137,7 +159,7 @@ Gere a resposta formal e educada pronta para o cliente agora:
     for tentativa in range(5):
         try:
             response = client.models.generate_content(
-                model="gemini-1.5-flash",
+                model="gemini-2.5-flash",
                 contents=conteudo_enviado
             )
             return response.text
